@@ -87,6 +87,7 @@ Every session has the same shape (clock times add up to 240 minutes):
 3. Starter tickets in SCRUM: 8–10 small tickets, one per participant plus spares.
 4. Collaborator invites to the repo and to Jira for the 6 participants, sent several days earlier.
 5. Claude accounts: confirm who is on Pro and who is on free, and check that free accounts can complete the GitHub and Jira connections.
+6. Slides for the trainer: generate the PowerPoint deck for session 5 (ground rules and work trail, setup walkthrough, first-ticket instructions, Three Ways activity, skill creation), with speaker notes.
 
 ---
 
@@ -351,6 +352,7 @@ Every session has the same shape (clock times add up to 240 minutes):
 | S5 | Starter tickets in SCRUM (8–10) | Instructor (with Claude) |
 | S5 | Collaborator invites (repo and Jira) for the 6 participants | Instructor |
 | S5 | Check Claude accounts (Pro/free) and the GitHub/Jira connections | Instructor + participants |
+| S5 | PowerPoint deck for the trainer (with speaker notes) | Instructor (with Claude) |
 | S6 | Café Cumbre orders API in `cafe-cumbre-en-linea/` with a planted bug | Instructor (with Claude) |
 | S7 | Images in GHCR with permissions; reference nginx config | Instructor (with Claude) |
 | S9 | Observability Compose profile; Codespaces fallback | Instructor (with Claude) |
