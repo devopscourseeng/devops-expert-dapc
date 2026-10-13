@@ -1,99 +1,99 @@
-# CONTEXT.md — Curso DAPC (DevOps Advanced Professional Certification)
+# CONTEXT.md — DAPC Course (DevOps Advanced Professional Certification)
 
-Archivo de contexto compartido. Su objetivo es que cualquier persona (o cualquier sesión de Claude) que abra este repositorio entienda el curso, su estado y las reglas de trabajo sin depender del historial de un chat.
+Shared context file. Its purpose is that anyone (or any Claude session) opening this repository can understand the course, its status and the working rules without depending on a chat history.
 
-> Mantenimiento: actualiza este archivo mediante PR cuando cambie el estado del curso o una decisión. Si algo aquí contradice otro documento del repo, este archivo describe el **estado vigente** y debe corregirse.
+> Maintenance: update this file through a PR when the course status or a decision changes. If something here contradicts another document in the repo, this file describes the **current state** and the other document should be fixed or this file corrected.
 
-## 1. El curso
+## 1. The course
 
-| Dato | Valor |
+| Item | Value |
 |---|---|
-| Curso | DevOps Advanced Professional Certification (DAPC) · "DevOps Expert" |
-| Entidad certificadora | CertiProf (material base V072021A) |
-| Modalidad | Virtual sincrónica (videollamada, salas de grupos, pizarra Excalidraw) |
-| Carga | 16 sesiones de 4 h = 64 h, una sesión por semana, más 2–3 h semanales de trabajo autónomo |
-| Participantes | 6, en dos equipos de 3 para las dinámicas |
-| Examen de certificación | 40 preguntas de selección múltiple, 60 min, se aprueba con 80 % (32/40) |
-| Nota del curso | 0–100; aprueba con 70 o más y 80 % de asistencia (13 de 16 sesiones) |
+| Course | DevOps Advanced Professional Certification (DAPC) · "DevOps Expert" |
+| Certifying body | CertiProf (base material V072021A) |
+| Format | Live online (video call, breakout rooms, Excalidraw whiteboard) |
+| Workload | 16 sessions of 4 h = 64 h, one session per week, plus 2–3 h per week of independent work |
+| Participants | 6, in two teams of 3 for group activities |
+| Certification exam | 40 multiple-choice questions, 60 min, pass mark 80 % (32/40) |
+| Course grade | 0–100; pass with 70 or more and 80 % attendance (13 of 16 sessions) |
 
-## 2. Estado actual
+## 2. Current status
 
-- **Sesiones 1–4:** ya preparadas por el instructor anterior (guiones, laboratorios y prácticas). Resumen en la sección 4.
-- **Desde la sesión 5:** el curso lo toma un nuevo instructor (el propietario de este repo). Aquí se prepara todo lo que falta.
-- **Plan global original (v1.0, oct 2026)** del instructor anterior: cubre las 16 sesiones. Es la referencia de partida, no necesariamente el plan final.
-- **Nuevo plan global (v0.1, sesiones 5–16):** borrador solo con títulos y descripciones breves. Lo seguirá mejorando el instructor durante los próximos días. Hasta que se publique aquí, el plan v1.0 es la referencia.
-- **Sesión 5:** será el *kickoff* del nuevo instructor: conocer a la audiencia, configurar herramientas de IA, Jira y GitHub, y empezar a recorrer el material DAPC.
+- **Sessions 1–4:** already prepared by the previous instructor (scripts, labs and practices). Summary in section 4.
+- **From session 5:** a new instructor (the owner of this repo) takes over the course. Everything that is still missing is prepared here.
+- **Original global plan (v1.0, Oct 2026)** by the previous instructor: covers all 16 sessions. It is the starting reference, not necessarily the final plan.
+- **New global plan (v0.1, sessions 5–16):** draft with titles and short descriptions only. The instructor will keep improving it over the coming days. Until it is published here, plan v1.0 is the reference.
+- **Session 5:** will be the new instructor's kickoff: get to know the audience, set up AI tools, Jira and GitHub, and start working through the DAPC material.
 
-## 3. Objetivos y enfoque del nuevo instructor
+## 3. New instructor's goals and approach
 
-- Cubrir el contenido de CertiProf usando **IA como herramienta principal de los estudiantes** para aprender haciendo.
-- Reducir el tiempo de exposición del instructor (no le gustan las clases magistrales) y aumentar el tiempo de práctica de los estudiantes.
-- Trabajar con **GitLab o GitHub** (el que resulte más fácil para MCPs y herramientas DevOps) más **Jira**: los estudiantes reciben tickets, suben cambios y tienen CI/CD integrado.
-- Que los estudiantes **creen skills**.
-- Un proyecto completo como hilo del curso, alojado en este repo (ver sección 5).
+- Cover the CertiProf content using **AI as the students' main tool** for learning by doing.
+- Reduce instructor talk time (the instructor dislikes master classes) and increase student practice time.
+- Work with **GitLab or GitHub** (whichever is easier for MCPs and DevOps tools) plus **Jira**: students get tickets assigned, push changes and have CI/CD integrated.
+- Have students **create skills**.
+- One complete project as the thread of the course, hosted in this repo (see section 5).
 
-## 4. Qué se vio en las sesiones 1–4
+## 4. What was covered in sessions 1–4
 
-Resumen del plan v1.0. Las diapositivas son páginas del PDF del instructor CertiProf.
+Summary of plan v1.0. Slide numbers refer to pages of the CertiProf instructor PDF.
 
-| Sesión | Tema | Diap. | Práctica principal |
+| Session | Topic | Slides | Main practice |
 |---|---|---|---|
-| S1 | Origen de DevOps, conceptos base (CD, IaC, Kata, WIP, lead time, deuda técnica, bimodal), CALMS, organización | 1–47 | Lab 1 GitHub (repo, ramas, PR, conflicto, Actions, protección de `main`, tag) · Lab 2 Docker (imágenes, capas, Dockerfile, registro). Tarea T1 «Cafetería Yungas» |
-| S2 | Team Topologies, equipos autogestionados, Ops en Dev, DevOps Topologies | 48–63 | Cafetería Yungas resuelta por tres métodos; consigna «Chocolatería Alto Beni»; dinámica Ruta Salar / Cooperativa Illimani. T2 opcional |
-| S3 | Las Tres Formas y cimientos del pipeline | 64–98 | Dinámica Flowban; entorno completo con Compose en un comando (taller 98). T3 |
-| S4 | **Evaluación 1** y pruebas automatizadas | 99–109 | Práctica de evaluación «Heladería Sajama»; pytest + cobertura + CI que bloquea `main`. T4 |
+| S1 | Origin of DevOps, base concepts (CD, IaC, Kata, WIP, lead time, technical debt, bimodal), CALMS, organization | 1–47 | Lab 1 GitHub (repo, branches, PR, conflict, Actions, `main` protection, tag) · Lab 2 Docker (images, layers, Dockerfile, registry). Homework T1 "Cafetería Yungas" |
+| S2 | Team Topologies, self-managed teams, Ops in Dev, DevOps Topologies | 48–63 | Cafetería Yungas solved three ways; in-class exercise "Chocolatería Alto Beni"; group activity Ruta Salar / Cooperativa Illimani. T2 optional |
+| S3 | The Three Ways and pipeline foundations | 64–98 | Flowban simulation; full environment with Compose in one command (workshop 98). T3 |
+| S4 | **Assessment 1** and automated testing | 99–109 | Assessment practice "Heladería Sajama"; pytest + coverage + CI that blocks `main`. T4 |
 
-> Nota: el plan v1.0 indica que solo S1 y S2 estaban dictadas al momento de redactarse; el nuevo instructor retoma desde S5. Verifica con el instructor qué parte de S3–S4 se llegó a impartir antes de planificar repasos.
+> Note: plan v1.0 states that only S1 and S2 had been delivered when it was written; the new instructor resumes from S5. Check with the instructor how much of S3–S4 was actually delivered before planning any review.
 
-## 5. Proyecto hilo conductor: «Café Cumbre en línea»
+## 5. Thread project: "Café Cumbre en línea" (Café Cumbre Online)
 
-Sistema que cada participante construye y opera durante el curso: una API en Flask más un sitio nginx, orquestados con Docker Compose. Sesión a sesión se le añaden capacidades (según el plan v1.0):
+A system that each participant builds and operates during the course: a Flask API plus an nginx site, orchestrated with Docker Compose. Each session adds a capability (per plan v1.0):
 
-| Sesiones | Capacidad que se añade | Forma |
+| Sessions | Capability added | Way |
 |---|---|---|
-| S1–S2 | Repo con CI y publicación; imagen del sitio versionada (1.0 → 1.1) | Flujo |
-| S3 | API de pedidos y Compose: entorno completo en un comando | Flujo |
-| S4 | Pruebas unitarias y de API; job de pruebas que bloquea la integración | Flujo |
-| S5 | Funcionalidad por TDD; pipeline de análisis, pruebas, build y publicación en GHCR | Flujo |
-| S6 | Despliegue de autoservicio, azul-verde, canario y feature toggles | Flujo |
-| S7 | Servicio de inventario extraído con patrón estrangulador; mapa de flujo de valor | Flujo |
-| S8 | Métricas en Prometheus y paneles en Grafana | Feedback |
-| S9 | Logs estructurados con id de correlación, radiador y alertas | Feedback |
-| S10 | Canario vigilado con retorno automático; lista LRR | Feedback |
-| S11 | Experimento A/B; plantilla de PR, CODEOWNERS y revisión cruzada | Feedback |
-| S12 | Plantilla de postmortem sin culpa | Aprendizaje |
-| S13 | Timeouts, reintentos y runbooks probados en un Game Day (Toxiproxy) | Aprendizaje |
-| S14 | Workflow reutilizable y plantilla de repo compartidos | Aprendizaje |
-| S15 | Controles de seguridad (gitleaks, pip-audit, Trivy), SBOM y registro automático del cambio | Seguridad y cambio |
+| S1–S2 | Repo with CI and publishing; versioned site image (1.0 → 1.1) | Flow |
+| S3 | Orders API and Compose: full environment in one command | Flow |
+| S4 | Unit and API tests; test job that blocks integration | Flow |
+| S5 | Feature built with TDD; pipeline for analysis, tests, build and publishing to GHCR | Flow |
+| S6 | Self-service deployment, blue-green, canary and feature toggles | Flow |
+| S7 | Inventory service extracted with the strangler pattern; value stream map | Flow |
+| S8 | Metrics in Prometheus and Grafana dashboards | Feedback |
+| S9 | Structured logs with correlation id, information radiator and alerts | Feedback |
+| S10 | Watched canary with automatic rollback; LRR checklist | Feedback |
+| S11 | A/B experiment; PR template, CODEOWNERS and cross review | Feedback |
+| S12 | Blameless postmortem template | Learning |
+| S13 | Timeouts, retries and runbooks tested in a Game Day (Toxiproxy) | Learning |
+| S14 | Reusable workflow and shared repository template | Learning |
+| S15 | Security controls (gitleaks, pip-audit, Trivy), SBOM and automatic change record | Security and change |
 
-Con el nuevo enfoque (IA + Jira + tickets), este reparto puede cambiar. El nuevo plan v0.1 lo redefine para S5–S16.
+With the new approach (AI + Jira + tickets) this distribution may change. The new plan v0.1 redefines it for S5–S16.
 
-## 6. Temario oficial (6 unidades)
+## 6. Official syllabus (6 units)
 
-1. Introducción (diap. 18–63)
-2. Principios: las Tres Formas (64–76)
-3. La Primera Forma: flujo (77–159)
-4. La Segunda Forma: feedback (160–216)
-5. La Tercera Forma: aprendizaje (217–252)
-6. Seguridad, cambio y cumplimiento (253–273)
+1. Introduction (slides 18–63)
+2. Principles: the Three Ways (64–76)
+3. The First Way: flow (77–159)
+4. The Second Way: feedback (160–216)
+5. The Third Way: learning (217–252)
+6. Security, change and compliance (253–273)
 
-Evaluaciones: E1 en S4, E2 en S8, E3 en S12, evaluación final con simulacro en S16. Peso: E1–E3 15 % c/u, final 25 %, tareas 20 %, participación 10 %.
+Assessments: A1 in S4, A2 in S8, A3 in S12, final assessment with exam simulation in S16. Weights: A1–A3 15 % each, final 25 %, homework 20 %, participation 10 %.
 
-## 7. Herramientas y stack
+## 7. Tools and stack
 
-Git y GitHub (Actions, GHCR), Docker y Compose, Flask, pytest, ruff, nginx, Prometheus, Grafana, k6, Toxiproxy, gitleaks, pip-audit, Trivy (SBOM CycloneDX), Dependabot. Nuevo: Jira y asistentes de IA para los estudiantes. Pizarra: Excalidraw.
+Git and GitHub (Actions, GHCR), Docker and Compose, Flask, pytest, ruff, nginx, Prometheus, Grafana, k6, Toxiproxy, gitleaks, pip-audit, Trivy (CycloneDX SBOM), Dependabot. New: Jira and AI assistants for students. Whiteboard: Excalidraw.
 
-## 8. Convenciones de este repositorio
+## 8. Repository conventions
 
-- Idioma de los materiales: **español**.
-- Estructura prevista: `plan/` (planes globales), `session_N/` (guion, consignas, soluciones y `recursos/` por sesión), `cafe-cumbre-en-linea/` (proyecto hilo conductor), `recursos/` (material compartido).
-- Los cambios entran **por pull request**, uno por tema, con una descripción breve de qué cambia y por qué.
-- Los secretos que aparezcan en prácticas son siempre **falsos** (patrones de prueba); nunca credenciales reales.
-- Los PDF originales de CertiProf (material del instructor y del estudiante, brochure, examen de muestra) **no se suben** a este repo público: son material con derechos de autor. Se citan por número de diapositiva.
+- Language of all materials: **English**. Original names of exercises and projects (for example "Café Cumbre en línea") are kept as they are.
+- Planned structure: `plan/` (global plans), `session_N/` (script, assignments, solutions and `recursos/` per session), `cafe-cumbre-en-linea/` (thread project), `recursos/` (shared material).
+- Changes enter **through pull requests**, one topic per PR, with a short description of what changes and why.
+- Secrets that appear in practices are always **fake** (test patterns); never real credentials.
+- The original CertiProf PDFs (instructor and student material, brochure, sample exam) are **not uploaded** to this repo because they are copyrighted material. They are cited by slide number.
 
-## 9. Decisiones abiertas
+## 9. Open decisions
 
-- [ ] Elegir GitHub o GitLab como plataforma de los estudiantes y cómo integrar Jira.
-- [ ] Publicar el nuevo plan global (v0.1) en `plan/` cuando esté listo.
-- [ ] Decidir si «Café Cumbre en línea» vive en este repo (subcarpeta) o en un repo propio.
-- [ ] Definir cómo se evaluará el uso de IA por los estudiantes (el plan v1.0 lo prohíbe en las evaluaciones prácticas y lo permite declarado en tareas; es una propuesta a revisar).
+- [ ] Choose GitHub or GitLab as the students' platform and how to integrate Jira.
+- [ ] Publish the new global plan (v0.1) in `plan/` when it is ready.
+- [ ] Decide whether "Café Cumbre en línea" lives in this repo (subfolder) or in its own repo.
+- [ ] Define how students' use of AI will be assessed (plan v1.0 forbids it in practical assessments and allows it, if declared, in homework; this is a proposal to review).
