@@ -7,6 +7,7 @@ This plan replaces the plan for sessions 5–16 in the original global plan (v1.
 ## 1. How the course works from session 5
 
 - **Format:** 12 sessions (5–16) of 4 hours, live online, 6 participants in two teams of 3.
+- **Session leads:** Patricia leads sessions 6 and 12 (quality focus: tests and peer review). Alex leads all the others.
 - **Tools:** one shared GitHub repo (`devopscourseeng/devops-expert-dapc`), one Jira project (key **SCRUM**), and **Claude** as the only AI tool (Pro preferred, free allowed).
 - **Learning by doing:** the instructor talks about 20–30 minutes per session. Participants build the theory themselves with Claude, check it against the official CertiProf material, and apply it on real tickets.
 - **Everything goes through tickets and pull requests:** a `SCRUM-N` ticket, a branch named `SCRUM-N-short-description`, a PR with CI green, a review by a classmate, and a closing comment in Jira.
@@ -32,20 +33,20 @@ Optional, outside the grade: the official CertiProf DAPC exam (40 multiple-choic
 
 ## 3. Session overview
 
-| Session | Theme | DAPC slides | Syllabus unit | Project capability added |
-|---|---|---|---|---|
-| S5 | Kickoff: Claude, GitHub and Jira as the way of working | 64–76 (recap) | 2 | First ticket closed through a PR |
-| S6 | Tests, TDD, continuous integration and trunk-based development | 99–128 | 3 | Real CI pipeline with tests that block merges |
-| S7 | Low-risk releases | 129–154 | 3 | Self-service deploy, blue-green, canary, feature toggles |
-| S8 | Low-risk architecture and the end of the First Way | 155–159 | 3 | Inventory service extracted (strangler pattern); value stream map |
-| S9 | Telemetry | 160–173 | 4 | Metrics in Prometheus and Grafana dashboards |
-| S10 | Logs, information radiators and predictive analysis | 174–182 | 4 | Structured logs, correlation id, radiator and alerts |
-| S11 | Feedback to deploy safely: LRR and HRR | 183–194 | 4 | Watched canary with automatic rollback; LRR checklist |
-| S12 | Hypotheses, A/B tests and peer review | 195–216 | 4 | A/B experiment; PR template, CODEOWNERS |
-| S13 | Learning culture and blameless postmortems | 217–225 | 5 | Postmortem template and first postmortem |
-| S14 | Resilience: fault injection and Game Day | 226–235 | 5 | Timeouts, retries, runbooks tested in a Game Day |
-| S15 | Local discoveries, global improvements | 236–252 | 5 | Reusable workflow, repo template, DORA metrics |
-| S16 | Security, change management, compliance and course close | 253–273 | 6 | DevSecOps pipeline, SBOM, automatic change record |
+| Session | Lead | Theme | DAPC slides | Syllabus unit | Project capability added |
+|---|---|---|---|---|---|
+| S5 | Alex | Kickoff: Claude, GitHub and Jira as the way of working | 64–76 (recap) | 2 | First ticket closed through a PR |
+| S6 | Patricia | Tests, TDD, continuous integration and trunk-based development | 99–128 | 3 | Real CI pipeline with tests that block merges |
+| S7 | Alex | Low-risk releases | 129–154 | 3 | Self-service deploy, blue-green, canary, feature toggles |
+| S8 | Alex | Low-risk architecture and the end of the First Way | 155–159 | 3 | Inventory service extracted (strangler pattern); value stream map |
+| S9 | Alex | Telemetry | 160–173 | 4 | Metrics in Prometheus and Grafana dashboards |
+| S10 | Alex | Logs, information radiators and predictive analysis | 174–182 | 4 | Structured logs, correlation id, radiator and alerts |
+| S11 | Alex | Feedback to deploy safely: LRR and HRR | 183–194 | 4 | Watched canary with automatic rollback; LRR checklist |
+| S12 | Patricia | Hypotheses, A/B tests and peer review | 195–216 | 4 | A/B experiment; PR template, CODEOWNERS |
+| S13 | Alex | Learning culture and blameless postmortems | 217–225 | 5 | Postmortem template and first postmortem |
+| S14 | Alex | Resilience: fault injection and Game Day | 226–235 | 5 | Timeouts, retries, runbooks tested in a Game Day |
+| S15 | Alex | Local discoveries, global improvements | 236–252 | 5 | Reusable workflow, repo template, DORA metrics |
+| S16 | Alex | Security, change management, compliance and course close | 253–273 | 6 | DevSecOps pipeline, SBOM, automatic change record |
 
 Slide numbers refer to the CertiProf instructor PDF (V072021A). The old plan's three assessment sessions (4, 8, 12) and the final exam session are removed; their time goes to practice.
 
@@ -63,6 +64,8 @@ Every session has the same shape (clock times add up to 240 minutes):
 ---
 
 ### Session 5 — Kickoff: Claude, GitHub and Jira as the way of working
+**Session lead:** Alex
+
 
 **Goal:** by the end, each participant has Claude connected to GitHub and Jira, has closed one ticket through a PR, and understands how their work is measured.
 
@@ -92,6 +95,8 @@ Every session has the same shape (clock times add up to 240 minutes):
 ---
 
 ### Session 6 — Tests, TDD, continuous integration and trunk-based development
+**Session lead:** Patricia
+
 
 **Goal:** make the pipeline a safety net: automated tests that block bad changes, built with test-first discipline and small, frequent integrations.
 
@@ -115,6 +120,8 @@ Every session has the same shape (clock times add up to 240 minutes):
 ---
 
 ### Session 7 — Low-risk releases
+**Session lead:** Alex
+
 
 **Goal:** separate deployment from release and learn the patterns that make releases boring: blue-green, canary and feature toggles.
 
@@ -138,6 +145,8 @@ Every session has the same shape (clock times add up to 240 minutes):
 ---
 
 ### Session 8 — Low-risk architecture and the end of the First Way
+**Session lead:** Alex
+
 
 **Goal:** understand how architecture enables or blocks flow, evolve a system without rewriting it, and find the constraint in the team's own pipeline.
 
@@ -161,6 +170,8 @@ Every session has the same shape (clock times add up to 240 minutes):
 ---
 
 ### Session 9 — Telemetry
+**Session lead:** Alex
+
 
 **Goal:** see the system. Understand why telemetry is a precondition for solving problems, and instrument the API.
 
@@ -184,6 +195,8 @@ Every session has the same shape (clock times add up to 240 minutes):
 ---
 
 ### Session 10 — Logs, information radiators and predictive analysis
+**Session lead:** Alex
+
 
 **Goal:** design useful logs, build a radiator and actionable alerts, and apply simple statistics to detect anomalies.
 
@@ -207,6 +220,8 @@ Every session has the same shape (clock times add up to 240 minutes):
 ---
 
 ### Session 11 — Feedback to deploy safely: LRR and HRR
+**Session lead:** Alex
+
 
 **Goal:** use telemetry to decide whether a deployment continues or rolls back, and review a service for readiness to launch and to hand off.
 
@@ -230,6 +245,8 @@ Every session has the same shape (clock times add up to 240 minutes):
 ---
 
 ### Session 12 — Hypotheses, A/B tests and peer review
+**Session lead:** Patricia
+
 
 **Goal:** treat features as measurable hypotheses, validate them with experiments, and design review processes that raise quality without slowing flow.
 
@@ -253,6 +270,8 @@ Every session has the same shape (clock times add up to 240 minutes):
 ---
 
 ### Session 13 — Learning culture and blameless postmortems
+**Session lead:** Alex
+
 
 **Goal:** distinguish pathological, bureaucratic and generative cultures, and run a blameless incident analysis.
 
@@ -276,6 +295,8 @@ Every session has the same shape (clock times add up to 240 minutes):
 ---
 
 ### Session 14 — Resilience: fault injection and Game Day
+**Session lead:** Alex
+
 
 **Goal:** understand why injecting failures on purpose builds resilience, make the code tolerate slow or failing dependencies, and run a Game Day with its postmortem.
 
@@ -299,6 +320,8 @@ Every session has the same shape (clock times add up to 240 minutes):
 ---
 
 ### Session 15 — Local discoveries, global improvements
+**Session lead:** Alex
+
 
 **Goal:** turn what one team learns into something the whole organization uses, reserve time to improve and pay down technical debt, and measure performance with DORA metrics.
 
@@ -322,6 +345,8 @@ Every session has the same shape (clock times add up to 240 minutes):
 ---
 
 ### Session 16 — Security, change management, compliance and course close
+**Session lead:** Alex
+
 
 **Goal:** build security into the pipeline, protect the pipeline itself, use it as evidence for change management and audit, and close the course with a path to the certification.
 
@@ -352,6 +377,7 @@ Every session has the same shape (clock times add up to 240 minutes):
 | S5 | Starter tickets in SCRUM (8–10) | Instructor (with Claude) |
 | S5 | Collaborator invites (repo and Jira) for the 6 participants | Instructor |
 | S5 | Check Claude accounts (Pro/free) and the GitHub/Jira connections | Instructor + participants |
+| S5 | Invite Patricia (leads S6 and S12) to the repo and Jira; share the plan and the sessions she leads | Alex |
 | S5 | PowerPoint deck for the trainer (with speaker notes) | Instructor (with Claude) |
 | S6 | Café Cumbre orders API in `cafe-cumbre-en-linea/` with a planted bug | Instructor (with Claude) |
 | S7 | Images in GHCR with permissions; reference nginx config | Instructor (with Claude) |
