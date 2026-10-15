@@ -90,7 +90,8 @@ Every session has the same shape (clock times add up to 240 minutes):
 3. Starter tickets in SCRUM: 8–10 small tickets, one per participant plus spares.
 4. Collaborator invites to the repo and to Jira for the 6 participants, sent several days earlier.
 5. Claude accounts: confirm who is on Pro and who is on free, and check that free accounts can complete the GitHub and Jira connections.
-6. Slides for the trainer: generate the PowerPoint deck for session 5 (ground rules and work trail, setup walkthrough, first-ticket instructions, Three Ways activity, skill creation), with speaker notes.
+6. Test skill creation on a free Claude account before the session. Skills need code execution to be enabled; confirm it works on a free account and decide the fallback (a Pro account, or pairing the participant with a classmate).
+7. Slides for the trainer: generate the PowerPoint deck for session 5 (ground rules and work trail, setup walkthrough, first-ticket instructions, Three Ways activity, skill creation), with speaker notes.
 
 ---
 
@@ -390,5 +391,6 @@ Every session has the same shape (clock times add up to 240 minutes):
 - [ ] Exact scoring for the work trail (weights, thresholds, pass mark).
 - [ ] Who creates tickets from session 6 on (instructor, participants, or both).
 - [ ] Whether free Claude accounts can complete every exercise, or Pro is required from a given session.
+- [ ] Skill creation on free accounts: skills require code execution to be enabled, and the "record a skill" shortcut is not available on free plans. Decide whether participants without Pro write the skill file by hand, pair up, or upgrade.
 - [ ] Docker capacity on participants' laptops (otherwise use GitHub Codespaces).
 - [ ] How the previous plan's sessions 3–4 content (Compose environment, pytest basics) is verified as covered before session 6.
