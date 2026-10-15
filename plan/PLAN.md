@@ -11,7 +11,7 @@ This plan replaces the plan for sessions 5–16 in the original global plan (v1.
 - **Tools:** one shared GitHub repo (`devopscourseeng/devops-expert-dapc`), one Jira project (key **SCRUM**), and **Claude** as the only AI tool (Pro preferred, free allowed).
 - **Learning by doing:** the instructor talks about 20–30 minutes per session. Participants build the theory themselves with Claude, check it against the official CertiProf material, and apply it on real tickets.
 - **Everything goes through tickets and pull requests:** a `SCRUM-N` ticket, a branch named `SCRUM-N-short-description`, a PR with CI green, a review by a classmate, and a closing comment in Jira.
-- **Skills:** in every session participants turn something they learned into a Claude skill and contribute it to the repo.
+- **Skills:** session 5 introduces the idea with a group discussion. From session 6 on, in every session participants turn something they learned into a Claude skill and contribute it to the repo.
 - **Thread project:** *Café Cumbre en línea* (Flask API + nginx, Docker Compose) lives in `cafe-cumbre-en-linea/`. Each session adds a capability to it.
 - **Language:** all materials are in English.
 
@@ -58,7 +58,7 @@ Every session has the same shape (clock times add up to 240 minutes):
 - **Theory built by the participants** with Claude, in teams.
 - **Hands-on tickets** on Café Cumbre.
 - **Team activity.**
-- **Skill creation.**
+- **Skill creation** (from session 6).
 - **Wrap-up and buffer.**
 
 ---
@@ -77,7 +77,7 @@ Every session has the same shape (clock times add up to 240 minutes):
 | 1:30–1:40 | Break | 10 | |
 | 1:40–2:40 | **First real ticket:** take it in Jira, branch, solve it with Claude, open the PR, CI green, comment on the ticket when closing | 60 | Participants |
 | 2:40–3:20 | **The Three Ways with Claude** (slides 64–76, recap): each team asks Claude to explain one Way, checks it against the official material and presents it in 3 minutes | 40 | Teams |
-| 3:20–3:40 | **First skill:** turn what they learned during setup into a skill (for example "open a PR that follows the course rules") | 20 | Participants |
+| 3:20–3:40 | **What is a skill?** Group discussion: what a skill is, which repeated tasks we could automate with one, and confirmation that we build the first skill in session 6 | 20 | Everyone |
 | 3:40–4:00 | Wrap-up and buffer | 20 | Instructor |
 
 **Instructor talk time:** about 20 of 240 minutes.
@@ -108,7 +108,7 @@ Every session has the same shape (clock times add up to 240 minutes):
 | 1:05–2:35 | **Tickets:** (a) write unit and API tests with pytest and coverage for the orders logic; (b) add a TDD feature in pairs (red-green-refactor, one commit per cycle); (c) extend CI so tests and `ruff` must pass before merge | 90 | Participants |
 | 2:35–2:45 | Break | 10 | |
 | 2:45–3:20 | **Discussion (slide 114):** who stops the line when the build breaks? Break a test on purpose and watch the PR get blocked. Teams decide their own "build is red" rule | 35 | Teams |
-| 3:20–3:40 | **Skill:** "write a failing test first" or "review a PR for test quality" | 20 | Participants |
+| 3:20–3:40 | **First skill:** every participant builds their first skill (introduced in session 5), for example "write a failing test first" or "review a PR for test quality" | 20 | Participants |
 | 3:40–4:00 | Wrap-up and buffer | 20 | Instructor |
 
 **Instructor talk time:** about 25 minutes.
