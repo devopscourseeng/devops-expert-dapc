@@ -1,51 +1,51 @@
 Summary,Issue Type,Description,Labels
 "Fix the typo ""Capuchino"" in the menu",Bug,"The menu item 2 is called ""Capuchino"". The correct name is ""Cappuccino"".
 
-File: summit-cafe-api/menu.py
+File: src/summit-cafe-api/menu.py
 Branch: bugfix/SCRUM-N
 Done when: GET /menu/2 returns the name ""Cappuccino"".",starter-ticket
 Return 404 for an unknown menu item,Bug,"GET /menu/99 returns an error 500 because the id does not exist. It should return status 404 and a JSON message such as {""error"": ""Item not found""}.
 
-File: summit-cafe-api/app.py
+File: src/summit-cafe-api/app.py
 Branch: bugfix/SCRUM-N
 Done when: GET /menu/99 returns 404 with a JSON error message.",starter-ticket
 Set the correct price for the Espresso,Bug,"The Espresso (item 1) has the price 0. Set it to 2.5.
 
-File: summit-cafe-api/menu.py
+File: src/summit-cafe-api/menu.py
 Branch: bugfix/SCRUM-N
 Done when: GET /menu/1 returns the price 2.5.",starter-ticket
 "Make /health return ""ok""",Bug,"GET /health returns {""status"": ""okay""}. The agreed value is ""ok"".
 
-File: summit-cafe-api/app.py
+File: src/summit-cafe-api/app.py
 Branch: bugfix/SCRUM-N
 Done when: GET /health returns {""status"": ""ok""}.",starter-ticket
 "Add an ""available"" field to menu items",Story,"Add the field ""available"" (true or false) to every menu item. Set it to true for all items.
 
-File: summit-cafe-api/menu.py
+File: src/summit-cafe-api/menu.py
 Branch: feature/SCRUM-N
 Done when: Every item returned by GET /menu has ""available"": true.",starter-ticket
 Filter the menu by category,Story,"Add the query option category to GET /menu. Example: GET /menu?category=drinks returns only the drinks. Without the option, it returns all items.
 
-File: summit-cafe-api/app.py
+File: src/summit-cafe-api/app.py
 Branch: feature/SCRUM-N
 Done when: GET /menu?category=food returns only food items, and GET /menu still returns everything.",starter-ticket
 Add an opening hours endpoint,Story,"Add GET /hours. It returns the opening hours as JSON, for example {""open"": ""08:00"", ""close"": ""18:00""}.
 
-File: summit-cafe-api/app.py
+File: src/summit-cafe-api/app.py
 Branch: feature/SCRUM-N
 Done when: GET /hours returns 200 and the opening and closing times.",starter-ticket
 Add a root endpoint with the API name and version,Story,"Add GET /. It returns the name of the API and its version, for example {""name"": ""Summit Cafe API"", ""version"": ""0.1.0""}.
 
-File: summit-cafe-api/app.py
+File: src/summit-cafe-api/app.py
 Branch: feature/SCRUM-N
 Done when: GET / returns 200 with the name and the version.",starter-ticket
 "Write the ""Run it"" section of the README",Task,"The README says ""To be written"" under Run it. Explain how to run the API on your computer (with Python, and with Docker) and how to run the tests.
 
-File: summit-cafe-api/README.md
+File: src/summit-cafe-api/README.md
 Branch: feature/SCRUM-N
 Done when: A new person can follow the README and start the API.",starter-ticket
-Add a test that every menu item has the required fields,Task,"Add a test in summit-cafe-api/tests that checks every item returned by GET /menu has the fields id, name, category and price.
+Add a test that every menu item has the required fields,Task,"Add a test in src/summit-cafe-api/tests that checks every item returned by GET /menu has the fields id, name, category and price.
 
-File: summit-cafe-api/tests/test_menu.py
+File: src/summit-cafe-api/tests/test_menu.py
 Branch: feature/SCRUM-N
 Done when: The new test passes in CI.",starter-ticket

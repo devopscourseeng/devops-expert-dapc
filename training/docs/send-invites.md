@@ -61,7 +61,7 @@ Fill in the date and time, and send it to everyone:
 > Our next session is on **[date and time]**. Before the session, please do this:
 > 1. Accept the **GitHub** invitation (email from GitHub).
 > 2. Accept the **Jira** invitation (email from Atlassian). Use the same email I invited.
-> 3. If you can, read the setup guide: https://github.com/devopscourseeng/devops-expert-dapc/blob/main/docs/setup-tools.md
+> 3. If you can, read the setup guide: https://github.com/devopscourseeng/devops-expert-dapc/blob/develop/training/docs/setup-tools.md
 >
 > If an invitation does not arrive, check your spam folder and tell me.
 >

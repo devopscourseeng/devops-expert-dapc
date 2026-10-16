@@ -8,7 +8,7 @@ Pair 3 · Session 5 · "Teach one of the Three Ways in three minutes"
 
 **How to get there.** See mistakes as a chance to learn, not a reason to punish (a "fair culture"). Share local discoveries so everyone improves. Build strength into daily work, even by causing small failures on purpose. Keep time to improve the way we work. Leaders show that learning is important.
 
-**Example from Café Cumbre.**
+**Example from the Summit Cafe API.**
 
 - After an incident, the team writes a postmortem (a review of what happened) that does not blame anyone, and notes what to change.
 - A lesson from one pull request, for example a common mistake in branch names, becomes a rule in the repository guide for everyone.

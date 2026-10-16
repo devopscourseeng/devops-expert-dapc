@@ -7,4 +7,4 @@
 
 Branch protection on `main` and `develop` should require the **Checks** status check to pass before a PR can be merged.
 
-The tests live in `summit-cafe-api/tests`.
+The tests live in `src/summit-cafe-api/tests`.

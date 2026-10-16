@@ -28,4 +28,4 @@ _To be written: this is a starter ticket._
 
 ## Deploy
 
-The service can be deployed to Render from this repository with the Dockerfile. Set the root directory to `summit-cafe-api`.
+The service can be deployed to Render from this repository with the Dockerfile. Set the root directory to `src/summit-cafe-api`.

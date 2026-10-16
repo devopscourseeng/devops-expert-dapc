@@ -9,8 +9,8 @@ The slides in the PowerPoint file are pictures, so their text cannot be edited t
 
 Related files:
 
-- `docs/setup-tools.md`: step-by-step instructions for the setup slide
-- `session_5/three-ways/`: backup answers for the Three Ways activity, for participants who cannot use Claude
+- `training/docs/setup-tools.md`: step-by-step instructions for the setup slide
+- `training/session_5/three-ways/`: backup answers for the Three Ways activity, for participants who cannot use Claude
 
 Before the session:
 
