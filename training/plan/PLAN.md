@@ -8,7 +8,7 @@ This plan replaces the plan for sessions 5–16 in the original global plan (v1.
 
 - **Format:** 12 sessions (5–16) of 4 hours, live online, 6 participants in two teams of 3.
 - **Session leads:** Patricia leads sessions 6 and 12 (quality focus: tests and peer review). Alex leads all the others.
-- **Tools:** one shared GitHub repo (`devopscourseeng/devops-expert-dapc`), one Jira project (key **SCRUM**), and **Claude** as the only AI tool (Pro preferred, free allowed).
+- **Tools:** one shared GitHub repo (`devopscourseeng/devops-expert-dapc`), one Jira project (key **SCRUM**), and **Claude** as the only AI tool (every participant needs a Pro plan).
 - **Learning by doing:** the instructor talks about 20–30 minutes per session. Participants build the theory themselves with Claude, check it against the official CertiProf material, and apply it on real tickets.
 - **Everything goes through tickets and pull requests:** a `SCRUM-N` ticket, a short branch from `develop` named `feature/SCRUM-N` or `bugfix/SCRUM-N`, a PR to `develop` with CI green, a review by a classmate, and a closing comment in Jira.
 - **Skills:** session 5 introduces the idea with a group discussion. From session 6 on, in every session participants turn something they learned into a Claude skill and contribute it to the repo.
@@ -27,7 +27,7 @@ There are **no exams or quizzes**. Assessment is entirely practical and automate
 | Skills contributed to the repo | GitHub |
 | Attendance and participation in team activities | Session log |
 
-The exact scoring (weights and thresholds) is **to be defined** and added to this plan in a separate PR. The signals above are fixed so participants know from session 5 what counts.
+At the end of the course the instructor runs a skill that measures each participant's activity in Jira and GitHub. The exact scoring (weights and thresholds) is **to be defined** and added to this plan in a separate PR. The signals above are fixed so participants know from session 5 what counts.
 
 Optional, outside the grade: the official CertiProf DAPC exam (40 multiple-choice questions, 60 minutes, 80 % to pass). Session 16 includes a non-graded practice with the sample exam.
 
@@ -81,7 +81,7 @@ Every session has the same shape (the minutes add up to 240):
 | Closing: outcomes, expectations check, next session | 10 | Instructor |
 
 **Action Items**
-1. Check live where the GitHub and Jira connections are in Claude's settings (the menu names change), and replace the "plan blocks a step" row on the troubleshooting slide with what really happens on a free account.
+1. Check live where the GitHub and Jira connections are in Claude's settings (the menu names change) and update the setup slide notes if needed. The troubleshooting slide already assumes every participant has a Pro plan.
 
 ---
 
@@ -329,10 +329,12 @@ Every session has the same shape (the minutes add up to 240):
 
 ## 6. Open decisions
 
-- [ ] Exact scoring for the work trail (weights, thresholds, pass mark).
-- [ ] Who creates tickets from session 6 on (instructor, participants, or both).
-- [ ] Branching model: session 5 teaches `main` + `develop` with `feature/` and `bugfix/` branches. Session 6 teaches trunk-based development (slides 121–123). Decide how session 6 compares the two, and whether the course keeps `develop` afterwards.
-- [ ] Whether free Claude accounts can complete every exercise, or Pro is required from a given session.
-- [ ] Skill creation on free accounts: skills require code execution to be enabled, and the "record a skill" shortcut is not available on free plans. Decide whether participants without Pro write the skill file by hand, pair up, or upgrade.
+- [ ] Who creates tickets from session 6 on (instructor, participants, or both). To be decided later.
 - [ ] Docker capacity on participants' laptops (otherwise use GitHub Codespaces).
 - [ ] How the previous plan's sessions 3–4 content (Compose environment, pytest basics) is verified as covered before session 6.
+
+## 7. Decisions taken
+
+- **Branching:** the course keeps `main` + `develop` with `feature/` and `bugfix/` branches. Session 6 teaches trunk-based development and compares it with this model, but `develop` stays.
+- **Claude plans:** every participant needs a Pro plan, so skill creation and all exercises work for everyone.
+- **Work trail scoring:** at the end of the course, a skill measures participation in Jira and GitHub. Weights and thresholds are still to be defined.

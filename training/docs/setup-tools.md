@@ -35,7 +35,7 @@ Project: https://devopscourseeng.atlassian.net/jira/software/projects/SCRUM/boar
 
 1. Go to https://claude.ai (or open the Claude desktop or mobile app).
 2. Sign in with your account, or create one.
-3. A Pro plan is preferred for the course. A free account is allowed, but some features may be limited. Tell the instructor if something is blocked by your plan.
+3. A Pro plan is required for the course. Tell the instructor if something is blocked.
 4. Start a new chat and say hello to confirm it works.
 
 **Done when:** you can send a message to Claude and get an answer.
