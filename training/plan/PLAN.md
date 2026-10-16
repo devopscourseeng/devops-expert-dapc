@@ -81,7 +81,7 @@ Every session has the same shape (the minutes add up to 240):
 | Closing: outcomes, expectations check, next session | 10 | Instructor |
 
 **Action Items**
-1. Check live where the GitHub and Jira connections are in Claude's settings (the menu names change) and update the setup slide notes if needed. The troubleshooting slide already assumes every participant has a Pro plan.
+None.
 
 ---
 
