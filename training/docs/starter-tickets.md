@@ -4,6 +4,10 @@ Ten small tickets for the first real ticket exercise (6 participants plus 4 spar
 
 The bug fixes are planted on purpose: the code in the repository really has these problems.
 
+## How "Done when" is checked
+
+The API is not deployed yet (Render comes later), so nobody can call it online. For every bug and feature ticket, "Done when" is proven by a **new test** in `src/summit-cafe-api/tests`. The test calls the endpoint with Flask's test client, and CI must pass on the pull request. Ask Claude to help write the test.
+
 ## Already created in Jira
 
 The ten tickets exist in the SCRUM project as **SCRUM-5 to SCRUM-14** (SCRUM-1 to SCRUM-4 are sample tickets from the Jira template). The SCRUM project has no Bug type, so the bug fixes are **Task** tickets with the labels `starter-ticket` and `bug`. Features are **Story** tickets. The CSV import below is only needed if the tickets must be created again.
@@ -24,14 +28,14 @@ If the import does not work, create the tickets by hand: copy the summary and th
 
 | # | Jira | Summary | Type | Branch | File | Done when |
 |---|---|---|---|---|---|---|
-| 1 | SCRUM-5 | Fix the typo "Capuchino" in the menu | Bug | `bugfix/SCRUM-N` | `menu.py` | GET /menu/2 returns the name "Cappuccino". |
-| 2 | SCRUM-6 | Return 404 for an unknown menu item | Bug | `bugfix/SCRUM-N` | `app.py` | GET /menu/99 returns 404 with a JSON error message. |
-| 3 | SCRUM-7 | Set the correct price for the Espresso | Bug | `bugfix/SCRUM-N` | `menu.py` | GET /menu/1 returns the price 2.5. |
-| 4 | SCRUM-8 | Make /health return "ok" | Bug | `bugfix/SCRUM-N` | `app.py` | GET /health returns {"status": "ok"}. |
-| 5 | SCRUM-9 | Add an "available" field to menu items | Story | `feature/SCRUM-N` | `menu.py` | Every item returned by GET /menu has "available": true. |
-| 6 | SCRUM-10 | Filter the menu by category | Story | `feature/SCRUM-N` | `app.py` | GET /menu?category=food returns only food items, and GET /menu still returns everything. |
-| 7 | SCRUM-11 | Add an opening hours endpoint | Story | `feature/SCRUM-N` | `app.py` | GET /hours returns 200 and the opening and closing times. |
-| 8 | SCRUM-12 | Add a root endpoint with the API name and version | Story | `feature/SCRUM-N` | `app.py` | GET / returns 200 with the name and the version. |
+| 1 | SCRUM-5 | Fix the typo "Capuchino" in the menu | Bug | `bugfix/SCRUM-N` | `menu.py` | GET /menu/2 returns the name "Cappuccino". A test checks it and CI passes. |
+| 2 | SCRUM-6 | Return 404 for an unknown menu item | Bug | `bugfix/SCRUM-N` | `app.py` | GET /menu/99 returns 404 with a JSON error message. A test checks it and CI passes. |
+| 3 | SCRUM-7 | Set the correct price for the Espresso | Bug | `bugfix/SCRUM-N` | `menu.py` | GET /menu/1 returns the price 2.5. A test checks it and CI passes. |
+| 4 | SCRUM-8 | Make /health return "ok" | Bug | `bugfix/SCRUM-N` | `app.py` | GET /health returns {"status": "ok"}. A test checks it and CI passes. |
+| 5 | SCRUM-9 | Add an "available" field to menu items | Story | `feature/SCRUM-N` | `menu.py` | Every item returned by GET /menu has "available": true. A test checks it and CI passes. |
+| 6 | SCRUM-10 | Filter the menu by category | Story | `feature/SCRUM-N` | `app.py` | GET /menu?category=food returns only food items, and GET /menu still returns everything. A test checks it and CI passes. |
+| 7 | SCRUM-11 | Add an opening hours endpoint | Story | `feature/SCRUM-N` | `app.py` | GET /hours returns 200 and the opening and closing times. A test checks it and CI passes. |
+| 8 | SCRUM-12 | Add a root endpoint with the API name and version | Story | `feature/SCRUM-N` | `app.py` | GET / returns 200 with the name and the version. A test checks it and CI passes. |
 | 9 | SCRUM-13 | Write the "Run it" section of the README | Task | `feature/SCRUM-N` | `README.md` | A new person can follow the README and start the API. |
 | 10 | SCRUM-14 | Add a test that every menu item has the required fields | Task | `feature/SCRUM-N` | `tests/test_menu.py` | The new test passes in CI. |
 
@@ -44,7 +48,7 @@ The menu item 2 is called "Capuchino". The correct name is "Cappuccino".
 - **Type:** Bug
 - **Branch:** `bugfix/SCRUM-N`
 - **File:** `src/summit-cafe-api/menu.py`
-- **Done when:** GET /menu/2 returns the name "Cappuccino".
+- **Done when:** GET /menu/2 returns the name "Cappuccino". Add a test for it in `src/summit-cafe-api/tests`. CI must pass.
 
 ### 2. SCRUM-6: Return 404 for an unknown menu item
 
@@ -53,7 +57,7 @@ GET /menu/99 returns an error 500 because the id does not exist. It should retur
 - **Type:** Bug
 - **Branch:** `bugfix/SCRUM-N`
 - **File:** `src/summit-cafe-api/app.py`
-- **Done when:** GET /menu/99 returns 404 with a JSON error message.
+- **Done when:** GET /menu/99 returns 404 with a JSON error message. Add a test for it in `src/summit-cafe-api/tests`. CI must pass.
 
 ### 3. SCRUM-7: Set the correct price for the Espresso
 
@@ -62,7 +66,7 @@ The Espresso (item 1) has the price 0. Set it to 2.5.
 - **Type:** Bug
 - **Branch:** `bugfix/SCRUM-N`
 - **File:** `src/summit-cafe-api/menu.py`
-- **Done when:** GET /menu/1 returns the price 2.5.
+- **Done when:** GET /menu/1 returns the price 2.5. Add a test for it in `src/summit-cafe-api/tests`. CI must pass.
 
 ### 4. SCRUM-8: Make /health return "ok"
 
@@ -71,7 +75,7 @@ GET /health returns {"status": "okay"}. The agreed value is "ok".
 - **Type:** Bug
 - **Branch:** `bugfix/SCRUM-N`
 - **File:** `src/summit-cafe-api/app.py`
-- **Done when:** GET /health returns {"status": "ok"}.
+- **Done when:** GET /health returns {"status": "ok"}. Add a test for it in `src/summit-cafe-api/tests`. CI must pass.
 
 ### 5. SCRUM-9: Add an "available" field to menu items
 
@@ -80,7 +84,7 @@ Add the field "available" (true or false) to every menu item. Set it to true for
 - **Type:** Story
 - **Branch:** `feature/SCRUM-N`
 - **File:** `src/summit-cafe-api/menu.py`
-- **Done when:** Every item returned by GET /menu has "available": true.
+- **Done when:** Every item returned by GET /menu has "available": true. Add a test for it in `src/summit-cafe-api/tests`. CI must pass.
 
 ### 6. SCRUM-10: Filter the menu by category
 
@@ -89,7 +93,7 @@ Add the query option category to GET /menu. Example: GET /menu?category=drinks r
 - **Type:** Story
 - **Branch:** `feature/SCRUM-N`
 - **File:** `src/summit-cafe-api/app.py`
-- **Done when:** GET /menu?category=food returns only food items, and GET /menu still returns everything.
+- **Done when:** GET /menu?category=food returns only food items, and GET /menu still returns everything. Add a test for it in `src/summit-cafe-api/tests`. CI must pass.
 
 ### 7. SCRUM-11: Add an opening hours endpoint
 
@@ -98,7 +102,7 @@ Add GET /hours. It returns the opening hours as JSON, for example {"open": "08:0
 - **Type:** Story
 - **Branch:** `feature/SCRUM-N`
 - **File:** `src/summit-cafe-api/app.py`
-- **Done when:** GET /hours returns 200 and the opening and closing times.
+- **Done when:** GET /hours returns 200 and the opening and closing times. Add a test for it in `src/summit-cafe-api/tests`. CI must pass.
 
 ### 8. SCRUM-12: Add a root endpoint with the API name and version
 
@@ -107,7 +111,7 @@ Add GET /. It returns the name of the API and its version, for example {"name": 
 - **Type:** Story
 - **Branch:** `feature/SCRUM-N`
 - **File:** `src/summit-cafe-api/app.py`
-- **Done when:** GET / returns 200 with the name and the version.
+- **Done when:** GET / returns 200 with the name and the version. Add a test for it in `src/summit-cafe-api/tests`. CI must pass.
 
 ### 9. SCRUM-13: Write the "Run it" section of the README
 
