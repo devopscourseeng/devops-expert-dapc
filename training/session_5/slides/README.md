@@ -11,7 +11,3 @@ Related files:
 
 - `training/docs/setup-tools.md`: step-by-step instructions for the setup slide
 - `training/session_5/three-ways/`: backup answers for the Three Ways activity, for participants who cannot use Claude
-
-Before the session:
-
-- Check the menu names for the GitHub and Jira connections in Claude (they change from time to time).
