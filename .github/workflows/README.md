@@ -7,4 +7,4 @@
 
 Branch protection on `main` and `develop` should require the **Checks** status check to pass before a PR can be merged.
 
-Right now the only test is a placeholder (`tests/test_placeholder.py`). Replace it with real tests when the Café Cumbre code is added.
+The tests live in `summit-cafe-api/tests`.
