@@ -10,8 +10,8 @@ This plan replaces the plan for sessions 5–16 in the original global plan (v1.
 - **Session leads:** Patricia leads sessions 6 and 12 (quality focus: tests and peer review). Alex leads all the others.
 - **Tools:** one shared GitHub repo (`devopscourseeng/devops-expert-dapc`), one Jira project (key **SCRUM**), and **Claude** as the only AI tool (Pro preferred, free allowed).
 - **Learning by doing:** the instructor talks about 20–30 minutes per session. Participants build the theory themselves with Claude, check it against the official CertiProf material, and apply it on real tickets.
-- **Everything goes through tickets and pull requests:** a `SCRUM-N` ticket, a branch named `SCRUM-N-short-description`, a PR with CI green, a review by a classmate, and a closing comment in Jira.
-- **Skills:** in every session participants turn something they learned into a Claude skill and contribute it to the repo.
+- **Everything goes through tickets and pull requests:** a `SCRUM-N` ticket, a short branch from `develop` named `feature/SCRUM-N` or `bugfix/SCRUM-N`, a PR to `develop` with CI green, a review by a classmate, and a closing comment in Jira.
+- **Skills:** session 5 introduces the idea with a group discussion. From session 6 on, in every session participants turn something they learned into a Claude skill and contribute it to the repo.
 - **Thread project:** *Café Cumbre en línea* (Flask API + nginx, Docker Compose) lives in `cafe-cumbre-en-linea/`. Each session adds a capability to it.
 - **Language:** all materials are in English.
 
@@ -58,7 +58,7 @@ Every session has the same shape (clock times add up to 240 minutes):
 - **Theory built by the participants** with Claude, in teams.
 - **Hands-on tickets** on Café Cumbre.
 - **Team activity.**
-- **Skill creation.**
+- **Skill creation** (from session 6).
 - **Wrap-up and buffer.**
 
 ---
@@ -67,18 +67,18 @@ Every session has the same shape (clock times add up to 240 minutes):
 **Session lead:** Alex
 
 
-**Goal:** by the end, each participant has Claude connected to GitHub and Jira, has closed one ticket through a PR, and understands how their work is measured.
+**Goal:** by the end, each participant has Claude connected to GitHub and Jira, has closed one ticket through a PR, and understands how their work is checked.
 
 | Clock | Block | Min | Who talks |
 |---|---|---|---|
-| 0:00–0:20 | Get to know each other: background, expectations | 20 | Participants |
-| 0:20–0:40 | Ground rules: how the work trail is measured | 20 | Instructor |
-| 0:40–1:30 | **Claude-guided setup:** accept the repo and Jira invites, connect GitHub and Jira to Claude, check Claude can see the repo and the tickets | 50 | Participants |
-| 1:30–1:40 | Break | 10 | |
-| 1:40–2:40 | **First real ticket:** take it in Jira, branch, solve it with Claude, open the PR, CI green, comment on the ticket when closing | 60 | Participants |
-| 2:40–3:20 | **The Three Ways with Claude** (slides 64–76, recap): each team asks Claude to explain one Way, checks it against the official material and presents it in 3 minutes | 40 | Teams |
-| 3:20–3:40 | **First skill:** turn what they learned during setup into a skill (for example "open a PR that follows the course rules") | 20 | Participants |
-| 3:40–4:00 | Wrap-up and buffer | 20 | Instructor |
+| 0:00–0:30 | **Get to know each other:** four questions for each participant (job today, tools used, AI use, expectations) | 30 | Participants |
+| 0:30–0:50 | **Course rules:** the course in four numbers, the path every change follows, how the work trail shows progress, the branching strategy (`main` and `develop`) and best practices | 20 | Instructor |
+| 0:50–1:50 | **Setup with Claude:** accept the repo and Jira invites, open Claude, connect GitHub and Jira, check that Claude can see the repo and the tickets (guide: `docs/setup-tools.md`) | 60 | Participants |
+| 1:50–2:00 | Break | 10 | |
+| 2:00–3:00 | **First real ticket:** take it in Jira, branch from `develop`, solve it with Claude, open the PR, tests pass, classmate review, closing comment in Jira | 60 | Participants |
+| 3:00–3:30 | **The Three Ways with Claude** (slides 64–76, recap): each pair asks Claude to explain one Way, checks it against the official material and teaches it in 3 minutes, then the group talks about what Claude got right or missed | 30 | Pairs |
+| 3:30–3:50 | **What is a skill?** Group discussion: what a skill is, which repeated tasks we could automate with one, and confirmation that we build the first skill in session 6 | 20 | Everyone |
+| 3:50–4:00 | Closing: outcomes, expectations check, next session | 10 | Instructor |
 
 **Instructor talk time:** about 20 of 240 minutes.
 
@@ -86,11 +86,13 @@ Every session has the same shape (clock times add up to 240 minutes):
 
 **Action items before the session (instructor):**
 1. Minimal CI: a GitHub Actions workflow that runs on every PR (lint/format check plus a placeholder test job).
-2. Branch protection on `main`: PR required, CI must pass, one approval.
-3. Starter tickets in SCRUM: 8–10 small tickets, one per participant plus spares.
+2. Branches: create `develop` from `main`, make `develop` the default branch, and protect both `main` and `develop` (PR required, CI must pass, one approval).
+3. Starter tickets in SCRUM: 8–10 small, easy tickets (for example "fix the site title"), one per participant plus spares, each assigned to a participant. Replace `SCRUM-12` on the branching and best-practices slides with a real ticket number.
 4. Collaborator invites to the repo and to Jira for the 6 participants, sent several days earlier.
 5. Claude accounts: confirm who is on Pro and who is on free, and check that free accounts can complete the GitHub and Jira connections.
-6. Slides for the trainer: generate the PowerPoint deck for session 5 (ground rules and work trail, setup walkthrough, first-ticket instructions, Three Ways activity, skill creation), with speaker notes.
+6. Test skill creation on a free Claude account before the session. Skills need code execution to be enabled; confirm it works on a free account and decide the fallback (a Pro account, or pairing the participant with a classmate).
+7. Check live where the GitHub and Jira connections are in Claude's settings (the menu names change), and replace the "plan blocks a step" row on the troubleshooting slide with what really happens on a free account.
+8. Slides for the trainer: **done.** The 17-slide deck with speaker notes is in `session_5/slides/` (PowerPoint and PDF). The setup guide is `docs/setup-tools.md`. Backup answers for the Three Ways activity, for participants who lose access to Claude, are in `session_5/three-ways/`.
 
 ---
 
@@ -108,7 +110,7 @@ Every session has the same shape (clock times add up to 240 minutes):
 | 1:05–2:35 | **Tickets:** (a) write unit and API tests with pytest and coverage for the orders logic; (b) add a TDD feature in pairs (red-green-refactor, one commit per cycle); (c) extend CI so tests and `ruff` must pass before merge | 90 | Participants |
 | 2:35–2:45 | Break | 10 | |
 | 2:45–3:20 | **Discussion (slide 114):** who stops the line when the build breaks? Break a test on purpose and watch the PR get blocked. Teams decide their own "build is red" rule | 35 | Teams |
-| 3:20–3:40 | **Skill:** "write a failing test first" or "review a PR for test quality" | 20 | Participants |
+| 3:20–3:40 | **First skill:** every participant builds their first skill (introduced in session 5), for example "write a failing test first" or "review a PR for test quality" | 20 | Participants |
 | 3:40–4:00 | Wrap-up and buffer | 20 | Instructor |
 
 **Instructor talk time:** about 25 minutes.
@@ -389,6 +391,8 @@ Every session has the same shape (clock times add up to 240 minutes):
 
 - [ ] Exact scoring for the work trail (weights, thresholds, pass mark).
 - [ ] Who creates tickets from session 6 on (instructor, participants, or both).
+- [ ] Branching model: session 5 teaches `main` + `develop` with `feature/` and `bugfix/` branches. Session 6 teaches trunk-based development (slides 121–123). Decide how session 6 compares the two, and whether the course keeps `develop` afterwards.
 - [ ] Whether free Claude accounts can complete every exercise, or Pro is required from a given session.
+- [ ] Skill creation on free accounts: skills require code execution to be enabled, and the "record a skill" shortcut is not available on free plans. Decide whether participants without Pro write the skill file by hand, pair up, or upgrade.
 - [ ] Docker capacity on participants' laptops (otherwise use GitHub Codespaces).
 - [ ] How the previous plan's sessions 3–4 content (Compose environment, pytest basics) is verified as covered before session 6.
