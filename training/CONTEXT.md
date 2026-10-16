@@ -45,9 +45,9 @@ Summary of plan v1.0. Slide numbers refer to pages of the CertiProf instructor P
 
 > Note: plan v1.0 states that only S1 and S2 had been delivered when it was written; the new instructor resumes from S5. Check with the instructor how much of S3–S4 was actually delivered before planning any review.
 
-## 5. Thread project: "Café Cumbre en línea" (Café Cumbre Online)
+## 5. Thread project: Summit Cafe API
 
-A system that each participant builds and operates during the course: a Flask API plus an nginx site, orchestrated with Docker Compose. Each session adds a capability (per plan v1.0):
+The project that participants build and operate from session 5: a small Flask REST API in `src/summit-cafe-api/`, packaged with Docker and deployed to Render. (Sessions 1–4 used the earlier project "Café Cumbre en línea": a Flask API plus an nginx site with Docker Compose.) Each session adds a capability (per plan v1.0):
 
 | Sessions | Capability added | Way |
 |---|---|---|
@@ -85,8 +85,8 @@ Git and GitHub (Actions, GHCR), Docker and Compose, Flask, pytest, ruff, nginx, 
 
 ## 8. Repository conventions
 
-- Language of all materials: **English**. Original names of exercises and projects (for example "Café Cumbre en línea") are kept as they are.
-- Planned structure: `plan/` (global plans), `session_N/` (script, assignments, solutions and `recursos/` per session), `cafe-cumbre-en-linea/` (thread project), `recursos/` (shared material).
+- Language of all materials: **English**. Original names of exercises from the CertiProf material are kept as they are.
+- Structure: `training/` holds the course material (`CONTEXT.md`, `plan/`, `docs/` guides, `session_N/` per session with slides and handouts). `src/` holds the source code (`src/summit-cafe-api/`). `.github/` holds the CI workflow.
 - Changes enter **through pull requests**, one topic per PR, with a short description of what changes and why.
 - Secrets that appear in practices are always **fake** (test patterns); never real credentials.
 - The original CertiProf PDFs (instructor and student material, brochure, sample exam) are **not uploaded** to this repo because they are copyrighted material. They are cited by slide number.
@@ -94,6 +94,6 @@ Git and GitHub (Actions, GHCR), Docker and Compose, Flask, pytest, ruff, nginx, 
 ## 9. Open decisions
 
 - [ ] Choose GitHub or GitLab as the students' platform and how to integrate Jira.
-- [ ] Publish the new global plan (v0.1) in `plan/` when it is ready.
-- [ ] Decide whether "Café Cumbre en línea" lives in this repo (subfolder) or in its own repo.
+- [ ] Publish the new global plan (v0.1) in `training/plan/` when it is ready.
+- [x] The thread project (Summit Cafe API) lives in this repo, in `src/summit-cafe-api/`.
 - [ ] Define how students' use of AI will be assessed (plan v1.0 forbids it in practical assessments and allows it, if declared, in homework; this is a proposal to review).

@@ -10,7 +10,7 @@ Use these files **only if you cannot use Claude** during the activity "Teach one
 
 Each file has two parts:
 
-- **Step 1.** The answer Claude would give: an explanation of the Way with an example from Café Cumbre.
+- **Step 1.** The answer Claude would give: an explanation of the Way with an example from the Summit Cafe API.
 - **Step 2.** The check against the official course slides (64 to 76): what matches, what is easy to get wrong, and the skills (capabilities) each Way needs.
 
 Steps 3, 4 and 5 (prepare, present, talk together) are yours to do with your pair.

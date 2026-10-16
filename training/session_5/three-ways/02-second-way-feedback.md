@@ -8,7 +8,7 @@ Pair 2 · Session 5 · "Teach one of the Three Ways in three minutes"
 
 **How to get there.** See problems as they happen, with monitoring (telemetry) and automatic tests. When a problem appears, the team stops and fixes it together (this is called swarming), and shares what it learned. Put quality checks as early as possible. Think about the people who receive your work next (downstream) and make their job easier.
 
-**Example from Café Cumbre.**
+**Example from the Summit Cafe API.**
 
 - A unit test fails on a pull request after a few minutes, so the author fixes it before it affects anyone else.
 - A required review gives a second pair of eyes before the change is merged.
@@ -38,7 +38,7 @@ Pair 2 · Session 5 · "Teach one of the Three Ways in three minutes"
 
 - Is the direction right (right to left)? Is the purpose clear (short and strong feedback loops)?
 - Does it cover **swarming**, **downstream teams** and **working safely in complex systems**? These are easy to forget, because most people think only of tests and monitoring.
-- Is the Café Cumbre example really feedback, and not flow? A test that runs on every change is feedback. Merging small changes is flow.
+- Is the Summit Cafe API example really feedback, and not flow? A test that runs on every change is feedback. Merging small changes is flow.
 
 **Watch out for.** Feedback is not only monitoring in production. It also includes tests, reviews and any early signal that something is wrong.
 

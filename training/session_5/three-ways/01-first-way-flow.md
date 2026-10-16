@@ -8,7 +8,7 @@ Pair 1 · Session 5 · "Teach one of the Three Ways in three minutes"
 
 **How to get there.** Show the work so everyone can see it. Work in small pieces. Do not start too many things at once (this is called limiting work in progress, or WIP). Reduce the number of times work passes from one person or team to another (handoffs). Find the biggest bottleneck and fix it. Some technical practices help: a deployment pipeline, automatic tests, continuous integration (CI) and safe releases.
 
-**Example from Café Cumbre.**
+**Example from the Summit Cafe API.**
 
 - A change to the café's menu page is one small pull request. We do not save a week of work for one big release.
 - The ticket on the SCRUM board shows where the work is: To Do, In Progress or Done. Everyone can see it.
