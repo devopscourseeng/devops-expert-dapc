@@ -1,8 +1,6 @@
 # Las Tres Vías de DevOps: resumen en español con ejemplos sencillos
 
-Referencia para el entrenador (Sesión 5). Resume las diapositivas oficiales 64 a 76 con nuestras propias palabras y con ejemplos de una cafetería. Los ejemplos son nuestros, no vienen del material oficial.
-
-> No guardamos las diapositivas originales de CertiProf en este repositorio por derechos de autor. Este archivo solo indica el número de diapositiva y describe el contenido con palabras propias.
+Referencia para el entrenador (Sesión 5). Resume las diapositivas 64 a 76 con ejemplos de una cafetería. Los ejemplos son nuestros, no vienen del material oficial.
 
 ## Contexto (diapositivas 64 a 68)
 
