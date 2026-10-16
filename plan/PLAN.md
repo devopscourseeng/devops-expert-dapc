@@ -82,10 +82,8 @@ Every session has the same shape (the minutes add up to 240):
 
 **Action Items**
 1. Starter tickets in SCRUM: 8–10 small, easy tickets (for example "fix the site title"), one per participant plus spares, each assigned to a participant. Replace `SCRUM-12` on the branching and best-practices slides with a real ticket number.
-2. Collaborator invites to the repo and to Jira for the 6 participants, sent several days earlier.
-3. Claude accounts: confirm who is on Pro and who is on free, and check that free accounts can complete the GitHub and Jira connections.
-4. Test skill creation on a free Claude account before the session. Skills need code execution to be enabled; confirm it works on a free account and decide the fallback (a Pro account, or pairing the participant with a classmate).
-5. Check live where the GitHub and Jira connections are in Claude's settings (the menu names change), and replace the "plan blocks a step" row on the troubleshooting slide with what really happens on a free account.
+2. Collaborator invites to the repo and to Jira for the 6 participants, sent several days earlier (guide: `docs/send-invites.md`).
+3. Check live where the GitHub and Jira connections are in Claude's settings (the menu names change), and replace the "plan blocks a step" row on the troubleshooting slide with what really happens on a free account.
 
 ---
 
@@ -326,7 +324,6 @@ Every session has the same shape (the minutes add up to 240):
 |---|---|---|
 | S5 | Starter tickets in SCRUM (8–10) | Instructor (with Claude) |
 | S5 | Collaborator invites (repo and Jira) for the 6 participants | Instructor |
-| S5 | Check Claude accounts (Pro/free) and the GitHub/Jira connections | Instructor + participants |
 | S5 | Invite Patricia (leads S6 and S12) to the repo and Jira; share the plan and the sessions she leads | Alex |
 | S6 | Café Cumbre orders API in `cafe-cumbre-en-linea/` with a planted bug | Instructor (with Claude) |
 | S7 | Images in GHCR with permissions; reference nginx config | Instructor (with Claude) |
