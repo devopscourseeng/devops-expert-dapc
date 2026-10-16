@@ -14,5 +14,4 @@ Related files:
 
 Before the session:
 
-- Replace `SCRUM-12` on the branching and best-practices slides with a real ticket number.
 - Check the menu names for the GitHub and Jira connections in Claude (they change from time to time).
