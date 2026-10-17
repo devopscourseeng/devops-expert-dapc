@@ -18,3 +18,9 @@ def test_get_one_item(client):
     response = client.get("/menu/3")
     assert response.status_code == 200
     assert response.get_json()["name"] == "Latte"
+
+
+def test_health_returns_ok(client):
+    response = client.get("/health")
+    assert response.status_code == 200
+    assert response.get_json() == {"status": "ok"}
