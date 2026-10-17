@@ -9,7 +9,7 @@ def create_app():
 
     @app.get("/health")
     def health():
-        return jsonify({"status": "okay"})
+        return jsonify({"status": "ok"})
 
     @app.get("/menu")
     def list_menu():
