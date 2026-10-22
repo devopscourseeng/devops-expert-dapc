@@ -20,7 +20,7 @@ def create_order(items):
                 "price": item["price"],
             }
         )
-    total = round(sum(line["price"] for line in lines), 2)
+    total = round(sum(line["price"] * line["quantity"] for line in lines), 2)
     _last_id += 1
     order = {"id": _last_id, "items": lines, "total": total}
     ORDERS[_last_id] = order
