@@ -7,7 +7,7 @@ This plan replaces the plan for sessions 5–16 in the original global plan (v1.
 ## 1. How the course works from session 5
 
 - **Format:** 12 sessions (5–16) of 4 hours, live online, 6 participants in two teams of 3.
-- **Session leads:** Patricia leads sessions 6 and 12 (quality focus: tests and peer review). Alex leads all the others.
+- **Session leads:** Patricia leads sessions 6 and 12 (quality focus: tests and peer review). The main instructor leads all the others.
 - **Tools:** one shared GitHub repo (`devopscourseeng/devops-expert-dapc`), one Jira project (key **SCRUM**), and **Claude** as the only AI tool (every participant needs a Pro plan).
 - **Learning by doing:** the instructor talks about 20–30 minutes per session. Participants build the theory themselves with Claude, check it against the official CertiProf material, and apply it on real tickets.
 - **Everything goes through tickets and pull requests:** a `SCRUM-N` ticket, a short branch from `develop` named `feature/SCRUM-N` or `bugfix/SCRUM-N`, a PR to `develop` with CI green, a review by a classmate, and a closing comment in Jira.
@@ -35,18 +35,18 @@ Optional, outside the grade: the official CertiProf DAPC exam (40 multiple-choic
 
 | Session | Lead | Theme | DAPC slides | Syllabus unit | Project capability added |
 |---|---|---|---|---|---|
-| S5 | Alex | Kickoff: Claude, GitHub and Jira as the way of working | 64–76 (recap) | 2 | First ticket closed through a PR |
+| S5 | Instructor | Kickoff: Claude, GitHub and Jira as the way of working | 64–76 (recap) | 2 | First ticket closed through a PR |
 | S6 | Patricia | Tests, TDD, continuous integration and trunk-based development | 99–128 | 3 | Real CI pipeline with tests that block merges |
-| S7 | Alex | Low-risk releases | 129–154 | 3 | Self-service deploy, blue-green, canary, feature toggles |
-| S8 | Alex | Low-risk architecture and the end of the First Way | 155–159 | 3 | Inventory service extracted (strangler pattern); value stream map |
-| S9 | Alex | Telemetry | 160–173 | 4 | Metrics in Prometheus and Grafana dashboards |
-| S10 | Alex | Logs, information radiators and predictive analysis | 174–182 | 4 | Structured logs, correlation id, radiator and alerts |
-| S11 | Alex | Feedback to deploy safely: LRR and HRR | 183–194 | 4 | Watched canary with automatic rollback; LRR checklist |
+| S7 | Instructor | Low-risk releases | 129–154 | 3 | Self-service deploy, blue-green, canary, feature toggles |
+| S8 | Instructor | Low-risk architecture and the end of the First Way | 155–159 | 3 | Inventory service extracted (strangler pattern); value stream map |
+| S9 | Instructor | Telemetry | 160–173 | 4 | Metrics in Prometheus and Grafana dashboards |
+| S10 | Instructor | Logs, information radiators and predictive analysis | 174–182 | 4 | Structured logs, correlation id, radiator and alerts |
+| S11 | Instructor | Feedback to deploy safely: LRR and HRR | 183–194 | 4 | Watched canary with automatic rollback; LRR checklist |
 | S12 | Patricia | Hypotheses, A/B tests and peer review | 195–216 | 4 | A/B experiment; PR template, CODEOWNERS |
-| S13 | Alex | Learning culture and blameless postmortems | 217–225 | 5 | Postmortem template and first postmortem |
-| S14 | Alex | Resilience: fault injection and Game Day | 226–235 | 5 | Timeouts, retries, runbooks tested in a Game Day |
-| S15 | Alex | Local discoveries, global improvements | 236–252 | 5 | Reusable workflow, repo template, DORA metrics |
-| S16 | Alex | Security, change management, compliance and course close | 253–273 | 6 | DevSecOps pipeline, SBOM, automatic change record |
+| S13 | Instructor | Learning culture and blameless postmortems | 217–225 | 5 | Postmortem template and first postmortem |
+| S14 | Instructor | Resilience: fault injection and Game Day | 226–235 | 5 | Timeouts, retries, runbooks tested in a Game Day |
+| S15 | Instructor | Local discoveries, global improvements | 236–252 | 5 | Reusable workflow, repo template, DORA metrics |
+| S16 | Instructor | Security, change management, compliance and course close | 253–273 | 6 | DevSecOps pipeline, SBOM, automatic change record |
 
 Slide numbers refer to the CertiProf instructor PDF (V072021A). The old plan's three assessment sessions (4, 8, 12) and the final exam session are removed; their time goes to practice.
 
@@ -64,7 +64,7 @@ Every session has the same shape (the minutes add up to 240):
 ---
 
 ### Session 5 — Kickoff: Claude, GitHub and Jira as the way of working
-**Session lead:** Alex
+**Session lead:** Instructor
 
 
 **Goal:** by the end, each participant has Claude connected to GitHub and Jira, has closed one ticket through a PR, and understands how their work is checked.
@@ -107,13 +107,26 @@ None.
 ---
 
 ### Session 7 — Low-risk releases
-**Session lead:** Alex
+**Session lead:** Instructor
 
-
-**Goal:** separate deployment from release and learn the patterns that make releases boring: blue-green, canary and feature toggles.
+**Goal:** separate deployment from release and learn the patterns that make releases boring: blue-green, canary and feature toggles. Then write the steps of a release as a runbook and let a skill run it, with the trainer's rules around it (harness engineering).
 
 | Block | Min | Who talks |
 |---|---|---|
+| Opening: review the work trail from session 6 | 15 | Instructor + participants |
+| **Theory with Claude** (slides 129–153): risky releases and self-service deploys (Team A), environment-based patterns: blue-green, canary, cluster immune system (Team B), application-based patterns: feature toggles and dark launches (Team C) | 45 | Teams |
+| Break | 10 | |
+| **Tickets (run it, then extend it):** first 10 minutes to set up Docker Desktop, a bash terminal and the repo. Then four tickets under the epic "Release version 1.2 with low risk", all with the label `session-N`: (a) the deploy script checks `/menu` and `/version` after a deploy; (b) blue-green: a command moves all calls to the other side and back, and the time is measured; (c) canary: 1.2 at 10, 50 and 100, and a script counts the versions in 20 calls; (d) feature toggle: 1.2 with `SCHEDULED_ORDERS` off and on, and a test | 85 | Participants |
+| Break | 10 | |
+| **Team activity:** roll out a new version as a canary, see the errors, and roll back with weight 0. Each team writes the steps, the checks and the way back in a runbook PR | 35 | Teams |
+| **Skill:** "deploy from the runbook". The skill reads the runbook (context first, then one step per row), deploys, sets the weights, runs the check after each step, and suggests a rollback when a check fails. A person says yes. It runs only commands that are written in the runbook | 20 | Participants |
+| Wrap-up and spare time | 20 | Instructor |
+
+**Practice environment:** `staging` (port 8100) and `prod` with `cafe-prod-stable` (8201), `cafe-prod-canary` (8202) and an nginx proxy `cafe-prod` (8200). Scripts: `deploy/deploy-to-environment.sh ENVIRONMENT VERSION`, `deploy/start-environment.sh VERSION`, `deploy/set-weight.sh PERCENT`.
+
+**Action Items:** images 1.1 and 1.2 published to GHCR (public package) and the broken release 1.3 published from the branch `trainer/broken-release-1.3`; Jira epic and four tickets with the label `session-7`; the setup guide sent to the participants. All details are in `training/session_7/`.
+
+---|---|---|
 | Opening: review the work trail from session 6 | 15 | Instructor + participants |
 | **Theory with Claude** (slides 129–153): high-risk releases (Knight Capital case), self-service deploys, environment-based patterns (blue-green, canary, cluster immune system) and application-based patterns (feature toggles, dark launches) | 45 | Teams |
 | Break | 10 | |
@@ -128,7 +141,7 @@ None.
 ---
 
 ### Session 8 — Low-risk architecture and the end of the First Way
-**Session lead:** Alex
+**Session lead:** Instructor
 
 
 **Goal:** understand how architecture enables or blocks flow, evolve a system without rewriting it, and find the constraint in the team's own pipeline.
@@ -149,7 +162,7 @@ None.
 ---
 
 ### Session 9 — Telemetry
-**Session lead:** Alex
+**Session lead:** Instructor
 
 
 **Goal:** see the system. Understand why telemetry is a precondition for solving problems, and instrument the API.
@@ -170,7 +183,7 @@ None.
 ---
 
 ### Session 10 — Logs, information radiators and predictive analysis
-**Session lead:** Alex
+**Session lead:** Instructor
 
 
 **Goal:** design useful logs, build a radiator and actionable alerts, and apply simple statistics to detect anomalies.
@@ -191,7 +204,7 @@ None.
 ---
 
 ### Session 11 — Feedback to deploy safely: LRR and HRR
-**Session lead:** Alex
+**Session lead:** Instructor
 
 
 **Goal:** use telemetry to decide whether a deployment continues or rolls back, and review a service for readiness to launch and to hand off.
@@ -233,7 +246,7 @@ None.
 ---
 
 ### Session 13 — Learning culture and blameless postmortems
-**Session lead:** Alex
+**Session lead:** Instructor
 
 
 **Goal:** distinguish pathological, bureaucratic and generative cultures, and run a blameless incident analysis.
@@ -254,7 +267,7 @@ None.
 ---
 
 ### Session 14 — Resilience: fault injection and Game Day
-**Session lead:** Alex
+**Session lead:** Instructor
 
 
 **Goal:** understand why injecting failures on purpose builds resilience, make the code tolerate slow or failing dependencies, and run a Game Day with its postmortem.
@@ -275,7 +288,7 @@ None.
 ---
 
 ### Session 15 — Local discoveries, global improvements
-**Session lead:** Alex
+**Session lead:** Instructor
 
 
 **Goal:** turn what one team learns into something the whole organization uses, reserve time to improve and pay down technical debt, and measure performance with DORA metrics.
@@ -296,7 +309,7 @@ None.
 ---
 
 ### Session 16 — Security, change management, compliance and course close
-**Session lead:** Alex
+**Session lead:** Instructor
 
 
 **Goal:** build security into the pipeline, protect the pipeline itself, use it as evidence for change management and audit, and close the course with a path to the certification.
@@ -320,7 +333,7 @@ None.
 
 | Before | Item | Owner |
 |---|---|---|
-| S5 | Invite Patricia (leads S6 and S12) to the repo and Jira; share the plan and the sessions she leads | Alex |
+| S5 | Invite Patricia (leads S6 and S12) to the repo and Jira; share the plan and the sessions she leads | Instructor |
 | S6 | orders endpoint in the Summit Cafe API (`src/summit-cafe-api/`) with a planted bug | Instructor (with Claude) |
 | S7 | Images in GHCR with permissions; reference nginx config | Instructor (with Claude) |
 | S9 | Observability Compose profile; Codespaces fallback | Instructor (with Claude) |
