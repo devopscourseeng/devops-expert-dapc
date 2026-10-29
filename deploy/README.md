@@ -11,7 +11,7 @@ Two environments run on your own computer with Docker:
 
 In prod, always call the app through port **8200**.
 
-## deploy-to-environment.sh ENVIRONMENT VERSION
+## deploy-to-environment.sh ENVIRONMENT VERSION [--scheduled-orders on|off]
 
 Deploys one published version.
 
@@ -29,12 +29,13 @@ Deploys one published version.
 
 To put the last good version back: `./deploy/deploy-to-environment.sh prod 1.1`.
 
-**Feature toggle.** API 1.2 and later read `SCHEDULED_ORDERS`. Put it before the
-command to turn the feature on or off. The default is `off`.
+**Feature toggle.** API 1.2 and later read `SCHEDULED_ORDERS`. Add
+`--scheduled-orders on` or `--scheduled-orders off` at the end of the command.
+The default is `off`.
 
 ```
-SCHEDULED_ORDERS=on  ./deploy/deploy-to-environment.sh staging 1.2
-SCHEDULED_ORDERS=off ./deploy/deploy-to-environment.sh staging 1.2
+./deploy/deploy-to-environment.sh staging 1.2 --scheduled-orders on
+./deploy/deploy-to-environment.sh staging 1.2 --scheduled-orders off
 curl http://localhost:8100/version     # shows "scheduled_orders":"on" or "off"
 ```
 
