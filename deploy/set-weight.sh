@@ -1,13 +1,13 @@
 #!/usr/bin/env bash
 # set-weight.sh PERCENT
 #
-# Sets the percent of calls that go to the NEW slot (cafe-new, port 8002).
-# The rest goes to the stable slot (cafe-stable, port 8001).
+# Sets the percent of calls in prod that go to the canary (cafe-prod-canary).
+# The rest goes to cafe-prod-stable. Calls always come in through port 8200.
 #
 # Examples:
-#   ./set-weight.sh 10    # canary: 10% new, 90% stable
+#   ./set-weight.sh 10    # canary: 10% canary, 90% stable
 #   ./set-weight.sh 50    # half and half
-#   ./set-weight.sh 100   # everyone on the new version
+#   ./set-weight.sh 100   # everyone on the canary
 #   ./set-weight.sh 0     # roll back: everyone on stable
 #   DRY_RUN=1 ./set-weight.sh 10   # only show the config
 set -euo pipefail
@@ -23,5 +23,5 @@ PERCENT=$((10#$1))
 
 apply_config "$PERCENT"
 if [ "${DRY_RUN:-0}" != "1" ]; then
-  echo "[weight] OK: $PERCENT% of the calls go to the new slot, $((100 - PERCENT))% to stable."
+  echo "[weight] OK: $PERCENT% of the calls go to the canary, $((100 - PERCENT))% to stable."
 fi

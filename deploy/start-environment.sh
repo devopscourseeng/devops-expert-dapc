@@ -1,12 +1,13 @@
 #!/usr/bin/env bash
 # start-environment.sh STABLE_VERSION
 #
-# Starts the practice environment:
-#   cafe-stable  runs STABLE_VERSION on port 8001
-#   cafe-proxy   nginx on port 8080, sends 100% of calls to cafe-stable
-# The "new" slot is empty until you run deploy-to-environment.sh.
+# Starts the prod environment:
+#   cafe-prod-stable  runs STABLE_VERSION on port 8201
+#   cafe-prod         nginx on port 8200, sends 100% of calls to cafe-prod-stable
+# The canary (cafe-prod-canary) and staging are empty until you run
+# deploy-to-environment.sh.
 #
-# Example:  ./start-environment.sh 1.1     then   curl localhost:8080/menu
+# Example:  ./start-environment.sh 1.1     then   curl localhost:8200/menu
 # Dry run:  DRY_RUN=1 ./start-environment.sh 1.1
 set -euo pipefail
 HERE="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
@@ -22,10 +23,10 @@ if [ "$#" -ne 1 ] || ! [[ "$1" =~ ^[0-9]+\.[0-9]+(\.[0-9]+)?$ ]]; then
 fi
 VERSION="$1"
 
-say "Starting cafe-stable with version $VERSION on port $STABLE_PORT"
+say "Starting $STABLE with version $VERSION on port $STABLE_PORT"
 run docker pull "$IMAGE:$VERSION"
-run docker rm -f cafe-stable >/dev/null 2>&1 || true
-run docker run -d --name cafe-stable --label "cafe.version=$VERSION" \
+run docker rm -f "$STABLE" >/dev/null 2>&1 || true
+run docker run -d --name "$STABLE" --label "cafe.version=$VERSION" \
   -p "$STABLE_PORT:8000" "$IMAGE:$VERSION"
 
 say "Starting $PROXY (nginx) on port $PROXY_PORT"
@@ -35,7 +36,7 @@ run docker run -d --name "$PROXY" --add-host host.docker.internal:host-gateway \
   -p "$PROXY_PORT:80" "$NGINX_IMAGE"
 
 if [ "${DRY_RUN:-0}" != "1" ]; then sleep 2; fi
-say "Sending 100% of the calls to cafe-stable"
+say "Sending 100% of the calls to $STABLE"
 apply_config 0
 
 if [ "${DRY_RUN:-0}" = "1" ]; then
