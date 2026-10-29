@@ -117,7 +117,7 @@ None.
 | Opening: review the work trail from session 6 | 15 | Instructor + participants |
 | **Theory with Claude** (slides 129–153): high-risk releases (Knight Capital case), self-service deploys, environment-based patterns (blue-green, canary, cluster immune system) and application-based patterns (feature toggles, dark launches) | 45 | Teams |
 | Break | 10 | |
-| **Tickets:** (a) `deploy.sh VERSION` that pulls the image from GHCR and starts it; (b) blue-green with two API instances behind nginx; (c) canary with weighted upstreams 90/10, 50/50, 100; (d) a feature toggle that ships a feature turned off and enables it via an environment variable | 85 | Participants |
+| **Tickets:** (a) `deploy-to-environment.sh VERSION` that pulls the image from GHCR and starts it; (b) blue-green with two API instances behind nginx; (c) canary with weighted upstreams 90/10, 50/50, 100; (d) a feature toggle that ships a feature turned off and enables it via an environment variable | 85 | Participants |
 | Break | 10 | |
 | **Team activity:** roll out version 1.2 as a canary and perform a deliberate rollback. Each team documents the steps and times in a runbook PR | 35 | Teams |
 | **Skill:** "write a deployment runbook" | 20 | Participants |
