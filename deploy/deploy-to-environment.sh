@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# deploy.sh VERSION
+# deploy-to-environment.sh VERSION
 #
 # Deploys one published version of the Summit Cafe API to the "new" slot.
 # It never touches the "stable" slot and never changes the nginx weights,
@@ -12,9 +12,9 @@
 #   4. Waits until /health answers. If it does not, it stops with an error.
 #
 # Examples:
-#   ./deploy.sh 1.2      # put version 1.2 in the new slot
-#   ./deploy.sh 1.1      # put version 1.1 back in the new slot
-#   DRY_RUN=1 ./deploy.sh 1.2   # only print the commands
+#   ./deploy-to-environment.sh 1.2      # put version 1.2 in the new slot
+#   ./deploy-to-environment.sh 1.1      # put version 1.1 back in the new slot
+#   DRY_RUN=1 ./deploy-to-environment.sh 1.2   # only print the commands
 #
 # Settings (all optional):
 #   IMAGE      image name without the tag
@@ -74,5 +74,5 @@ done
 
 echo "Error: version $VERSION did not answer /health after $TRIES seconds." >&2
 echo "Logs: docker logs $CONTAINER" >&2
-echo "Go back with: ./deploy.sh <last good version>" >&2
+echo "Go back with: ./deploy-to-environment.sh <last good version>" >&2
 exit 1

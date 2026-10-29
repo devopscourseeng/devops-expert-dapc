@@ -1,11 +1,11 @@
 # Deploy scripts
 
-## deploy.sh VERSION
+## deploy-to-environment.sh VERSION
 
 Puts one published version of the Summit Cafe API in the **new** slot.
 
 ```
-./deploy/deploy.sh 1.2
+./deploy/deploy-to-environment.sh 1.2
 ```
 
 - It pulls `ghcr.io/devopscourseeng/devops-expert-dapc/summit-cafe-api:1.2`.
@@ -15,8 +15,8 @@ Puts one published version of the Summit Cafe API in the **new** slot.
   weights. Customers do not see the new version until the weights change.
 - It refuses `latest`. Use a version number only, such as `1.2` or `1.2.3`.
 
-To go back to the last good version in the new slot: `./deploy/deploy.sh 1.1`.
+To go back to the last good version in the new slot: `./deploy/deploy-to-environment.sh 1.1`.
 
-To see what it would do without changing anything: `DRY_RUN=1 ./deploy/deploy.sh 1.2`.
+To see what it would do without changing anything: `DRY_RUN=1 ./deploy/deploy-to-environment.sh 1.2`.
 
 You need Docker running and a published image (see `.github/workflows/README.md`).
