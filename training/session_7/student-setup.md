@@ -64,6 +64,7 @@ In prod, always call port **8200**. The proxy splits the calls between stable an
 ./deploy/set-weight.sh 10                       # 10% of the calls go to the canary
 ./deploy/set-weight.sh 0                        # rollback: all calls go to stable
 curl http://localhost:8200/version              # which version answered?
+./deploy/check-menu.sh                           # 20 calls to /menu: are they all 200?
 ```
 
 Add `DRY_RUN=1` before a command to see what it would do without doing it.

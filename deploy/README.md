@@ -40,6 +40,10 @@ Sets the percent of prod calls that go to the **canary**. The rest goes to stabl
 At 0 or 100 nginx marks the other side as `down`, because nginx does not accept a
 weight of 0. Before reloading, the script tests the new config inside the proxy.
 
+## check-menu.sh [CALLS]
+
+The "watch" step. It calls `/menu` through the prod proxy (port 8200) 20 times (or CALLS times) and counts the status codes. It prints `OK` and exits with 0 if every call returned 200. Otherwise it says how many calls failed and exits with 1.
+
 ## A full release
 
 ```
@@ -48,6 +52,7 @@ weight of 0. Before reloading, the script tests the new config inside the proxy.
 curl http://localhost:8100/menu
 ./deploy/deploy-to-environment.sh prod 1.2      # canary = 1.2, still 0% of calls
 ./deploy/set-weight.sh 10                       # canary: 10% of calls
+./deploy/check-menu.sh                          # watch: are all calls 200?
 ./deploy/set-weight.sh 50                       # half and half
 ./deploy/set-weight.sh 100                      # everyone on 1.2
 ./deploy/set-weight.sh 0                        # roll back: everyone on stable
