@@ -6,7 +6,7 @@ Everything the trainer must prepare, and what to expect in class.
 
 | # | What | How to check |
 |---|---|---|
-| 1 | Images in GHCR: `1.1`, `1.2` and the broken `1.3` | See "Publish the images" below |
+| 1 | Images in GHCR: `1.1`, `1.2` and the broken `1.4` | See "Publish the images" below |
 | 2 | The package is public | An anonymous `docker pull` works (no `docker login`) |
 | 3 | Jira: epic **SCRUM-23** with tickets **SCRUM-24 to SCRUM-27**, all with the label `session-7` | Open the board and filter by the label |
 | 4 | The setup guide is sent to the participants | [student-setup.md](student-setup.md) |
@@ -21,7 +21,7 @@ Use the workflow **Publish image** (Actions tab, "Run workflow"). A published ta
 |---|---|---|
 | 1.1 | `develop` | The first image. It has no `/version` route. |
 | 1.2 | `develop` | Has `/version` and the toggle `SCHEDULED_ORDERS`. |
-| 1.3 | `trainer/broken-release-1.3` | **Broken on purpose.** Do not merge this branch. |
+| 1.4 | `trainer/broken-release-1.3` | **Broken on purpose.** Do not merge this branch. (The branch name still says 1.3: the first try at 1.3 was published by mistake from another branch. 1.3 is a healthy image and is not used.) |
 
 Check the tags from any terminal:
 
@@ -30,9 +30,9 @@ curl -s "https://ghcr.io/token?scope=repository:devopscourseeng/devops-expert-da
 curl -s -H "Authorization: Bearer TOKEN" https://ghcr.io/v2/devopscourseeng/devops-expert-dapc/summit-cafe-api/tags/list
 ```
 
-You should see `1.1`, `1.2`, `1.3` and the `sha-...` tags.
+You should see `1.1`, `1.2`, `1.3`, `1.4` and the `sha-...` tags.
 
-### What is broken in 1.3
+### What is broken in 1.4
 
 The menu is cached by app version, and the cache only has the key `dev`. In any published image `APP_VERSION` is set (`1.3`), so `GET /menu` raises an error and returns **500**.
 
@@ -43,9 +43,9 @@ It passes everything the pipeline checks: the unit tests run with `APP_VERSION` 
 ```
 ./deploy/start-environment.sh 1.1
 ./deploy/deploy-to-environment.sh staging 1.2
-./deploy/deploy-to-environment.sh prod 1.3
+./deploy/deploy-to-environment.sh prod 1.4
 ./deploy/set-weight.sh 50
-for i in $(seq 1 20); do curl -s -o /dev/null -w "%{http_code}\n" http://localhost:8200/menu; done | sort | uniq -c
+./deploy/check-menu.sh
 ./deploy/set-weight.sh 0
 ```
 
@@ -60,7 +60,7 @@ At 50%, about half of the calls return 500. After `set-weight.sh 0`, all return 
 | Break | 10 | |
 | Setup check and tickets | 85 | Slides 17–19. First 10 minutes: everyone runs the four setup steps. |
 | Break | 10 | |
-| Team activity | 35 | Slides 20 and 22. Canary of 1.3, find the errors, roll back, write the runbook. |
+| Team activity | 35 | Slides 20 and 22. Canary of 1.4, find the errors, roll back, write the runbook. |
 | Skill | 20 | Slides 24–26. The skill reads the runbook and runs the steps. |
 | Wrap-up | 20 | Slide 27. |
 
