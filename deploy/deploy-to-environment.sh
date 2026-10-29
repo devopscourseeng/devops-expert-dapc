@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# deploy-to-environment.sh ENVIRONMENT VERSION
+# deploy-to-environment.sh ENVIRONMENT VERSION [--scheduled-orders on|off]
 #
 # Deploys one published version of the Summit Cafe API.
 #
@@ -19,6 +19,10 @@
 #   ./deploy-to-environment.sh prod 1.2
 #   ./deploy-to-environment.sh prod 1.1          # put the last good version back
 #   DRY_RUN=1 ./deploy-to-environment.sh prod 1.2   # only print the commands
+#
+# Feature toggle (API 1.2 and later): add --scheduled-orders on or off.
+#   ./deploy-to-environment.sh staging 1.2 --scheduled-orders on    # feature on
+#   ./deploy-to-environment.sh staging 1.2 --scheduled-orders off   # feature off (default)
 set -euo pipefail
 HERE="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 # shellcheck source=lib-nginx.sh
@@ -29,14 +33,25 @@ TRIES=20
 
 say() { printf '[deploy] %s\n' "$*"; }
 
-if [ "$#" -ne 2 ]; then
-  echo "Usage: $0 ENVIRONMENT VERSION   (example: $0 staging 1.2)" >&2
-  echo "ENVIRONMENT is staging or prod." >&2
+usage() {
+  echo "Usage: $0 ENVIRONMENT VERSION [--scheduled-orders on|off]" >&2
+  echo "Example: $0 staging 1.2" >&2
+  echo "ENVIRONMENT is staging or prod. The toggle is off unless you say on." >&2
   exit 2
-fi
+}
+
+if [ "$#" -ne 2 ] && [ "$#" -ne 4 ]; then usage; fi
 
 ENVIRONMENT="$1"
 VERSION="$2"
+SCHEDULED_ORDERS="off"
+if [ "$#" -eq 4 ]; then
+  [ "$3" = "--scheduled-orders" ] || usage
+  case "$4" in
+    on|off) SCHEDULED_ORDERS="$4" ;;
+    *) echo "Error: --scheduled-orders must be on or off (got: $4)." >&2; exit 2 ;;
+  esac
+fi
 
 case "$ENVIRONMENT" in
   staging) CONTAINER="$STAGING"; PORT="$STAGING_PORT" ;;
@@ -62,6 +77,7 @@ run docker run -d --name "$CONTAINER" \
   --label "cafe.version=$VERSION" \
   --label "cafe.environment=$ENVIRONMENT" \
   -p "$PORT:8000" \
+  -e "SCHEDULED_ORDERS=$SCHEDULED_ORDERS" \
   "$IMAGE:$VERSION"
 
 if [ "${DRY_RUN:-0}" = "1" ]; then
