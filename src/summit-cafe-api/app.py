@@ -7,6 +7,10 @@ from flask import Flask, jsonify, request
 from menu import MENU, MENU_BY_ID
 from orders import create_order, get_order
 
+# Keep the menu in a cache, one entry for each version of the app.
+MENU_CACHE = {"dev": MENU}
+
+
 PICKUP_TIME = re.compile(r"([01]\d|2[0-3]):[0-5]\d")
 
 
@@ -28,7 +32,7 @@ def create_app():
 
     @app.get("/menu")
     def list_menu():
-        return jsonify(MENU)
+        return jsonify(MENU_CACHE[app_version()])
 
     @app.get("/menu/<int:item_id>")
     def get_item(item_id):
