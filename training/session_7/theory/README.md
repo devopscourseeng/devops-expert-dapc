@@ -16,5 +16,3 @@ Each file has two parts:
 - **Step 2.** The check against the official pages: what matches, what is easy to get wrong.
 
 Steps 3, 4 and 5 (prepare, present, talk together) are the team's own work.
-
-> We do not store the official CertiProf slides in this repository because they are protected by copyright. The files give the page numbers and describe the content in our own words.
