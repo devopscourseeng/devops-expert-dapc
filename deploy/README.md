@@ -1,52 +1,62 @@
 # Deploy scripts
 
-## deploy-to-environment.sh VERSION
+Two environments run on your own computer with Docker:
 
-Puts one published version of the Summit Cafe API in the **new** slot.
+| Environment | Container | Port | What it is |
+|---|---|---|---|
+| staging | `cafe-staging` | 8100 | The test place. One container, no proxy. |
+| prod | `cafe-prod-stable` | 8201 | The version customers use now |
+| prod | `cafe-prod-canary` | 8202 | The version being released |
+| prod | `cafe-prod` | 8200 | nginx, splits the calls between stable and canary |
+
+In prod, always call the app through port **8200**.
+
+## deploy-to-environment.sh ENVIRONMENT VERSION
+
+Deploys one published version.
 
 ```
-./deploy/deploy-to-environment.sh 1.2
+./deploy/deploy-to-environment.sh staging 1.2
+./deploy/deploy-to-environment.sh prod 1.2
 ```
 
 - It pulls `ghcr.io/devopscourseeng/devops-expert-dapc/summit-cafe-api:1.2`.
-- It replaces the container `cafe-new` and publishes it on port 8002.
+- `staging` replaces `cafe-staging`. `prod` replaces `cafe-prod-canary`.
 - It waits until `/health` answers. If it does not, it stops with an error.
-- It does **not** touch the stable slot and does **not** change the nginx
-  weights. Customers do not see the new version until the weights change.
+- In prod it does **not** touch `cafe-prod-stable` and does **not** change the
+  nginx weights. Customers do not see the new version until you change the weights.
 - It refuses `latest`. Use a version number only, such as `1.2` or `1.2.3`.
 
-To put the last good version back in the new slot: `./deploy/deploy-to-environment.sh 1.1`.
+To put the last good version back: `./deploy/deploy-to-environment.sh prod 1.1`.
 
-To see what it would do without changing anything: `DRY_RUN=1 ./deploy/deploy-to-environment.sh 1.2`.
+## start-environment.sh STABLE_VERSION
 
-You need Docker running and a published image (see `.github/workflows/README.md`).
+Starts prod: `cafe-prod-stable` with that version and the `cafe-prod` proxy,
+with 100% of the calls going to stable.
 
-## Practice environment with nginx
+## set-weight.sh PERCENT
 
-Two slots behind one nginx proxy:
+Sets the percent of prod calls that go to the **canary**. The rest goes to stable.
+At 0 or 100 nginx marks the other side as `down`, because nginx does not accept a
+weight of 0. Before reloading, the script tests the new config inside the proxy.
 
-| Container | Port | What it is |
-|---|---|---|
-| `cafe-stable` | 8001 | the version customers use now |
-| `cafe-new` | 8002 | the version you are releasing |
-| `cafe-proxy` | 8080 | nginx, splits the calls between the two slots |
-
-Always call the app through port 8080.
+## A full release
 
 ```
-./deploy/start-environment.sh 1.1        # stable = 1.1, 100% of calls
-./deploy/deploy-to-environment.sh 1.2    # new slot = 1.2, still 0% of calls
-./deploy/set-weight.sh 10                # canary: 10% new, 90% stable
-./deploy/set-weight.sh 50                # half and half
-./deploy/set-weight.sh 100               # everyone on 1.2
-./deploy/set-weight.sh 0                 # roll back: everyone on stable
+./deploy/start-environment.sh 1.1               # prod: stable = 1.1, 100% of calls
+./deploy/deploy-to-environment.sh staging 1.2   # test 1.2 first
+curl http://localhost:8100/menu
+./deploy/deploy-to-environment.sh prod 1.2      # canary = 1.2, still 0% of calls
+./deploy/set-weight.sh 10                       # canary: 10% of calls
+./deploy/set-weight.sh 50                       # half and half
+./deploy/set-weight.sh 100                      # everyone on 1.2
+./deploy/set-weight.sh 0                        # roll back: everyone on stable
+curl http://localhost:8200/menu                 # always through the proxy
 ```
-
-The weight is the percent of calls that go to the **new** slot. At 0 or 100 nginx
-marks the other slot as `down`, because nginx does not accept a weight of 0.
 
 All scripts accept `DRY_RUN=1` to print what they would do.
 
-Clean up: `docker rm -f cafe-proxy cafe-stable cafe-new`
+Clean up: `docker rm -f cafe-prod cafe-prod-stable cafe-prod-canary cafe-staging`
 
+You need Docker running and a published image (see `.github/workflows/README.md`).
 Windows: these are bash scripts. Run them in Git Bash or WSL, not in CMD.
