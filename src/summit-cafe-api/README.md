@@ -7,10 +7,19 @@ A small REST API for the cafe menu. It is the project we build and improve durin
 | Method | Path | What it returns |
 |---|---|---|
 | GET | `/health` | The status of the service |
+| GET | `/version` | The image version and the state of the toggles |
 | GET | `/menu` | The list of menu items |
 | GET | `/menu/{id}` | One menu item |
 
-More endpoints come in later sessions.
+| POST | `/orders` | Creates an order. With `SCHEDULED_ORDERS=on` it also accepts `pickup_time` (like `14:30`) |
+| GET | `/orders/{id}` | One order |
+
+## Settings
+
+| Variable | Values | What it does |
+|---|---|---|
+| `SCHEDULED_ORDERS` | `off` (default), `on` | Feature toggle: lets a customer choose a pickup time. With `off` the field is ignored and the API works as in 1.1. |
+| `APP_VERSION` | text | The version shown by `/version`. The publish workflow sets it from the image tag. |
 
 ## Project files
 

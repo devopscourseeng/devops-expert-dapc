@@ -1,8 +1,13 @@
 """Summit Cafe API: a small REST API for the cafe menu."""
 
+import re
+
+from features import app_version, scheduled_orders_enabled
 from flask import Flask, jsonify, request
 from menu import MENU, MENU_BY_ID
 from orders import create_order, get_order
+
+PICKUP_TIME = re.compile(r"([01]\d|2[0-3]):[0-5]\d")
 
 
 def create_app():
@@ -11,6 +16,15 @@ def create_app():
     @app.get("/health")
     def health():
         return jsonify({"status": "okay"})
+
+    @app.get("/version")
+    def version():
+        return jsonify(
+            {
+                "version": app_version(),
+                "scheduled_orders": "on" if scheduled_orders_enabled() else "off",
+            }
+        )
 
     @app.get("/menu")
     def list_menu():
@@ -35,7 +49,12 @@ def create_app():
                 or line["quantity"] < 1
             ):
                 return jsonify({"error": "each item needs a menu id and a quantity of at least 1"}), 400
-        return jsonify(create_order(items)), 201
+        pickup_time = None
+        if scheduled_orders_enabled() and "pickup_time" in body:
+            pickup_time = body["pickup_time"]
+            if not isinstance(pickup_time, str) or not PICKUP_TIME.fullmatch(pickup_time):
+                return jsonify({"error": "pickup_time must look like 14:30"}), 400
+        return jsonify(create_order(items, pickup_time)), 201
 
     @app.get("/orders/<int:order_id>")
     def get_one_order(order_id):
