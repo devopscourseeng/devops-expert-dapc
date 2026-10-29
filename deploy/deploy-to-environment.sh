@@ -19,6 +19,10 @@
 #   ./deploy-to-environment.sh prod 1.2
 #   ./deploy-to-environment.sh prod 1.1          # put the last good version back
 #   DRY_RUN=1 ./deploy-to-environment.sh prod 1.2   # only print the commands
+#
+# Feature toggle (API 1.2 and later): set SCHEDULED_ORDERS before the command.
+#   SCHEDULED_ORDERS=on  ./deploy-to-environment.sh staging 1.2   # feature on
+#   SCHEDULED_ORDERS=off ./deploy-to-environment.sh staging 1.2   # feature off (default)
 set -euo pipefail
 HERE="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 # shellcheck source=lib-nginx.sh
@@ -62,6 +66,7 @@ run docker run -d --name "$CONTAINER" \
   --label "cafe.version=$VERSION" \
   --label "cafe.environment=$ENVIRONMENT" \
   -p "$PORT:8000" \
+  -e "SCHEDULED_ORDERS=${SCHEDULED_ORDERS:-off}" \
   "$IMAGE:$VERSION"
 
 if [ "${DRY_RUN:-0}" = "1" ]; then

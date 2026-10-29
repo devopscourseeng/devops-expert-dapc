@@ -29,6 +29,15 @@ Deploys one published version.
 
 To put the last good version back: `./deploy/deploy-to-environment.sh prod 1.1`.
 
+**Feature toggle.** API 1.2 and later read `SCHEDULED_ORDERS`. Put it before the
+command to turn the feature on or off. The default is `off`.
+
+```
+SCHEDULED_ORDERS=on  ./deploy/deploy-to-environment.sh staging 1.2
+SCHEDULED_ORDERS=off ./deploy/deploy-to-environment.sh staging 1.2
+curl http://localhost:8100/version     # shows "scheduled_orders":"on" or "off"
+```
+
 ## start-environment.sh STABLE_VERSION
 
 Starts prod: `cafe-prod-stable` with that version and the `cafe-prod` proxy,
