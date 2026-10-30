@@ -109,34 +109,21 @@ None.
 ### Session 7 — Low-risk releases
 **Session lead:** Instructor
 
-**Goal:** separate deployment from release and learn the patterns that make releases boring: blue-green, canary and feature toggles. Then write the steps of a release as a runbook and let a skill run it, with the trainer's rules around it (harness engineering).
+**Goal:** separate deployment from release and learn the patterns that make releases boring: blue-green, canary and feature toggles. Then run a canary and a rollback with the practice scripts, and let a skill run the steps of a runbook, with the trainer's rules around it (harness engineering).
 
 | Block | Min | Who talks |
 |---|---|---|
 | Opening: review the work trail from session 6 | 15 | Instructor + participants |
 | **Theory with Claude** (slides 129–153): risky releases and self-service deploys (Team A), environment-based patterns: blue-green, canary, cluster immune system (Team B), application-based patterns: feature toggles and dark launches (Team C) | 45 | Teams |
 | Break | 10 | |
-| **Tickets (run it, then extend it):** first 10 minutes to set up Docker Desktop, a bash terminal and the repo. Then four tickets under the epic "Release version 1.2 with low risk", all with the label `session-N`: (a) the deploy script checks `/menu` and `/version` after a deploy; (b) blue-green: a command moves all calls to the other side and back, and the time is measured; (c) canary: 1.2 at 10, 50 and 100, and a script counts the versions in 20 calls; (d) feature toggle: 1.2 with `SCHEDULED_ORDERS` off and on, and a test | 85 | Participants |
+| **Hands-on: deploy, canary and rollback.** First 10 minutes to set up Docker Desktop, a bash terminal and the repo. Then, with the existing scripts only (no code, no tickets): 1.2 as the base, the broken 1.4 in staging, 1.4 to prod as a canary at 0%, then 10%, then a rollback with weight 0, timed. Extra: the feature toggle `SCHEDULED_ORDERS` off and on | 85 | Participants |
 | Break | 10 | |
-| **Team activity:** roll out a new version as a canary, see the errors, and roll back with weight 0. Each team writes the steps, the checks and the way back in a runbook PR | 35 | Teams |
-| **Skill:** "deploy from the runbook". The skill reads the runbook (context first, then one step per row), deploys, sets the weights, runs the check after each step, and suggests a rollback when a check fails. A person says yes. It runs only commands that are written in the runbook | 20 | Participants |
-| Wrap-up and spare time | 20 | Instructor |
+| **Skill:** "deploy from the runbook", created in the Claude Code CLI. The skill reads the runbook (context first, then one step per row), deploys, sets the weights, runs the check after each step, and suggests a rollback when a check fails. A person says yes. It runs only commands that are written in the runbook | 20 | Participants |
+| Closing | 20 | Instructor |
 
-**Practice environment:** `staging` (port 8100) and `prod` with `cafe-prod-stable` (8201), `cafe-prod-canary` (8202) and an nginx proxy `cafe-prod` (8200). Scripts: `deploy/deploy-to-environment.sh ENVIRONMENT VERSION`, `deploy/start-environment.sh VERSION`, `deploy/set-weight.sh PERCENT`.
+**Practice environment:** `staging` (port 8100) and `prod` with `cafe-prod-stable` (8201), `cafe-prod-canary` (8202) and an nginx proxy `cafe-prod` (8200). Scripts: `deploy/start-environment.sh VERSION`, `deploy/deploy-to-environment.sh ENVIRONMENT VERSION`, `deploy/set-weight.sh PERCENT`, `deploy/check-menu.sh`.
 
-**Action Items:** images 1.1 and 1.2 published to GHCR (public package) and the broken release 1.3 published from the branch `trainer/broken-release-1.3`; Jira epic and four tickets with the label `session-7`; the setup guide sent to the participants. All details are in `training/session_7/`.
-
----|---|---|
-| Opening: review the work trail from session 6 | 15 | Instructor + participants |
-| **Theory with Claude** (slides 129–153): high-risk releases (Knight Capital case), self-service deploys, environment-based patterns (blue-green, canary, cluster immune system) and application-based patterns (feature toggles, dark launches) | 45 | Teams |
-| Break | 10 | |
-| **Tickets:** (a) `deploy-to-environment.sh VERSION` that pulls the image from GHCR and starts it; (b) blue-green with two API instances behind nginx; (c) canary with weighted upstreams 90/10, 50/50, 100; (d) a feature toggle that ships a feature turned off and enables it via an environment variable | 85 | Participants |
-| Break | 10 | |
-| **Team activity:** roll out version 1.2 as a canary and perform a deliberate rollback. Each team documents the steps and times in a runbook PR | 35 | Teams |
-| **Skill:** "write a deployment runbook" | 20 | Participants |
-| Wrap-up and buffer | 20 | Instructor |
-
-**Action Items:** images published to GHCR with write permission for the participants; reference nginx configuration; version 1.2 of the API with a toggle.
+**Action Items:** images 1.1, 1.2 and the broken 1.4 published to GHCR (public package); the setup guide sent to the participants. All details are in `training/session_7/`.
 
 ---
 
