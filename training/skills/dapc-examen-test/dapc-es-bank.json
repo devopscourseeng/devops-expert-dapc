@@ -1,0 +1,3207 @@
+{
+  "bank": "Banco de preguntas DAPC (español), generado desde el material oficial",
+  "status": "borrador para revisión",
+  "total": 117,
+  "questions": [
+    {
+      "id": "DAPC-ES-001",
+      "parte": "Parte 1: Introducción",
+      "seccion": "1.1 Surgimiento",
+      "topic": "Culturas de producto y de servicio",
+      "type": "single",
+      "difficulty": "fácil",
+      "question": "En el modelo tradicional, ¿qué busca la cultura de servicio?",
+      "options": [
+        "Entregar nuevas funcionalidades lo antes posible",
+        "Mantener la estabilidad y la disponibilidad de los servicios",
+        "Reducir el número de desarrolladores",
+        "Eliminar las pruebas de rendimiento"
+      ],
+      "answer": [
+        "B"
+      ],
+      "explanation": "La cultura de producto quiere entregar funcionalidades, y la de servicio quiere mantener la estabilidad y la disponibilidad.",
+      "source": "Oficial, p. 20",
+      "verified": "sí (texto leído)",
+      "paginas_fuente": [
+        20
+      ],
+      "sesiones": [
+        1
+      ]
+    },
+    {
+      "id": "DAPC-ES-002",
+      "parte": "Parte 1: Introducción",
+      "seccion": "1.1 Surgimiento",
+      "topic": "Origen de DevOps",
+      "type": "single",
+      "difficulty": "fácil",
+      "question": "¿Qué conflicto dio origen al movimiento DevOps?",
+      "options": [
+        "Diferencias de costo entre proveedores de hardware",
+        "Conflictos entre desarrolladores y administradores de sistemas",
+        "Falta de herramientas de compilación",
+        "Exceso de documentación técnica"
+      ],
+      "answer": [
+        "B"
+      ],
+      "explanation": "El movimiento nace de las frustraciones y conflictos entre quienes desarrollan software y quienes lo operan.",
+      "source": "Oficial, p. 22",
+      "verified": "sí (texto leído)",
+      "paginas_fuente": [
+        22
+      ],
+      "sesiones": [
+        1
+      ]
+    },
+    {
+      "id": "DAPC-ES-003",
+      "parte": "Parte 1: Introducción",
+      "seccion": "1.3 Conceptos base",
+      "topic": "Entrega continua frente a integración continua",
+      "type": "single",
+      "difficulty": "medio",
+      "question": "¿Qué garantiza la entrega continua?",
+      "options": [
+        "Que todo el código integrado en la rama principal pueda desplegarse con seguridad, y que código e infraestructura estén siempre en estado desplegable",
+        "Que los despliegues se realicen solo una vez al año",
+        "Que no haya pruebas automatizadas antes del despliegue",
+        "Que los desarrolladores trabajen en ramas separadas durante todo el proyecto"
+      ],
+      "answer": [
+        "A"
+      ],
+      "explanation": "La entrega continua extiende la integración continua para que los cambios puedan liberarse de forma rápida y sostenible.",
+      "source": "Oficial, p. 28",
+      "verified": "sí (texto leído)",
+      "paginas_fuente": [
+        28
+      ],
+      "sesiones": [
+        1
+      ]
+    },
+    {
+      "id": "DAPC-ES-004",
+      "parte": "Parte 1: Introducción",
+      "seccion": "1.3 Conceptos base",
+      "topic": "Infraestructura como código",
+      "type": "single",
+      "difficulty": "fácil",
+      "question": "¿Qué significa tratar la infraestructura como código?",
+      "options": [
+        "Definir la infraestructura con archivos de definición, versionados y tratados como cualquier software",
+        "Configurar cada servidor a mano mediante una consola",
+        "Eliminar la infraestructura y usar solo la nube",
+        "Documentar la infraestructura en un documento de texto"
+      ],
+      "answer": [
+        "A"
+      ],
+      "explanation": "La infraestructura se define con archivos que se guardan en control de versiones, se prueban y se reconstruyen de forma reproducible.",
+      "source": "Oficial, p. 30",
+      "verified": "sí (texto leído)",
+      "paginas_fuente": [
+        30
+      ],
+      "sesiones": [
+        1
+      ]
+    },
+    {
+      "id": "DAPC-ES-005",
+      "parte": "Parte 1: Introducción",
+      "seccion": "1.3 Conceptos base",
+      "topic": "Trabajo en proceso (WIP)",
+      "type": "single",
+      "difficulty": "medio",
+      "question": "¿Para qué sirve limitar el trabajo en proceso (WIP) con un tablero Kanban?",
+      "options": [
+        "Para aumentar la multitarea y ocupar a todo el equipo",
+        "Para reducir la multitarea y mejorar el flujo de trabajo",
+        "Para eliminar la necesidad de priorizar",
+        "Para medir el número de horas trabajadas"
+      ],
+      "answer": [
+        "B"
+      ],
+      "explanation": "Imponer límites de WIP por columna reduce la multitarea, que suele retrasar la entrega de todo el trabajo.",
+      "source": "Oficial, p. 33",
+      "verified": "sí (texto leído)",
+      "paginas_fuente": [
+        33
+      ],
+      "sesiones": [
+        1
+      ]
+    },
+    {
+      "id": "DAPC-ES-006",
+      "parte": "Parte 1: Introducción",
+      "seccion": "1.3 Conceptos base",
+      "topic": "Tiempo de entrega (lead time)",
+      "type": "single",
+      "difficulty": "medio",
+      "question": "¿Cuándo empieza a medirse el tiempo de entrega (lead time) de una solicitud?",
+      "options": [
+        "Cuando el trabajo se inicia",
+        "Cuando la solicitud es creada",
+        "Cuando el trabajo se completa",
+        "Cuando el cliente la aprueba en producción"
+      ],
+      "answer": [
+        "B"
+      ],
+      "explanation": "El tiempo de entrega abarca desde la creación de la solicitud hasta su entrega al cliente. El tiempo de proceso empieza más tarde.",
+      "source": "Oficial, p. 34",
+      "verified": "sí (texto leído)",
+      "paginas_fuente": [
+        34
+      ],
+      "sesiones": [
+        1
+      ]
+    },
+    {
+      "id": "DAPC-ES-007",
+      "parte": "Parte 1: Introducción",
+      "seccion": "1.3 Conceptos base",
+      "topic": "Deuda técnica",
+      "type": "single",
+      "difficulty": "fácil",
+      "question": "¿Qué es la deuda técnica?",
+      "options": [
+        "El costo implícito del retrabajo causado por elegir una solución fácil ahora en vez de un enfoque mejor que llevaría más tiempo",
+        "El dinero que una empresa debe a sus proveedores de software",
+        "El número de errores abiertos en el tablero",
+        "El tiempo que tarda un despliegue en producción"
+      ],
+      "answer": [
+        "A"
+      ],
+      "explanation": "La deuda técnica es el costo futuro de decisiones rápidas que hacen más difícil cambiar el sistema después.",
+      "source": "Oficial, p. 35",
+      "verified": "sí (texto leído)",
+      "paginas_fuente": [
+        35
+      ],
+      "sesiones": [
+        1
+      ]
+    },
+    {
+      "id": "DAPC-ES-008",
+      "parte": "Parte 1: Introducción",
+      "seccion": "1.3 Conceptos base",
+      "topic": "Causas de la deuda técnica",
+      "type": "multiple",
+      "difficulty": "difícil",
+      "question": "¿Cuáles de las siguientes son causas habituales de deuda técnica? (Seleccione todas las que correspondan)",
+      "options": [
+        "Componentes fuertemente acoplados",
+        "La falta de un conjunto de pruebas",
+        "Falta de documentación",
+        "Refactorización constante y temprana"
+      ],
+      "answer": [
+        "A",
+        "B",
+        "C"
+      ],
+      "explanation": "El material enumera el acoplamiento fuerte, la falta de pruebas, la falta de documentación y la refactorización retrasada. Refactorizar de forma constante y temprana reduce la deuda, no la causa.",
+      "source": "Oficial, p. 36",
+      "verified": "sí (texto leído)",
+      "paginas_fuente": [
+        36
+      ],
+      "sesiones": [
+        1
+      ]
+    },
+    {
+      "id": "DAPC-ES-009",
+      "parte": "Parte 1: Introducción",
+      "seccion": "1.3 Conceptos base",
+      "topic": "Sistemas de registro y de contratación",
+      "type": "single",
+      "difficulty": "medio",
+      "question": "¿Qué característica tienen típicamente los sistemas de registro, según la distinción de TI bimodal?",
+      "options": [
+        "Cambios más rápidos y experimentación constante",
+        "Cambios más lentos, con énfasis en hacer las cosas correctamente y cumplir normas",
+        "Ausencia de requisitos de conformidad",
+        "Despliegues diarios sin revisión"
+      ],
+      "answer": [
+        "B"
+      ],
+      "explanation": "Los sistemas de registro cambian más despacio y suelen tener requisitos de conformidad. Los sistemas de contratación priorizan la velocidad y la experimentación.",
+      "source": "Oficial, pp. 37–38",
+      "verified": "sí (texto leído)",
+      "paginas_fuente": [
+        37,
+        38
+      ],
+      "sesiones": [
+        1
+      ]
+    },
+    {
+      "id": "DAPC-ES-010",
+      "parte": "Parte 1: Introducción",
+      "seccion": "1.3.2 Pilares",
+      "topic": "Pilares CALMS",
+      "type": "single",
+      "difficulty": "fácil",
+      "question": "¿Qué significan las letras de la sigla CALMS?",
+      "options": [
+        "Culture, Automation, Lean, Measurement, Sharing",
+        "Control, Analysis, Logs, Monitoring, Security",
+        "Code, Build, Test, Measure, Ship",
+        "Cost, Agility, Latency, Maintenance, Scale"
+      ],
+      "answer": [
+        "A"
+      ],
+      "explanation": "CALMS resume los pilares de DevOps: cultura, automatización, Lean, medición y compartir.",
+      "source": "Oficial, p. 41",
+      "verified": "sí (texto leído)",
+      "paginas_fuente": [
+        41
+      ],
+      "sesiones": [
+        1
+      ]
+    },
+    {
+      "id": "DAPC-ES-011",
+      "parte": "Parte 1: Introducción",
+      "seccion": "1.3.2 Pilares",
+      "topic": "Automatización en DevOps",
+      "type": "single",
+      "difficulty": "medio",
+      "question": "Según el material, ¿qué es correcto sobre la automatización?",
+      "options": [
+        "Es una bala de plata que resuelve la transformación por sí sola",
+        "Ayuda, pero no es una bala de plata, y debe ir acompañada de un cambio cultural",
+        "No tiene relación con la integración continua",
+        "Solo sirve para la documentación"
+      ],
+      "answer": [
+        "B"
+      ],
+      "explanation": "La automatización ayuda a mejorar la calidad y la entrega, pero sin cambio cultural la transformación no funciona.",
+      "source": "Oficial, p. 42",
+      "verified": "sí (texto leído)",
+      "paginas_fuente": [
+        42
+      ],
+      "sesiones": [
+        1
+      ]
+    },
+    {
+      "id": "DAPC-ES-012",
+      "parte": "Parte 1: Introducción",
+      "seccion": "1.3.3 Organización",
+      "topic": "Equipo de tamaño reducido",
+      "type": "single",
+      "difficulty": "fácil",
+      "question": "¿Qué idea expresa la regla del equipo que se alimenta con dos pizzas?",
+      "options": [
+        "Equipos pequeños con una comprensión clara y compartida del sistema en el que trabajan",
+        "Equipos de al menos veinte personas",
+        "Equipos que solo trabajan con una tecnología",
+        "Equipos que no necesitan líder"
+      ],
+      "answer": [
+        "A"
+      ],
+      "explanation": "El equipo pequeño mantiene una comprensión compartida del sistema, descentraliza el poder y permite autonomía.",
+      "source": "Oficial, p. 45",
+      "verified": "sí (texto leído)",
+      "paginas_fuente": [
+        45
+      ],
+      "sesiones": [
+        1
+      ]
+    },
+    {
+      "id": "DAPC-ES-013",
+      "parte": "Parte 1: Introducción",
+      "seccion": "1.3.3 Organización",
+      "topic": "Estructura organizativa y arquitectura",
+      "type": "single",
+      "difficulty": "medio",
+      "question": "¿Qué establece la ley que describe cómo la comunicación de una organización se refleja en los sistemas que diseña?",
+      "options": [
+        "Los sistemas tienden a reflejar las estructuras de comunicación de las organizaciones que los diseñan",
+        "Las organizaciones grandes siempre producen mejores sistemas",
+        "Los equipos deben tener exactamente cinco miembros",
+        "La comunicación no influye en el diseño de software"
+      ],
+      "answer": [
+        "A"
+      ],
+      "explanation": "La estructura de comunicación de una organización se refleja en el diseño de los sistemas que produce.",
+      "source": "Oficial, p. 46",
+      "verified": "sí (texto leído)",
+      "paginas_fuente": [
+        46
+      ],
+      "sesiones": [
+        1
+      ]
+    },
+    {
+      "id": "DAPC-ES-014",
+      "parte": "Parte 1: Introducción",
+      "seccion": "1.3.3 Organización",
+      "topic": "Topologías de equipo",
+      "type": "single",
+      "difficulty": "medio",
+      "question": "¿Cuál es la función de un equipo habilitador?",
+      "options": [
+        "Operar la plataforma sobre la que trabajan otros equipos",
+        "Ayudar a otros equipos a adoptar y modificar software durante un período de transición o aprendizaje",
+        "Atender directamente a los clientes finales",
+        "Aprobar todos los cambios antes de su despliegue"
+      ],
+      "answer": [
+        "B"
+      ],
+      "explanation": "Un equipo habilitador ayuda temporalmente a otros equipos a adoptar nuevas prácticas o herramientas.",
+      "source": "Oficial, p. 51",
+      "verified": "sí (texto leído)",
+      "paginas_fuente": [
+        51
+      ],
+      "sesiones": [
+        2
+      ]
+    },
+    {
+      "id": "DAPC-ES-015",
+      "parte": "Parte 1: Introducción",
+      "seccion": "1.3.3 Organización",
+      "topic": "Modos de interacción entre equipos",
+      "type": "single",
+      "difficulty": "medio",
+      "question": "Un equipo consume un servicio de otro equipo con muy poca colaboración. ¿Qué modo de interacción describe mejor la situación?",
+      "options": [
+        "Colaboración",
+        "X-as-a-Service",
+        "Facilitar",
+        "Supervisión jerárquica"
+      ],
+      "answer": [
+        "B"
+      ],
+      "explanation": "En el modo X-as-a-Service, un equipo consume o proporciona algo con una colaboración mínima.",
+      "source": "Oficial, p. 52",
+      "verified": "sí (texto leído)",
+      "paginas_fuente": [
+        52
+      ],
+      "sesiones": [
+        2
+      ]
+    },
+    {
+      "id": "DAPC-ES-016",
+      "parte": "Parte 1: Introducción",
+      "seccion": "1.3.3 Organización",
+      "topic": "Equipos de forma I, T y E",
+      "type": "single",
+      "difficulty": "difícil",
+      "question": "¿Qué describe mejor a un profesional con forma T?",
+      "options": [
+        "Especialización profunda en una sola área y solo conocimientos básicos en el resto",
+        "Amplia gama de conocimientos básicos y especialización profunda en un área",
+        "Conocimiento superficial de todas las áreas sin especialización",
+        "Especialización profunda en todas las áreas"
+      ],
+      "answer": [
+        "B"
+      ],
+      "explanation": "La forma T combina una especialización profunda en un área con conocimientos amplios en muchas otras. La forma I se especializa en un solo ámbito.",
+      "source": "Oficial, pp. 55–56",
+      "verified": "sí (texto leído)",
+      "paginas_fuente": [
+        55,
+        56
+      ],
+      "sesiones": [
+        2
+      ]
+    },
+    {
+      "id": "DAPC-ES-017",
+      "parte": "Parte 1: Introducción",
+      "seccion": "1.3.4 Integrando Ops en Dev",
+      "topic": "Estrategias para integrar Operaciones",
+      "type": "single",
+      "difficulty": "fácil",
+      "question": "¿Cuál NO es una de las tres estrategias para integrar Operaciones en Desarrollo?",
+      "options": [
+        "Crear capacidades de autoservicio para desarrolladores",
+        "Incorporar ingenieros de Operaciones en los equipos de servicio",
+        "Desarrollar vínculos entre Operaciones y otros equipos",
+        "Eliminar por completo a los equipos de Operaciones"
+      ],
+      "answer": [
+        "D"
+      ],
+      "explanation": "Las tres estrategias buscan que Operaciones aporte valor a los equipos de desarrollo, no que desaparezca.",
+      "source": "Oficial, p. 59",
+      "verified": "sí (texto leído)",
+      "paginas_fuente": [
+        59
+      ],
+      "sesiones": [
+        2
+      ]
+    },
+    {
+      "id": "DAPC-ES-018",
+      "parte": "Parte 2: Principios de DevOps (3 Ways)",
+      "seccion": "2.1 Los tres principios",
+      "topic": "Tres principios de DevOps",
+      "type": "single",
+      "difficulty": "fácil",
+      "question": "¿Cuáles son los tres principios en los que se resume DevOps?",
+      "options": [
+        "Pensamiento sistémico, retroalimentación, y experimentación y aprendizaje continuo",
+        "Automatización, contratación y documentación",
+        "Costo, calidad y velocidad",
+        "Planificación, ejecución y cierre"
+      ],
+      "answer": [
+        "A"
+      ],
+      "explanation": "DevOps se entiende mejor con tres principios: pensamiento sistémico, retroalimentación, y experimentación y aprendizaje continuo.",
+      "source": "Oficial, p. 68",
+      "verified": "sí (texto leído)",
+      "paginas_fuente": [
+        68
+      ],
+      "sesiones": [
+        3,
+        5
+      ]
+    },
+    {
+      "id": "DAPC-ES-019",
+      "parte": "Parte 2: Principios de DevOps (3 Ways)",
+      "seccion": "2.1 Primera forma",
+      "topic": "Primera forma: flujo",
+      "type": "single",
+      "difficulty": "fácil",
+      "question": "La primera forma de DevOps enfatiza:",
+      "options": [
+        "El rendimiento de un silo de trabajo o departamento específico",
+        "El rendimiento de todo el sistema, más allá de los departamentos",
+        "La cantidad de pruebas manuales",
+        "La velocidad de un solo desarrollador"
+      ],
+      "answer": [
+        "B"
+      ],
+      "explanation": "La primera forma se centra en el rendimiento de todo el sistema y en el valor para el cliente, no en un silo.",
+      "source": "Oficial, p. 69",
+      "verified": "sí (texto leído)",
+      "paginas_fuente": [
+        69
+      ],
+      "sesiones": [
+        3,
+        5
+      ]
+    },
+    {
+      "id": "DAPC-ES-020",
+      "parte": "Parte 2: Principios de DevOps (3 Ways)",
+      "seccion": "2.1 Primera forma",
+      "topic": "Competencias de la primera forma",
+      "type": "multiple",
+      "difficulty": "medio",
+      "question": "¿Cuáles son competencias de la primera forma? (Seleccione todas las que correspondan)",
+      "options": [
+        "Hacer visible nuestro trabajo",
+        "Limitar el trabajo en proceso",
+        "Reducir el tamaño de los lotes de trabajo",
+        "Aumentar el número de transferencias entre equipos"
+      ],
+      "answer": [
+        "A",
+        "B",
+        "C"
+      ],
+      "explanation": "Las competencias del flujo incluyen hacer visible el trabajo, limitar el WIP y reducir el tamaño de los lotes. Aumentar las transferencias entre equipos va en contra del flujo.",
+      "source": "Oficial, p. 71",
+      "verified": "sí (texto leído)",
+      "paginas_fuente": [
+        71
+      ],
+      "sesiones": [
+        3,
+        5
+      ]
+    },
+    {
+      "id": "DAPC-ES-021",
+      "parte": "Parte 2: Principios de DevOps (3 Ways)",
+      "seccion": "2.2 Segunda forma",
+      "topic": "Segunda forma: retroalimentación",
+      "type": "single",
+      "difficulty": "medio",
+      "question": "¿Cuál es el objetivo de la segunda forma?",
+      "options": [
+        "Alargar los bucles de retroalimentación para reducir las consultas",
+        "Acortar y simplificar los bucles de retroalimentación para corregir de forma continua",
+        "Eliminar las revisiones de código",
+        "Reducir la comunicación entre desarrollo y operaciones"
+      ],
+      "answer": [
+        "B"
+      ],
+      "explanation": "Casi toda mejora de procesos busca acortar y simplificar los bucles de retroalimentación.",
+      "source": "Oficial, p. 72",
+      "verified": "sí (texto leído)",
+      "paginas_fuente": [
+        72
+      ],
+      "sesiones": [
+        3,
+        5
+      ]
+    },
+    {
+      "id": "DAPC-ES-022",
+      "parte": "Parte 2: Principios de DevOps (3 Ways)",
+      "seccion": "2.2 Segunda forma",
+      "topic": "Swarm",
+      "type": "single",
+      "difficulty": "medio",
+      "question": "En la segunda forma, ¿qué significa «swarm»?",
+      "options": [
+        "Reunir de inmediato a varias personas para resolver un problema y construir conocimiento",
+        "Dejar un problema a una sola persona hasta su resolución",
+        "Trasladar el problema a otro equipo",
+        "Desactivar las alertas durante un incidente"
+      ],
+      "answer": [
+        "A"
+      ],
+      "explanation": "Swarm consiste en que varias personas se juntan de inmediato, en vez de dejar el problema a una sola persona.",
+      "source": "Oficial, p. 73",
+      "verified": "sí (texto leído)",
+      "paginas_fuente": [
+        73
+      ],
+      "sesiones": [
+        3,
+        5
+      ]
+    },
+    {
+      "id": "DAPC-ES-023",
+      "parte": "Parte 2: Principios de DevOps (3 Ways)",
+      "seccion": "2.3 Tercera forma",
+      "topic": "Tercera forma: experimentación",
+      "type": "single",
+      "difficulty": "medio",
+      "question": "Según la tercera forma, ¿qué requiere la experimentación continua?",
+      "options": [
+        "Evitar cualquier riesgo",
+        "Tomar riesgos y aprender del éxito y del fracaso",
+        "Ejecutar siempre el mismo proceso sin cambios",
+        "Limitar la práctica al personal senior"
+      ],
+      "answer": [
+        "B"
+      ],
+      "explanation": "La experimentación continua requiere tomar riesgos y aprender tanto del éxito como del fracaso.",
+      "source": "Oficial, p. 74",
+      "verified": "sí (texto leído)",
+      "paginas_fuente": [
+        74
+      ],
+      "sesiones": [
+        3,
+        5
+      ]
+    },
+    {
+      "id": "DAPC-ES-024",
+      "parte": "Parte 2: Principios de DevOps (3 Ways)",
+      "seccion": "2.3 Tercera forma",
+      "topic": "Competencias de la tercera forma",
+      "type": "single",
+      "difficulty": "fácil",
+      "question": "Dedicar un tiempo fijo cada semana para mejorar el trabajo diario corresponde a la competencia:",
+      "options": [
+        "Transformar descubrimientos locales en mejoras globales",
+        "Institucionalizar la mejora del trabajo diario",
+        "Inyectar patrones de resiliencia",
+        "Limitar el trabajo en proceso"
+      ],
+      "answer": [
+        "B"
+      ],
+      "explanation": "Institucionalizar la mejora significa reservar tiempo fijo para mejorar el trabajo diario.",
+      "source": "Oficial, p. 75",
+      "verified": "sí (texto leído)",
+      "paginas_fuente": [
+        75
+      ],
+      "sesiones": [
+        3,
+        5
+      ]
+    },
+    {
+      "id": "DAPC-ES-025",
+      "parte": "Parte 3: Primera forma, flujo (3.1 Pipeline)",
+      "seccion": "3.1 Pipeline de despliegue",
+      "topic": "Instancias del pipeline",
+      "type": "single",
+      "difficulty": "fácil",
+      "question": "¿Cuándo se crea una instancia del pipeline de despliegue?",
+      "options": [
+        "Una vez al año",
+        "Cada vez que se realiza un cambio en una aplicación",
+        "Solo cuando hay un error en producción",
+        "Cada vez que el equipo se reúne"
+      ],
+      "answer": [
+        "B"
+      ],
+      "explanation": "Cada cambio en una aplicación genera una instancia del pipeline que lleva el cambio por las etapas hasta producción.",
+      "source": "Oficial, p. 82",
+      "verified": "sí (texto leído)",
+      "paginas_fuente": [
+        82
+      ],
+      "sesiones": [
+        3
+      ]
+    },
+    {
+      "id": "DAPC-ES-026",
+      "parte": "Parte 3: Primera forma, flujo (3.1 Pipeline)",
+      "seccion": "3.1 Pipeline de despliegue",
+      "topic": "Infraestructura como código",
+      "type": "single",
+      "difficulty": "medio",
+      "question": "¿Qué caracteriza la infraestructura como código?",
+      "options": [
+        "Configurar el hardware físico de forma interactiva",
+        "Leer archivos de definición en lugar de configurar hardware o herramientas interactivas, guardados en control de versiones",
+        "Usar solo máquinas virtuales creadas a mano",
+        "No necesitar control de versiones"
+      ],
+      "answer": [
+        "B"
+      ],
+      "explanation": "La infraestructura se aprovisiona leyendo definiciones de máquina, y estas configuraciones se guardan en control de versiones.",
+      "source": "Oficial, p. 84",
+      "verified": "sí (texto leído)",
+      "paginas_fuente": [
+        84
+      ],
+      "sesiones": [
+        3
+      ]
+    },
+    {
+      "id": "DAPC-ES-027",
+      "parte": "Parte 3: Primera forma, flujo (3.1 Pipeline)",
+      "seccion": "3.1 Pipeline de despliegue",
+      "topic": "Contenedores",
+      "type": "single",
+      "difficulty": "fácil",
+      "question": "¿Qué ofrecen los contenedores frente a las máquinas virtuales completas?",
+      "options": [
+        "Una alternativa ligera que encapsula la aplicación con su entorno",
+        "Una máquina física dedicada",
+        "Más sobrecarga que una máquina virtual",
+        "Nada: son lo mismo"
+      ],
+      "answer": [
+        "A"
+      ],
+      "explanation": "Un contenedor es una alternativa ligera a la virtualización completa y permite trabajar con entornos idénticos.",
+      "source": "Oficial, p. 85",
+      "verified": "sí (texto leído)",
+      "paginas_fuente": [
+        85
+      ],
+      "sesiones": [
+        3
+      ]
+    },
+    {
+      "id": "DAPC-ES-028",
+      "parte": "Parte 3: Primera forma, flujo (3.1 Pipeline)",
+      "seccion": "3.1 Pipeline de despliegue",
+      "topic": "Etapas automatizadas del pipeline",
+      "type": "multiple",
+      "difficulty": "difícil",
+      "question": "Según el esquema de etapas del pipeline, ¿cuáles son etapas automatizadas? (Seleccione todas las que correspondan)",
+      "options": [
+        "Etapa de efectividad",
+        "Etapa de aceptación",
+        "Prueba exploratoria",
+        "UAT"
+      ],
+      "answer": [
+        "A",
+        "B"
+      ],
+      "explanation": "Las etapas de efectividad y de aceptación son automatizadas. La prueba exploratoria y la UAT son manuales.",
+      "source": "Oficial, p. 88",
+      "verified": "sí (texto leído)",
+      "paginas_fuente": [
+        88
+      ],
+      "sesiones": [
+        3
+      ]
+    },
+    {
+      "id": "DAPC-ES-029",
+      "parte": "Parte 3: Primera forma, flujo (3.1 Pipeline)",
+      "seccion": "3.1 Pipeline de despliegue",
+      "topic": "Tareas que resuelve el pipeline",
+      "type": "single",
+      "difficulty": "medio",
+      "question": "¿Cuál NO es una de las tareas que ayuda a resolver el pipeline de despliegue?",
+      "options": [
+        "Ahorrar recursos al no empezar una etapa antes de terminar la anterior",
+        "Asegurar la calidad al impedir que los cambios defectuosos lleguen a producción",
+        "Acelerar la entrega automatizando cada paso",
+        "Ocultar los registros para proteger al equipo"
+      ],
+      "answer": [
+        "D"
+      ],
+      "explanation": "El pipeline deja registros y logs para monitorear los cambios; ocultarlos no es uno de sus objetivos.",
+      "source": "Oficial, p. 92",
+      "verified": "sí (texto leído)",
+      "paginas_fuente": [
+        92
+      ],
+      "sesiones": [
+        3
+      ]
+    },
+    {
+      "id": "DAPC-ES-030",
+      "parte": "Parte 3: Primera forma, flujo (3.1 Pipeline)",
+      "seccion": "3.1 Pipeline de despliegue",
+      "topic": "Control de versiones compartido",
+      "type": "single",
+      "difficulty": "medio",
+      "question": "Según el material, ¿qué debe contener el control de versiones de una aplicación?",
+      "options": [
+        "Solo el código fuente de la aplicación",
+        "Todos los archivos y configuraciones, como único repositorio de confianza del estado deseado del sistema",
+        "Solo la documentación técnica",
+        "Solo los archivos de pruebas"
+      ],
+      "answer": [
+        "B"
+      ],
+      "explanation": "Todos los archivos y configuraciones deben estar en control de versiones, que es la única fuente confiable del estado deseado.",
+      "source": "Oficial, p. 93",
+      "verified": "sí (texto leído)",
+      "paginas_fuente": [
+        93
+      ],
+      "sesiones": [
+        3
+      ]
+    },
+    {
+      "id": "DAPC-ES-031",
+      "parte": "Parte 3: Primera forma, flujo (3.1 Pipeline)",
+      "seccion": "3.1 Definición de hecho",
+      "topic": "Definición de hecho para DevOps",
+      "type": "single",
+      "difficulty": "medio",
+      "question": "¿Cuál es el objetivo de ampliar la definición de «hecho» en DevOps?",
+      "options": [
+        "Que desarrollo y control de calidad integren el código rutinariamente en entornos similares a producción",
+        "Que los entregables se firmen en papel al final del proyecto",
+        "Que el código no necesite pruebas",
+        "Que solo se considere terminada la documentación"
+      ],
+      "answer": [
+        "A"
+      ],
+      "explanation": "La definición de hecho se amplía más allá de tener código correcto: el código debe integrarse con frecuencia en entornos similares a producción.",
+      "source": "Oficial, p. 94",
+      "verified": "sí (texto leído)",
+      "paginas_fuente": [
+        94
+      ],
+      "sesiones": [
+        3
+      ]
+    },
+    {
+      "id": "DAPC-ES-032",
+      "parte": "Parte 3: Primera forma, flujo (3.1 Pipeline)",
+      "seccion": "3.1 Automatización de entornos",
+      "topic": "Automatizar la creación de entornos",
+      "type": "single",
+      "difficulty": "fácil",
+      "question": "¿Cuál NO es una forma recomendada de crear entornos?",
+      "options": [
+        "Copiar un entorno virtualizado",
+        "Construcción automatizada desde metal desnudo",
+        "Uso de herramientas de administración de configuración",
+        "Construcción manual de cada entorno y su configuración a mano"
+      ],
+      "answer": [
+        "D"
+      ],
+      "explanation": "El material recomienda automatizar en lugar de construir entornos y configuraciones de forma manual.",
+      "source": "Oficial, p. 97",
+      "verified": "sí (texto leído)",
+      "paginas_fuente": [
+        97
+      ],
+      "sesiones": [
+        3
+      ]
+    },
+    {
+      "id": "DAPC-ES-033",
+      "parte": "Parte 3: Primera forma, flujo (3.2–3.4)",
+      "seccion": "Caso de estudio de impresoras",
+      "topic": "Caso de estudio de impresoras",
+      "type": "multiple",
+      "difficulty": "difícil",
+      "question": "Un equipo de desarrollo muy grande, con cientos de personas repartidas en varios países, se propone acelerar diez veces el tiempo dedicado a innovación. ¿Cuáles de las siguientes medidas formaban parte de sus medios? (Seleccione todas las que correspondan)",
+      "options": [
+        "Integración continua y desarrollo basado en TRUNK",
+        "Inversión significativa en automatización de pruebas",
+        "Un simulador de hardware para ejecutar pruebas en una plataforma virtual",
+        "Aumentar la cantidad de pruebas manuales antes de cada versión",
+        "Reproducir los errores de prueba en las estaciones de trabajo de los desarrolladores"
+      ],
+      "answer": [
+        "A",
+        "B",
+        "C",
+        "E"
+      ],
+      "explanation": "Los medios incluyen la integración continua con desarrollo basado en tronco, la inversión en automatización, un simulador de hardware y la reproducción de errores de prueba en las estaciones de los desarrolladores. Aumentar las pruebas manuales no forma parte de ellos, y va contra el principio de automatizar tantas pruebas manuales como sea posible.",
+      "source": "Oficial, pp. 119–120 (y p. 100 para la contrastación)",
+      "verified": "sí (texto leído); verificar la enumeración completa con el original",
+      "paginas_fuente": [
+        119,
+        120,
+        100
+      ],
+      "sesiones": [
+        6
+      ]
+    },
+    {
+      "id": "DAPC-ES-034",
+      "parte": "Parte 3: Primera forma, flujo (3.2–3.4)",
+      "seccion": "Pruebas automatizadas: tipos de prueba",
+      "topic": "Pruebas automatizadas: tipos de prueba",
+      "type": "single",
+      "difficulty": "fácil",
+      "question": "¿Qué tipo de prueba automatizada garantiza el buen desempeño de las funcionalidades de la aplicación?",
+      "options": [
+        "Unitarias",
+        "Integradas",
+        "Visuales",
+        "Funcionales"
+      ],
+      "answer": [
+        "D"
+      ],
+      "explanation": "Las pruebas funcionales garantizan un buen desempeño de las funcionalidades de la aplicación.",
+      "source": "Oficial, p. 102",
+      "verified": "sí (texto leído)",
+      "paginas_fuente": [
+        102
+      ],
+      "sesiones": [
+        4,
+        6
+      ]
+    },
+    {
+      "id": "DAPC-ES-035",
+      "parte": "Parte 3: Primera forma, flujo (3.2–3.4)",
+      "seccion": "Pruebas automatizadas: categorías",
+      "topic": "Pruebas automatizadas: categorías",
+      "type": "single",
+      "difficulty": "medio",
+      "question": "Según el material oficial, ¿en qué orden se presentan las categorías de pruebas automatizadas, de la más sencilla a la más compleja de implementar?",
+      "options": [
+        "Aceptación, integración, unitarias",
+        "Unitarias, integración, aceptación",
+        "Integración, unitarias, aceptación",
+        "Unitarias, aceptación, integración"
+      ],
+      "answer": [
+        "B"
+      ],
+      "explanation": "Las categorías, de la más sencilla a la más compleja de implementar, son: unitarias, de integración y de aceptación.",
+      "source": "Oficial, p. 105",
+      "verified": "sí (texto leído)",
+      "paginas_fuente": [
+        105
+      ],
+      "sesiones": [
+        4,
+        6
+      ]
+    },
+    {
+      "id": "DAPC-ES-036",
+      "parte": "Parte 3: Primera forma, flujo (3.2–3.4)",
+      "seccion": "Pruebas automatizadas: ubicación del error",
+      "topic": "Pruebas automatizadas: ubicación del error",
+      "type": "single",
+      "difficulty": "medio",
+      "question": "La mayoría de los errores de un proyecto se detectan con pruebas de aceptación e integración. ¿Qué recomienda el material oficial?",
+      "options": [
+        "Eliminar las pruebas de aceptación para acelerar el pipeline",
+        "Cada vez que una prueba de aceptación o de integración encuentre un error, crear pruebas unitarias que lo encuentren más rápido, más temprano y más barato",
+        "Ejecutar las pruebas de aceptación solo una vez al mes",
+        "Reemplazar las pruebas de integración por pruebas manuales"
+      ],
+      "answer": [
+        "B"
+      ],
+      "explanation": "Cuando una prueba de aceptación o de integración encuentra un error, conviene crear pruebas unitarias que lo encuentren más rápido, más temprano y más barato, porque el feedback de las pruebas de nivel superior es más lento.",
+      "source": "Oficial, p. 106",
+      "verified": "sí (texto leído)",
+      "paginas_fuente": [
+        106
+      ],
+      "sesiones": [
+        4,
+        6
+      ]
+    },
+    {
+      "id": "DAPC-ES-037",
+      "parte": "Parte 3: Primera forma, flujo (3.2–3.4)",
+      "seccion": "Integración: escenario combinado",
+      "topic": "Integración: escenario combinado",
+      "type": "single",
+      "difficulty": "difícil",
+      "question": "Un cambio supera las pruebas unitarias, pero una prueba de integración falla en el pipeline. Según el material oficial, ¿qué debe ocurrir?",
+      "options": [
+        "El cambio se mezcla en el trunk porque las pruebas unitarias pasaron",
+        "El cambio no entra al trunk, ningún trabajo nuevo entra en el sistema hasta corregirlo (cuerda Andon) y, además, se crea una prueba unitaria que detecte el error",
+        "Se desactiva la prueba de integración para no bloquear al equipo",
+        "Se espera a la prueba manual de UAT antes de corregir el error"
+      ],
+      "answer": [
+        "B"
+      ],
+      "explanation": "Combina tres principios: la confirmación bloqueada, que exige pasar todas las pruebas automatizadas antes de mezclar en el tronco; la cuerda Andon, que detiene el ingreso de nuevo trabajo hasta corregir el problema; y la regla de crear pruebas unitarias cuando una prueba de integración encuentra un error.",
+      "source": "Oficial, pp. 106, 113 y 122",
+      "verified": "sí (texto leído)",
+      "paginas_fuente": [
+        106,
+        113,
+        122
+      ],
+      "sesiones": [
+        4,
+        6
+      ]
+    },
+    {
+      "id": "DAPC-ES-038",
+      "parte": "Parte 3: Primera forma, flujo (3.2–3.4)",
+      "seccion": "Pruebas: afirmaciones combinadas",
+      "topic": "Pruebas: afirmaciones combinadas",
+      "type": "multiple",
+      "difficulty": "difícil",
+      "question": "Seleccione las afirmaciones que el material oficial sostiene. (Seleccione todas las que correspondan)",
+      "options": [
+        "Si una prueba de integración encuentra un error, conviene crear una prueba unitaria que lo detecte antes",
+        "Un pipeline con la mayoría de las pruebas manuales es el modelo ideal",
+        "Una arquitectura fuertemente acoplada facilita escribir pruebas unitarias",
+        "Un pequeño número de pruebas confiables y automatizadas es preferible a muchas pruebas no confiables"
+      ],
+      "answer": [
+        "A",
+        "D"
+      ],
+      "explanation": "Las afirmaciones correctas son la A y la D. La B contradice el principio de automatizar tantas pruebas manuales como sea posible. La C contradice el síntoma de acoplamiento fuerte: en ese caso escribir pruebas unitarias es difícil, no fácil.",
+      "source": "Oficial, pp. 106, 107 y 110",
+      "verified": "sí (texto leído)",
+      "paginas_fuente": [
+        106,
+        107,
+        110
+      ],
+      "sesiones": [
+        4,
+        6
+      ]
+    },
+    {
+      "id": "DAPC-ES-039",
+      "parte": "Parte 3: Primera forma, flujo (3.2–3.4)",
+      "seccion": "Pruebas automatizadas: acoplamiento",
+      "topic": "Pruebas automatizadas: acoplamiento",
+      "type": "multiple",
+      "difficulty": "medio",
+      "question": "¿Cuáles de las siguientes son señales de una arquitectura fuertemente acoplada? (Seleccione todas las que correspondan)",
+      "options": [
+        "Consecuencias inesperadas en otros módulos distintos al que se despliega",
+        "Escribir y mantener pruebas unitarias y de aceptación es difícil y costoso",
+        "Todas las pruebas terminan en menos de un segundo",
+        "Cada módulo puede probarse de forma independiente"
+      ],
+      "answer": [
+        "A",
+        "B"
+      ],
+      "explanation": "Las dos señales son consecuencias inesperadas en otros módulos y pruebas unitarias y de aceptación difíciles y costosas de escribir y mantener. Las otras dos describen un sistema débilmente acoplado, que es lo que se busca.",
+      "source": "Oficial, p. 107",
+      "verified": "sí (texto leído)",
+      "paginas_fuente": [
+        107
+      ],
+      "sesiones": [
+        4,
+        6
+      ]
+    },
+    {
+      "id": "DAPC-ES-040",
+      "parte": "Parte 3: Primera forma, flujo (3.2–3.4)",
+      "seccion": "TDD y pruebas rápidas y confiables",
+      "topic": "TDD y pruebas rápidas y confiables",
+      "type": "single",
+      "difficulty": "fácil",
+      "question": "En el desarrollo orientado a pruebas (TDD), ¿cuál es el primer paso de cada ciclo?",
+      "options": [
+        "Escribir el código funcional hasta que la prueba pase",
+        "Refactorizar el código antiguo",
+        "Escribir una prueba automatizada para la siguiente funcionalidad y asegurarse de que falle",
+        "Ejecutar la suite completa en el entorno de producción"
+      ],
+      "answer": [
+        "C"
+      ],
+      "explanation": "En el ciclo de TDD, el primer paso es escribir una prueba para el siguiente fragmento de funcionalidad y asegurarse de que falle antes de escribir el código.",
+      "source": "Oficial, p. 108",
+      "verified": "sí (texto leído)",
+      "paginas_fuente": [
+        108
+      ],
+      "sesiones": [
+        4,
+        6
+      ]
+    },
+    {
+      "id": "DAPC-ES-041",
+      "parte": "Parte 3: Primera forma, flujo (3.2–3.4)",
+      "seccion": "TDD y pruebas rápidas y confiables",
+      "topic": "TDD y pruebas rápidas y confiables",
+      "type": "single",
+      "difficulty": "medio",
+      "question": "En el paso de refactorización de TDD, ¿qué debe asegurarse el equipo?",
+      "options": [
+        "Que el código nuevo no tenga pruebas",
+        "Que las pruebas sigan siendo satisfactorias después de reestructurar el código nuevo y el antiguo",
+        "Que se elimine la prueba que falló",
+        "Que no se toque el código antiguo"
+      ],
+      "answer": [
+        "B"
+      ],
+      "explanation": "En la refactorización se reestructura el código nuevo y el antiguo, y se verifica que las pruebas sigan siendo satisfactorias.",
+      "source": "Oficial, p. 108",
+      "verified": "sí (texto leído)",
+      "paginas_fuente": [
+        108
+      ],
+      "sesiones": [
+        4,
+        6
+      ]
+    },
+    {
+      "id": "DAPC-ES-042",
+      "parte": "Parte 3: Primera forma, flujo (3.2–3.4)",
+      "seccion": "TDD y pruebas rápidas y confiables",
+      "topic": "TDD y pruebas rápidas y confiables",
+      "type": "single",
+      "difficulty": "medio",
+      "question": "Según el material oficial, ¿qué es casi siempre preferible?",
+      "options": [
+        "Un gran número de pruebas automatizadas no confiables",
+        "Un gran número de pruebas manuales",
+        "Un pequeño número de pruebas confiables y automatizadas",
+        "Ninguna prueba hasta tener el sistema completo"
+      ],
+      "answer": [
+        "C"
+      ],
+      "explanation": "Un pequeño número de pruebas confiables y automatizadas es casi siempre preferible a un gran número de pruebas manuales, automáticas o no confiables.",
+      "source": "Oficial, p. 110",
+      "verified": "sí (texto leído)",
+      "paginas_fuente": [
+        110
+      ],
+      "sesiones": [
+        6
+      ]
+    },
+    {
+      "id": "DAPC-ES-043",
+      "parte": "Parte 3: Primera forma, flujo (3.2–3.4)",
+      "seccion": "Cuerda Andon",
+      "topic": "Cuerda Andon",
+      "type": "single",
+      "difficulty": "fácil",
+      "question": "Un cambio hace fallar la creación o las pruebas automatizadas. ¿Qué establece la cuerda Andon virtual?",
+      "options": [
+        "El cambio se fusiona igual y se corrige después",
+        "Ningún nuevo trabajo puede entrar en el sistema hasta que se corrija el problema, y quien necesite ayuda puede traerla",
+        "Solo el autor del cambio puede seguir trabajando",
+        "Las pruebas se desactivan hasta la siguiente versión"
+      ],
+      "answer": [
+        "B"
+      ],
+      "explanation": "Cuando un cambio hace fallar la creación o las pruebas, ningún trabajo nuevo entra en el sistema hasta corregir el problema, y quien necesite ayuda puede traer la ayuda que necesite.",
+      "source": "Oficial, p. 113",
+      "verified": "sí (texto leído)",
+      "paginas_fuente": [
+        113
+      ],
+      "sesiones": [
+        6
+      ]
+    },
+    {
+      "id": "DAPC-ES-044",
+      "parte": "Parte 3: Primera forma, flujo (3.2–3.4)",
+      "seccion": "Integración continua y trunk",
+      "topic": "Integración continua y trunk",
+      "type": "single",
+      "difficulty": "medio",
+      "question": "En el material oficial, ¿qué es la «espiral descendente» del trabajo en branches?",
+      "options": [
+        "Un branch que se elimina automáticamente tras cada prueba",
+        "Cuando la fusión de código es dolorosa, se hace con menos frecuencia, y así las fusiones futuras son aún peores",
+        "La disminución del número de pruebas a medida que crece el proyecto",
+        "La reducción del tiempo de compilación al usar varios branches"
+      ],
+      "answer": [
+        "B"
+      ],
+      "explanation": "Cuando la fusión de código es dolorosa, se hace con menos frecuencia, y así las fusiones futuras son aún peores.",
+      "source": "Oficial, p. 116",
+      "verified": "sí (texto leído)",
+      "paginas_fuente": [
+        116
+      ],
+      "sesiones": [
+        6
+      ]
+    },
+    {
+      "id": "DAPC-ES-045",
+      "parte": "Parte 3: Primera forma, flujo (3.2–3.4)",
+      "seccion": "Caso de estudio de impresoras",
+      "topic": "Caso de estudio de impresoras",
+      "type": "single",
+      "difficulty": "medio",
+      "question": "En un caso de estudio de un equipo de firmware muy grande, ¿qué porcentaje del tiempo se dedicaba realmente a crear nuevos recursos?",
+      "options": [
+        "Aproximadamente el 5 %",
+        "Aproximadamente el 25 %",
+        "Aproximadamente el 50 %",
+        "Aproximadamente el 70 %"
+      ],
+      "answer": [
+        "A"
+      ],
+      "explanation": "El caso estima que solo el 5 % del tiempo se gastaba en crear nuevos recursos. El resto era trabajo no productivo asociado a la deuda técnica, como mantener muchos branches y hacer pruebas manuales.",
+      "source": "Oficial, p. 119",
+      "verified": "sí (texto leído)",
+      "paginas_fuente": [
+        119
+      ],
+      "sesiones": [
+        6
+      ]
+    },
+    {
+      "id": "DAPC-ES-046",
+      "parte": "Parte 3: Primera forma, flujo (3.2–3.4)",
+      "seccion": "Integración continua y trunk",
+      "topic": "Integración continua y trunk",
+      "type": "single",
+      "difficulty": "medio",
+      "question": "¿Qué son las «confirmaciones bloqueadas» en la estrategia de un solo trunk?",
+      "options": [
+        "Confirmaciones que un gerente revisa antes de ser visibles",
+        "Confirmaciones que solo se pueden realizar en el pipeline si el cambio pasa todas las pruebas automatizadas antes de mezclarse en el trunk",
+        "Confirmaciones a un branch bloqueado durante una versión",
+        "Confirmaciones rechazadas si el desarrollador tiene más de tres branches abiertos"
+      ],
+      "answer": [
+        "B"
+      ],
+      "explanation": "La confirmación bloqueada solo es posible si el cambio enviado pasa todas las pruebas automatizadas antes de mezclarse en el tronco.",
+      "source": "Oficial, p. 122",
+      "verified": "sí (texto leído)",
+      "paginas_fuente": [
+        122
+      ],
+      "sesiones": [
+        6
+      ]
+    },
+    {
+      "id": "DAPC-ES-047",
+      "parte": "Parte 3: Primera forma, flujo (3.2–3.4)",
+      "seccion": "Integración continua y trunk",
+      "topic": "Integración continua y trunk",
+      "type": "single",
+      "difficulty": "fácil",
+      "question": "En el desarrollo basado en TRUNK, ¿con qué frecuencia deben los desarrolladores registrar su código en el tronco?",
+      "options": [
+        "Una vez por sprint",
+        "Una vez por semana, después de la revisión",
+        "Al menos una vez al día",
+        "Solo cuando una funcionalidad está terminada"
+      ],
+      "answer": [
+        "C"
+      ],
+      "explanation": "Los desarrolladores registran su código en el tronco al menos una vez al día.",
+      "source": "Oficial, p. 123",
+      "verified": "sí (texto leído)",
+      "paginas_fuente": [
+        123
+      ],
+      "sesiones": [
+        6
+      ]
+    },
+    {
+      "id": "DAPC-ES-048",
+      "parte": "Parte 3: Primera forma, flujo (3.2–3.4)",
+      "seccion": "Definición de listo",
+      "topic": "Definición de listo",
+      "type": "single",
+      "difficulty": "medio",
+      "question": "¿Cuál de estas características NO aparece en la definición oficial de «listo» al final de cada intervalo de desarrollo?",
+      "options": [
+        "Código integrado y probado",
+        "Código funcional y potencialmente utilizable",
+        "Demostrado en un entorno similar a producción",
+        "Firmado en papel por el dueño del producto"
+      ],
+      "answer": [
+        "D"
+      ],
+      "explanation": "La definición incluye: integrado, probado, funcional, potencialmente utilizable, demostrado en un entorno similar a producción, creado desde el tronco con un proceso de un clic y validado con pruebas automatizadas. La firma en papel no forma parte de ella.",
+      "source": "Oficial, p. 123",
+      "verified": "sí (texto leído)",
+      "paginas_fuente": [
+        123
+      ],
+      "sesiones": [
+        6
+      ]
+    },
+    {
+      "id": "DAPC-ES-049",
+      "parte": "Parte 3: Primera forma, flujo (3.5 y 3.6 Lanzamientos y arquitectura)",
+      "seccion": "3.5 Lanzamientos de alto riesgo",
+      "topic": "Liberar bajo demanda",
+      "type": "single",
+      "difficulty": "medio",
+      "question": "¿Qué condición permite liberar a producción «presionando un botón» en horario normal?",
+      "options": [
+        "Trabajar en lotes grandes en una rama aislada",
+        "Trabajar en pequeños lotes en el tronco, con el código siempre en estado liberable",
+        "Liberar solo una vez por trimestre",
+        "Eliminar las pruebas automatizadas"
+      ],
+      "answer": [
+        "B"
+      ],
+      "explanation": "Con cambios pequeños integrados en el tronco y código siempre liberable, las liberaciones son eventos de bajo riesgo.",
+      "source": "Oficial, p. 130",
+      "verified": "sí (texto leído)",
+      "paginas_fuente": [
+        130
+      ],
+      "sesiones": [
+        7
+      ]
+    },
+    {
+      "id": "DAPC-ES-050",
+      "parte": "Parte 3: Primera forma, flujo (3.5 y 3.6 Lanzamientos y arquitectura)",
+      "seccion": "3.5 Lanzamientos de alto riesgo",
+      "topic": "Requisitos del pipeline de despliegue",
+      "type": "single",
+      "difficulty": "fácil",
+      "question": "¿Cuál NO es un requisito del pipeline de despliegue?",
+      "options": [
+        "Desplegar de la misma manera en todos los entornos",
+        "Pruebas de humo de los despliegues",
+        "Entornos consistentes para desarrollo, QA, soporte y producción",
+        "Desplegar de forma distinta en cada entorno"
+      ],
+      "answer": [
+        "D"
+      ],
+      "explanation": "El pipeline exige desplegar del mismo modo en todos los entornos para reducir sorpresas.",
+      "source": "Oficial, p. 131",
+      "verified": "sí (texto leído)",
+      "paginas_fuente": [
+        131
+      ],
+      "sesiones": [
+        7
+      ]
+    },
+    {
+      "id": "DAPC-ES-051",
+      "parte": "Parte 3: Primera forma, flujo (3.5 y 3.6 Lanzamientos y arquitectura)",
+      "seccion": "3.5 Lanzamientos de bajo riesgo",
+      "topic": "Despliegue frente a liberación",
+      "type": "single",
+      "difficulty": "medio",
+      "question": "¿Cuál es la diferencia entre despliegue y liberación?",
+      "options": [
+        "Son sinónimos y se usan indistintamente",
+        "El despliegue instala una versión en un entorno; la liberación ofrece una funcionalidad a los clientes",
+        "La liberación instala el software; el despliegue lo expone a los clientes",
+        "El despliegue solo ocurre en pruebas"
+      ],
+      "answer": [
+        "B"
+      ],
+      "explanation": "Desplegar es instalar una versión específica en un entorno. Liberar es ofrecer funcionalidad a clientes o segmentos de clientes.",
+      "source": "Oficial, p. 140",
+      "verified": "sí (texto leído)",
+      "paginas_fuente": [
+        140
+      ],
+      "sesiones": [
+        7
+      ]
+    },
+    {
+      "id": "DAPC-ES-052",
+      "parte": "Parte 3: Primera forma, flujo (3.5 y 3.6 Lanzamientos y arquitectura)",
+      "seccion": "3.5 Lanzamientos de bajo riesgo",
+      "topic": "Azul-verde",
+      "type": "single",
+      "difficulty": "medio",
+      "question": "En un despliegue azul-verde, ¿cuántos entornos de producción atienden tráfico de clientes al mismo tiempo?",
+      "options": [
+        "Ninguno",
+        "Uno",
+        "Dos",
+        "Todos"
+      ],
+      "answer": [
+        "B"
+      ],
+      "explanation": "Hay dos entornos de producción, pero solo uno atiende tráfico en cada momento.",
+      "source": "Oficial, p. 146",
+      "verified": "sí (texto leído)",
+      "paginas_fuente": [
+        146
+      ],
+      "sesiones": [
+        7
+      ]
+    },
+    {
+      "id": "DAPC-ES-053",
+      "parte": "Parte 3: Primera forma, flujo (3.5 y 3.6 Lanzamientos y arquitectura)",
+      "seccion": "3.5 Lanzamientos de bajo riesgo",
+      "topic": "Cambios en la base de datos",
+      "type": "single",
+      "difficulty": "difícil",
+      "question": "Una nueva versión de la aplicación necesita cambiar el esquema de una base de datos compartida, y la versión anterior todavía está en producción. ¿Qué enfoque recomienda el material?",
+      "options": [
+        "Modificar columnas y tablas existentes en el mismo despliegue",
+        "Desacoplar los cambios de base de datos de los cambios de aplicación, añadiendo nuevos objetos antes de retirar los antiguos",
+        "Eliminar la base de datos antes de cada liberación",
+        "Mantener siempre la misma versión de la aplicación"
+      ],
+      "answer": [
+        "B"
+      ],
+      "explanation": "Se usa un patrón de expansión y contracción: primero se añaden nuevos objetos y después se retiran los antiguos, sin modificar lo que usa la versión anterior.",
+      "source": "Oficial, p. 147",
+      "verified": "sí (texto leído)",
+      "paginas_fuente": [
+        147
+      ],
+      "sesiones": [
+        7
+      ]
+    },
+    {
+      "id": "DAPC-ES-054",
+      "parte": "Parte 3: Primera forma, flujo (3.5 y 3.6 Lanzamientos y arquitectura)",
+      "seccion": "3.5 Lanzamientos de bajo riesgo",
+      "topic": "Despliegue canario",
+      "type": "single",
+      "difficulty": "medio",
+      "question": "En un despliegue canario, ¿qué ocurre si la monitorización detecta un problema?",
+      "options": [
+        "Se continúa al siguiente entorno para no perder tiempo",
+        "Se retrocede (rollback)",
+        "Se ignora si el problema es pequeño",
+        "Se desactiva el monitoreo"
+      ],
+      "answer": [
+        "B"
+      ],
+      "explanation": "El canario se monitorea en cada entorno. Si algo parece mal se retrocede; si no, se pasa al siguiente.",
+      "source": "Oficial, p. 148",
+      "verified": "sí (texto leído)",
+      "paginas_fuente": [
+        148
+      ],
+      "sesiones": [
+        7
+      ]
+    },
+    {
+      "id": "DAPC-ES-055",
+      "parte": "Parte 3: Primera forma, flujo (3.5 y 3.6 Lanzamientos y arquitectura)",
+      "seccion": "3.5 Lanzamientos de bajo riesgo",
+      "topic": "Automatizar la reversión",
+      "type": "single",
+      "difficulty": "difícil",
+      "question": "Un equipo conecta el monitoreo de producción con su proceso de liberación para que una degradación de desempeño revierta el código automáticamente. ¿Qué beneficio principal obtiene?",
+      "options": [
+        "Elimina la necesidad de pruebas",
+        "Protege contra defectos difíciles de encontrar y reduce el tiempo para detectar y responder a un desempeño degradado",
+        "Permite liberar sin ningún monitoreo",
+        "Evita por completo las revisiones de código"
+      ],
+      "answer": [
+        "B"
+      ],
+      "explanation": "Conectar el monitoreo con el proceso de liberación reduce el tiempo de respuesta y protege frente a defectos que las pruebas no detectan.",
+      "source": "Oficial, p. 150",
+      "verified": "sí (texto leído)",
+      "paginas_fuente": [
+        150
+      ],
+      "sesiones": [
+        7
+      ]
+    },
+    {
+      "id": "DAPC-ES-056",
+      "parte": "Parte 3: Primera forma, flujo (3.5 y 3.6 Lanzamientos y arquitectura)",
+      "seccion": "3.5 Lanzamientos de bajo riesgo",
+      "topic": "Alternancias de recursos y lanzamientos ocultos",
+      "type": "single",
+      "difficulty": "difícil",
+      "question": "Un equipo quiere desplegar a producción una funcionalidad incompleta sin que los clientes la vean. ¿Qué técnica describe el material?",
+      "options": [
+        "Un despliegue azul-verde sin pruebas",
+        "Un lanzamiento oculto (dark release) con alternancias de recursos",
+        "Un retroceso completo del despliegue",
+        "Una liberación masiva a todos los clientes"
+      ],
+      "answer": [
+        "B"
+      ],
+      "explanation": "Las alternancias de recursos permiten desplegar funcionalidad en producción sin hacerla accesible a los usuarios.",
+      "source": "Oficial, p. 153",
+      "verified": "sí (texto leído)",
+      "paginas_fuente": [
+        153
+      ],
+      "sesiones": [
+        7
+      ]
+    },
+    {
+      "id": "DAPC-ES-057",
+      "parte": "Parte 3: Primera forma, flujo (3.5 y 3.6 Lanzamientos y arquitectura)",
+      "seccion": "3.6 Arquitectura de bajo riesgo",
+      "topic": "Técnica de estrangulamiento",
+      "type": "single",
+      "difficulty": "medio",
+      "question": "¿En qué consiste la técnica de estrangulamiento para evolucionar una arquitectura?",
+      "options": [
+        "Extraer y reemplazar por completo los servicios antiguos de una sola vez",
+        "Colocar la funcionalidad existente detrás de una API y evitar hacer más cambios en ella",
+        "Eliminar la arquitectura actual sin reemplazarla",
+        "Duplicar la base de datos en cada servicio nuevo"
+      ],
+      "answer": [
+        "B"
+      ],
+      "explanation": "En lugar de reemplazar los servicios antiguos de golpe, la funcionalidad existente se coloca detrás de una API y se deja de modificar.",
+      "source": "Oficial, p. 155",
+      "verified": "sí (texto leído)",
+      "paginas_fuente": [
+        155
+      ],
+      "sesiones": [
+        8
+      ]
+    },
+    {
+      "id": "DAPC-ES-058",
+      "parte": "Parte 3: Primera forma, flujo (3.5 y 3.6 Lanzamientos y arquitectura)",
+      "seccion": "3.6 Arquitectura de bajo riesgo",
+      "topic": "Priorizar la migración",
+      "type": "single",
+      "difficulty": "fácil",
+      "question": "Al decidir por dónde empezar la migración de una arquitectura, ¿qué criterio sugiere el material?",
+      "options": [
+        "Empezar por las partes más antiguas del código",
+        "Elegir las áreas con mayor retorno posible, por ejemplo clasificando las páginas del sitio según los ingresos que producen",
+        "Empezar por la parte del sistema con menos usuarios",
+        "Migrar todo el sistema en un mismo fin de semana"
+      ],
+      "answer": [
+        "B"
+      ],
+      "explanation": "La migración prioriza las áreas que aportan más valor al negocio, identificadas por los ingresos que generan.",
+      "source": "Oficial, p. 155",
+      "verified": "sí (texto leído)",
+      "paginas_fuente": [
+        155
+      ],
+      "sesiones": [
+        8
+      ]
+    },
+    {
+      "id": "DAPC-ES-059",
+      "parte": "Parte 3: Primera forma, flujo (3.5 y 3.6 Lanzamientos y arquitectura)",
+      "seccion": "3.6 Arquitectura de bajo riesgo",
+      "topic": "Arquitectura débilmente acoplada",
+      "type": "single",
+      "difficulty": "medio",
+      "question": "¿Qué característica define una arquitectura débilmente acoplada, según el material?",
+      "options": [
+        "Módulos que comparten todo su código interno",
+        "Interfaces bien definidas que determinan cómo se conectan los módulos",
+        "Una única base de datos sin límites",
+        "Cambios que siempre requieren coordinación entre todos los equipos"
+      ],
+      "answer": [
+        "B"
+      ],
+      "explanation": "Las interfaces bien definidas permiten que equipos pequeños hagan cambios seguros e independientes.",
+      "source": "Oficial, p. 156",
+      "verified": "sí (texto leído)",
+      "paginas_fuente": [
+        156
+      ],
+      "sesiones": [
+        8
+      ]
+    },
+    {
+      "id": "DAPC-ES-060",
+      "parte": "Parte 3: Primera forma, flujo (3.5 y 3.6 Lanzamientos y arquitectura)",
+      "seccion": "3.6 Arquitectura de bajo riesgo",
+      "topic": "Arquitectura débilmente acoplada",
+      "type": "single",
+      "difficulty": "medio",
+      "question": "¿Qué permite una arquitectura débilmente acoplada, con interfaces bien definidas, a equipos pequeños?",
+      "options": [
+        "Trabajar sobre un único código compartido por todos los equipos",
+        "Hacer pequeños cambios que se despliegan de forma segura e independiente",
+        "Depender de la coordinación con todos los equipos antes de cada cambio",
+        "Evitar por completo las interfaces entre módulos"
+      ],
+      "answer": [
+        "B"
+      ],
+      "explanation": "Con interfaces bien definidas, cada equipo trabaja en unidades pequeñas y puede desplegar sus cambios sin coordinar con los demás.",
+      "source": "Oficial, p. 156",
+      "verified": "sí (texto leído)",
+      "paginas_fuente": [
+        156
+      ],
+      "sesiones": [
+        8
+      ]
+    },
+    {
+      "id": "DAPC-ES-061",
+      "parte": "Parte 3: Primera forma, flujo (3.5 y 3.6 Lanzamientos y arquitectura)",
+      "seccion": "3.6 Arquitectura de bajo riesgo",
+      "topic": "Monolito frente a microservicios",
+      "type": "single",
+      "difficulty": "medio",
+      "question": "Según el material, ¿qué es correcto sobre las arquitecturas monolíticas?",
+      "options": [
+        "Son inherentemente malas y deben evitarse desde el inicio",
+        "No son inherentemente malas; suelen ser la mejor opción al principio del ciclo de vida de un producto",
+        "Solo funcionan si se combinan con microservicios",
+        "Impiden siempre alcanzar el ajuste producto/mercado"
+      ],
+      "answer": [
+        "B"
+      ],
+      "explanation": "Las arquitecturas monolíticas fuertemente acopladas ayudaron a muchas organizaciones a alcanzar el ajuste producto/mercado; el problema aparece después, al crecer el acoplamiento.",
+      "source": "Oficial, p. 157",
+      "verified": "sí (texto leído)",
+      "paginas_fuente": [
+        157
+      ],
+      "sesiones": [
+        8
+      ]
+    },
+    {
+      "id": "DAPC-ES-062",
+      "parte": "Parte 3: Primera forma, flujo (3.5 y 3.6 Lanzamientos y arquitectura)",
+      "seccion": "3.6 Arquitectura de bajo riesgo",
+      "topic": "Patrón estrangulador",
+      "type": "single",
+      "difficulty": "medio",
+      "question": "¿Qué propone el patrón estrangulador para evolucionar una arquitectura?",
+      "options": [
+        "Reemplazar todo el sistema de una sola vez",
+        "Separar gradualmente partes de la funcionalidad, de forma segura e independiente",
+        "Mantener la arquitectura sin cambios",
+        "Eliminar los microservicios"
+      ],
+      "answer": [
+        "B"
+      ],
+      "explanation": "En lugar de extraer y reemplazar todo, se separan partes de la funcionalidad para que cada una se desarrolle y despliegue por separado.",
+      "source": "Oficial, p. 158",
+      "verified": "sí (texto leído)",
+      "paginas_fuente": [
+        158
+      ],
+      "sesiones": [
+        8
+      ]
+    },
+    {
+      "id": "DAPC-ES-063",
+      "parte": "Parte 3: Primera forma, flujo (3.5 y 3.6 Lanzamientos y arquitectura)",
+      "seccion": "3.6 Arquitectura de bajo riesgo",
+      "topic": "Aplicaciones estranguladoras",
+      "type": "single",
+      "difficulty": "difícil",
+      "question": "¿Por qué advierte el material contra reproducir sin más la funcionalidad existente al construir una nueva arquitectura?",
+      "options": [
+        "Porque las tecnologías nuevas no admiten lógica de negocio",
+        "Porque los procesos de negocio se vuelven más complejos de lo necesario por las particularidades de los sistemas antiguos, que acaban reproduciéndose",
+        "Porque la migración siempre aumenta el número de servidores",
+        "Porque la documentación queda obsoleta al cambiar de tecnología"
+      ],
+      "answer": [
+        "B"
+      ],
+      "explanation": "Si se copia el comportamiento antiguo tal cual, se trasladan también sus complicaciones; la técnica busca evolucionar, no replicar.",
+      "source": "Oficial, p. 158",
+      "verified": "sí (texto leído)",
+      "paginas_fuente": [
+        158
+      ],
+      "sesiones": [
+        8
+      ]
+    },
+    {
+      "id": "DAPC-ES-064",
+      "parte": "Parte 4: Segunda forma, feedback",
+      "seccion": "4.0 Segunda forma",
+      "topic": "Aprender de los fallos",
+      "type": "single",
+      "difficulty": "fácil",
+      "question": "Según la segunda forma, ¿cómo deben tratarse los fallos y accidentes?",
+      "options": [
+        "Como causa de castigo y culpa para los responsables",
+        "Como oportunidades de aprendizaje, en lugar de causa de castigo y culpa",
+        "Como asuntos que la gerencia resuelve en privado",
+        "Como hechos que no deben documentarse"
+      ],
+      "answer": [
+        "B"
+      ],
+      "explanation": "La segunda forma busca crear aprendizaje organizativo, y para eso los fallos se tratan como oportunidades de aprender.",
+      "source": "Oficial, p. 161",
+      "verified": "sí (texto leído)",
+      "paginas_fuente": [
+        161
+      ],
+      "sesiones": [
+        9
+      ]
+    },
+    {
+      "id": "DAPC-ES-065",
+      "parte": "Parte 4: Segunda forma, feedback",
+      "seccion": "4.0 Segunda forma",
+      "topic": "Primera y segunda formas",
+      "type": "single",
+      "difficulty": "medio",
+      "question": "¿Qué describe la segunda forma en contraste con la primera?",
+      "options": [
+        "El flujo de trabajo de izquierda a derecha, desde el desarrollo hasta el cliente",
+        "Los principios que permiten el flujo de retroalimentación de derecha a izquierda en todas las etapas del flujo de valor",
+        "La forma de medir el costo de cada licencia de software",
+        "La organización de los equipos en silos separados"
+      ],
+      "answer": [
+        "B"
+      ],
+      "explanation": "La primera forma describe el flujo de izquierda a derecha; la segunda, la retroalimentación en sentido contrario, en todas las etapas.",
+      "source": "Oficial, p. 162",
+      "verified": "sí (texto leído)",
+      "paginas_fuente": [
+        162
+      ],
+      "sesiones": [
+        9
+      ]
+    },
+    {
+      "id": "DAPC-ES-066",
+      "parte": "Parte 4: Segunda forma, feedback",
+      "seccion": "4.1 Telemetría",
+      "topic": "Telemetría como habilitador",
+      "type": "single",
+      "difficulty": "medio",
+      "question": "¿Por qué el material insiste en diseñar los sistemas para generar telemetría de forma continua?",
+      "options": [
+        "Porque los sistemas complejos fallan y hay que poder ver y resolver los problemas rápidamente",
+        "Porque la telemetría reemplaza las pruebas",
+        "Porque la telemetría solo sirve para facturación",
+        "Porque reduce el número de despliegues"
+      ],
+      "answer": [
+        "A"
+      ],
+      "explanation": "Las cosas van a salir mal en sistemas complejos. La telemetría permite diagnosticar y resolver los problemas con rapidez.",
+      "source": "Oficial, pp. 164–165",
+      "verified": "sí (texto leído)",
+      "paginas_fuente": [
+        164,
+        165
+      ],
+      "sesiones": [
+        9
+      ]
+    },
+    {
+      "id": "DAPC-ES-067",
+      "parte": "Parte 4: Segunda forma, feedback",
+      "seccion": "4.1 Telemetría",
+      "topic": "Diagnóstico disciplinado",
+      "type": "single",
+      "difficulty": "difícil",
+      "question": "Durante una interrupción del servicio, ¿por qué el material pide usar telemetría de producción en lugar de reiniciar los servidores?",
+      "options": [
+        "Porque reiniciar los servidores está prohibido por normas de conformidad",
+        "Porque el fallo puede estar en la aplicación, en el entorno o ser externo, y la telemetría permite entender los factores que contribuyen",
+        "Porque la telemetría reemplaza a las pruebas de regresión",
+        "Porque reiniciar aumenta el costo de las licencias"
+      ],
+      "answer": [
+        "B"
+      ],
+      "explanation": "Sin telemetría no se sabe dónde está la falla. Un enfoque disciplinado usa datos de producción para atacar la causa, no solo reiniciar.",
+      "source": "Oficial, p. 164",
+      "verified": "sí (texto leído)",
+      "paginas_fuente": [
+        164
+      ],
+      "sesiones": [
+        9
+      ]
+    },
+    {
+      "id": "DAPC-ES-068",
+      "parte": "Parte 4: Segunda forma, feedback",
+      "seccion": "4.1 Telemetría",
+      "topic": "Definición de telemetría",
+      "type": "single",
+      "difficulty": "fácil",
+      "question": "¿Cómo se define la telemetría?",
+      "options": [
+        "Un proceso automatizado que recoge mediciones y otros datos en puntos remotos y los transmite a equipos receptores para su control",
+        "Un tipo de prueba funcional de la interfaz de usuario",
+        "Un informe mensual que redacta el equipo de soporte",
+        "Un mecanismo para bloquear despliegues"
+      ],
+      "answer": [
+        "A"
+      ],
+      "explanation": "Es un proceso automatizado de comunicación que recoge mediciones y datos en puntos remotos y los envía para su control.",
+      "source": "Oficial, p. 165",
+      "verified": "sí (texto leído)",
+      "paginas_fuente": [
+        165
+      ],
+      "sesiones": [
+        9
+      ]
+    },
+    {
+      "id": "DAPC-ES-069",
+      "parte": "Parte 4: Segunda forma, feedback",
+      "seccion": "4.1 Telemetría",
+      "topic": "Prácticas que aceleran la resolución",
+      "type": "multiple",
+      "difficulty": "difícil",
+      "question": "¿Cuáles son dos prácticas técnicas que el material asocia con una resolución rápida de incidentes de producción? (Seleccione todas las que correspondan)",
+      "options": [
+        "Usar control de versiones por parte de Operaciones",
+        "Utilizar telemetría y monitoreo proactivo en el entorno de producción",
+        "Reducir el número de pruebas automatizadas",
+        "Asignar un único responsable para todos los incidentes"
+      ],
+      "answer": [
+        "A",
+        "B"
+      ],
+      "explanation": "Las organizaciones de alto desempeño resuelven incidentes mucho más rápido gracias al control de versiones en Operaciones y a la telemetría proactiva.",
+      "source": "Oficial, p. 167",
+      "verified": "sí (texto leído)",
+      "paginas_fuente": [
+        167
+      ],
+      "sesiones": [
+        9
+      ]
+    },
+    {
+      "id": "DAPC-ES-070",
+      "parte": "Parte 4: Segunda forma, feedback",
+      "seccion": "4.1 Telemetría",
+      "topic": "Telemetría centralizada",
+      "type": "single",
+      "difficulty": "medio",
+      "question": "¿Qué problema busca resolver la infraestructura de telemetría centralizada?",
+      "options": [
+        "La falta de servidores de desarrollo",
+        "Los silos de información: Desarrollo solo genera registros útiles para sí mismo y Operaciones solo verifica si el entorno está activo o inactivo",
+        "El exceso de documentación técnica",
+        "La falta de licencias de software"
+      ],
+      "answer": [
+        "B"
+      ],
+      "explanation": "Cuando cada área ve solo una parte, nadie puede entender cómo se comporta el sistema completo.",
+      "source": "Oficial, p. 169",
+      "verified": "sí (texto leído)",
+      "paginas_fuente": [
+        169
+      ],
+      "sesiones": [
+        9
+      ]
+    },
+    {
+      "id": "DAPC-ES-071",
+      "parte": "Parte 4: Segunda forma, feedback",
+      "seccion": "4.1 Telemetría",
+      "topic": "Enrutador de eventos",
+      "type": "single",
+      "difficulty": "fácil",
+      "question": "¿Qué función cumple el enrutador de eventos dentro de la arquitectura de monitoreo?",
+      "options": [
+        "Escribir el código de la aplicación",
+        "Almacenar eventos y métricas, y permitir su visualización, tendencias, alertas y detección de anomalías",
+        "Reemplazar al sistema operativo del servidor",
+        "Aprobar los despliegues antes de que lleguen a producción"
+      ],
+      "answer": [
+        "B"
+      ],
+      "explanation": "El enrutador de eventos centraliza la telemetría para poder analizarla y alertar sobre ella.",
+      "source": "Oficial, p. 170",
+      "verified": "sí (texto leído)",
+      "paginas_fuente": [
+        170
+      ],
+      "sesiones": [
+        9
+      ]
+    },
+    {
+      "id": "DAPC-ES-072",
+      "parte": "Parte 4: Segunda forma, feedback",
+      "seccion": "4.1 Telemetría",
+      "topic": "Logs convertidos en métricas",
+      "type": "single",
+      "difficulty": "difícil",
+      "question": "¿Por qué resulta útil convertir logs centralizados en métricas?",
+      "options": [
+        "Porque eliminar los logs reduce el costo de almacenamiento y de monitoreo",
+        "Porque permite aplicar operaciones estadísticas, como la detección de anomalías, para encontrar valores atípicos y variaciones más rápido",
+        "Porque las métricas reemplazan la necesidad de alertas",
+        "Porque las métricas solo sirven para facturar a los clientes"
+      ],
+      "answer": [
+        "B"
+      ],
+      "explanation": "Al transformar los logs en métricas se pueden aplicar métodos estadísticos que detectan variaciones antes de que se vuelvan problemas.",
+      "source": "Oficial, pp. 170–171",
+      "verified": "sí (texto leído)",
+      "paginas_fuente": [
+        170,
+        171
+      ],
+      "sesiones": [
+        9
+      ]
+    },
+    {
+      "id": "DAPC-ES-073",
+      "parte": "Parte 4: Segunda forma, feedback",
+      "seccion": "4.1 Telemetría",
+      "topic": "Telemetría del pipeline",
+      "type": "single",
+      "difficulty": "medio",
+      "question": "¿Qué puede detectar la telemetría del pipeline de despliegue para corregir errores antes de que lleguen a producción?",
+      "options": [
+        "Solo el número de usuarios activos",
+        "Una compilación o una prueba de rendimiento que tarda el doble de lo normal",
+        "El precio de las licencias de los servidores",
+        "El horario de las reuniones del equipo"
+      ],
+      "answer": [
+        "B"
+      ],
+      "explanation": "Recoger la duración de builds y pruebas permite detectar anomalías de rendimiento en el propio pipeline.",
+      "source": "Oficial, p. 172",
+      "verified": "sí (texto leído)",
+      "paginas_fuente": [
+        172
+      ],
+      "sesiones": [
+        9
+      ]
+    },
+    {
+      "id": "DAPC-ES-074",
+      "parte": "Parte 4: Segunda forma, feedback (4.1 Logging, radiadores y análisis)",
+      "seccion": "4.1 Logging de aplicaciones",
+      "topic": "Usuarios de la telemetría",
+      "type": "single",
+      "difficulty": "medio",
+      "question": "¿Quién puede usar la telemetría de registro para confirmar la eficacia de un control necesario?",
+      "options": [
+        "Solo el equipo de desarrollo local",
+        "Infosec y los auditores",
+        "Únicamente el área comercial",
+        "Ningún actor fuera del equipo de Operaciones"
+      ],
+      "answer": [
+        "B"
+      ],
+      "explanation": "Infosec y los auditores revisan la telemetría para confirmar que los controles funcionan y para rastrear resultados de negocio.",
+      "source": "Oficial, p. 174",
+      "verified": "sí (texto leído)",
+      "paginas_fuente": [
+        174
+      ],
+      "sesiones": [
+        10
+      ]
+    },
+    {
+      "id": "DAPC-ES-075",
+      "parte": "Parte 4: Segunda forma, feedback",
+      "seccion": "4.1 Telemetría",
+      "topic": "Niveles de registro",
+      "type": "single",
+      "difficulty": "fácil",
+      "question": "¿Qué nivel de registro corresponde a una excepción?",
+      "options": [
+        "DEBUG",
+        "INFO",
+        "WARN",
+        "ERROR"
+      ],
+      "answer": [
+        "D"
+      ],
+      "explanation": "El nivel ERROR corresponde a excepciones. WARN es de alerta y FATAL es el más grave.",
+      "source": "Oficial, p. 175",
+      "verified": "sí (texto leído)",
+      "paginas_fuente": [
+        175
+      ],
+      "sesiones": [
+        10
+      ]
+    },
+    {
+      "id": "DAPC-ES-076",
+      "parte": "Parte 4: Segunda forma, feedback (4.1 Logging, radiadores y análisis)",
+      "seccion": "4.1 Logging de aplicaciones",
+      "topic": "Niveles de registro",
+      "type": "single",
+      "difficulty": "fácil",
+      "question": "¿Qué nivel de registro puede además accionar una alerta?",
+      "options": [
+        "DEBUG",
+        "INFO",
+        "WARN",
+        "TRACE"
+      ],
+      "answer": [
+        "C"
+      ],
+      "explanation": "WARN es el nivel de alerta. TRACE no aparece entre los niveles del material.",
+      "source": "Oficial, p. 175",
+      "verified": "sí (texto leído)",
+      "paginas_fuente": [
+        175
+      ],
+      "sesiones": [
+        10
+      ]
+    },
+    {
+      "id": "DAPC-ES-077",
+      "parte": "Parte 4: Segunda forma, feedback (4.1 Logging, radiadores y análisis)",
+      "seccion": "4.1 Logging de aplicaciones",
+      "topic": "Eventos que se registran",
+      "type": "multiple",
+      "difficulty": "difícil",
+      "question": "¿Cuáles de los siguientes eventos deben generar entradas de registro? (Seleccione todas las que correspondan)",
+      "options": [
+        "Cambios de privilegios en el sistema",
+        "Disparos de circuit breakers",
+        "Color de la pantalla de inicio de la aplicación",
+        "Duración de la reunión de planificación del equipo"
+      ],
+      "answer": [
+        "A",
+        "B"
+      ],
+      "explanation": "Los cambios de privilegios y los disparos de circuit breakers son eventos significativos del sistema. Los otros dos no afectan a la operación.",
+      "source": "Oficial, p. 176",
+      "verified": "sí (texto leído)",
+      "paginas_fuente": [
+        176
+      ],
+      "sesiones": [
+        10
+      ]
+    },
+    {
+      "id": "DAPC-ES-078",
+      "parte": "Parte 4: Segunda forma, feedback (4.1 Logging, radiadores y análisis)",
+      "seccion": "4.1 Logging de aplicaciones",
+      "topic": "Análisis de incidentes",
+      "type": "single",
+      "difficulty": "medio",
+      "question": "¿Qué aporta la telemetría durante el análisis de un incidente?",
+      "options": [
+        "Permite formular hipótesis sobre la causa del problema y comprobarlas con evidencia de monitorización",
+        "Reemplaza la necesidad de asignar un responsable del incidente",
+        "Evita por completo la comunicación entre equipos",
+        "Garantiza que el incidente nunca vuelva a ocurrir"
+      ],
+      "answer": [
+        "A"
+      ],
+      "explanation": "La telemetría aplica el método científico: se formulan hipótesis y se comprueban con datos.",
+      "source": "Oficial, p. 177",
+      "verified": "sí (texto leído)",
+      "paginas_fuente": [
+        177
+      ],
+      "sesiones": [
+        10
+      ]
+    },
+    {
+      "id": "DAPC-ES-079",
+      "parte": "Parte 4: Segunda forma, feedback (4.1 Logging, radiadores y análisis)",
+      "seccion": "4.1 Radiadores de información",
+      "topic": "Radiadores de información",
+      "type": "single",
+      "difficulty": "medio",
+      "question": "¿Qué valor promueve un radiador de información de telemetría visible en áreas comunes?",
+      "options": [
+        "Que el equipo oculte sus problemas a los visitantes",
+        "Que el equipo no tenga nada que esconder de sus visitantes ni de sí mismo, y reconozca y enfrente los problemas",
+        "Que solo los directivos vean las métricas",
+        "Que los datos de producción se mantengan en secreto"
+      ],
+      "answer": [
+        "B"
+      ],
+      "explanation": "Hacer visible la telemetría promueve la responsabilidad compartida y la transparencia.",
+      "source": "Oficial, p. 178",
+      "verified": "sí (texto leído)",
+      "paginas_fuente": [
+        178
+      ],
+      "sesiones": [
+        10
+      ]
+    },
+    {
+      "id": "DAPC-ES-080",
+      "parte": "Parte 4: Segunda forma, feedback (4.1 Logging, radiadores y análisis)",
+      "seccion": "4.1 Brechas en la telemetría",
+      "topic": "Niveles de telemetría",
+      "type": "single",
+      "difficulty": "medio",
+      "question": "Un equipo quiere medir el estado de su cadena de construcción y la frecuencia de sus despliegues. ¿A qué nivel de telemetría corresponde?",
+      "options": [
+        "Nivel de negocio",
+        "Nivel de aplicación",
+        "Nivel de infraestructura",
+        "Nivel de pipeline de despliegue"
+      ],
+      "answer": [
+        "D"
+      ],
+      "explanation": "El estado de la cadena de construcción, los tiempos y las frecuencias de despliegue forman parte de la telemetría del pipeline.",
+      "source": "Oficial, p. 180",
+      "verified": "sí (texto leído)",
+      "paginas_fuente": [
+        180
+      ],
+      "sesiones": [
+        10
+      ]
+    },
+    {
+      "id": "DAPC-ES-081",
+      "parte": "Parte 4: Segunda forma, feedback",
+      "seccion": "4.1 Telemetría",
+      "topic": "Análisis predictivo",
+      "type": "single",
+      "difficulty": "difícil",
+      "question": "¿Cuál es el propósito del análisis predictivo sobre la telemetría de producción?",
+      "options": [
+        "Reemplazar las pruebas de integración",
+        "Encontrar y resolver problemas antes de que ocurran, cuando todavía son pequeños",
+        "Eliminar la necesidad de registros",
+        "Medir solo el número de usuarios"
+      ],
+      "answer": [
+        "B"
+      ],
+      "explanation": "Las técnicas estadísticas permiten detectar señales de fallo cada vez más pronto, mucho antes de que causen resultados catastróficos.",
+      "source": "Oficial, pp. 181–182",
+      "verified": "sí (texto leído)",
+      "paginas_fuente": [
+        181,
+        182
+      ],
+      "sesiones": [
+        10
+      ]
+    },
+    {
+      "id": "DAPC-ES-082",
+      "parte": "Parte 4: Segunda forma, feedback (4.1 Logging, radiadores y análisis)",
+      "seccion": "4.1 Análisis predictivo",
+      "topic": "Técnicas predictivas",
+      "type": "single",
+      "difficulty": "medio",
+      "question": "¿Cuál NO es una técnica de análisis predictivo que menciona el material?",
+      "options": [
+        "Usar medias y desviaciones estándar para detectar posibles problemas",
+        "Instrumentar y alertar sobre resultados no deseados",
+        "Usar técnicas de detección de anomalías",
+        "Reemplazar el monitoreo de producción por revisiones manuales semanales"
+      ],
+      "answer": [
+        "D"
+      ],
+      "explanation": "Las técnicas estadísticas y la detección de anomalías analizan la telemetría de producción; el monitoreo no se reemplaza por revisiones manuales.",
+      "source": "Oficial, p. 181",
+      "verified": "sí (texto leído)",
+      "paginas_fuente": [
+        181
+      ],
+      "sesiones": [
+        10
+      ]
+    },
+    {
+      "id": "DAPC-ES-083",
+      "parte": "Parte 4: Segunda forma, feedback (4.2 Feedback)",
+      "seccion": "4.2 Feedback",
+      "topic": "Ampliar los ciclos de feedback",
+      "type": "single",
+      "difficulty": "fácil",
+      "question": "¿Cuál NO es una acción recomendada para ampliar los ciclos de feedback?",
+      "options": [
+        "Rotar el standby entre Operaciones y Desarrollo",
+        "Hacer que los desarrolladores acompañen los procesos aguas abajo",
+        "Eliminar todo el monitoreo para reducir alertas",
+        "Hacer que los desarrolladores autogestionen al principio su servicio en producción"
+      ],
+      "answer": [
+        "C"
+      ],
+      "explanation": "Las acciones buscan más feedback, no menos: eliminar el monitoreo lo reduce.",
+      "source": "Oficial, p. 184",
+      "verified": "sí (texto leído)",
+      "paginas_fuente": [
+        184
+      ],
+      "sesiones": [
+        11
+      ]
+    },
+    {
+      "id": "DAPC-ES-084",
+      "parte": "Parte 4: Segunda forma, feedback (4.2 Feedback)",
+      "seccion": "4.2 Feedback",
+      "topic": "Respuesta ante un cambio que falla",
+      "type": "single",
+      "difficulty": "medio",
+      "question": "Si un cambio en producción rompe o perjudica alguna funcionalidad, ¿cuál NO es una opción que menciona el material?",
+      "options": [
+        "Desactivar los recursos rotos con feature toggles",
+        "Corregir el problema",
+        "Dar marcha atrás (rollback)",
+        "Esperar a la siguiente liberación sin actuar"
+      ],
+      "answer": [
+        "D"
+      ],
+      "explanation": "Ante un cambio que rompe el servicio, el material propone desactivar, corregir o revertir, y restaurar el servicio con rapidez.",
+      "source": "Oficial, p. 185",
+      "verified": "sí (texto leído)",
+      "paginas_fuente": [
+        185
+      ],
+      "sesiones": [
+        11
+      ]
+    },
+    {
+      "id": "DAPC-ES-085",
+      "parte": "Parte 4: Segunda forma, feedback (4.2 Feedback)",
+      "seccion": "4.2 Feedback",
+      "topic": "Responsabilidad compartida",
+      "type": "single",
+      "difficulty": "medio",
+      "question": "¿Por qué el material propone compartir las responsabilidades de los incidentes entre Desarrollo y Operaciones?",
+      "options": [
+        "Para que Operaciones no tenga que resolver los problemas de producción relacionados con el código, aislada y sola",
+        "Para que los desarrolladores dejen de programar nuevas funcionalidades",
+        "Para reducir el número de despliegues a cero",
+        "Para evitar la documentación de los incidentes"
+      ],
+      "answer": [
+        "A"
+      ],
+      "explanation": "Compartir la guardia equilibra la corrección de defectos de producción con el desarrollo de nuevas funcionalidades.",
+      "source": "Oficial, p. 186",
+      "verified": "sí (texto leído)",
+      "paginas_fuente": [
+        186
+      ],
+      "sesiones": [
+        11
+      ]
+    },
+    {
+      "id": "DAPC-ES-086",
+      "parte": "Parte 4: Segunda forma, feedback (4.2 Feedback)",
+      "seccion": "4.2 Feedback",
+      "topic": "Desarrollo acompaña aguas abajo",
+      "type": "single",
+      "difficulty": "medio",
+      "question": "¿Qué se obtiene cuando el equipo de desarrollo acompaña su trabajo aguas abajo?",
+      "options": [
+        "Retroalimentación sobre los aspectos no funcionales del código, como la capacidad de despliegue, gestión y operación",
+        "Una aprobación formal de cada cambio por parte de un comité",
+        "La eliminación de las pruebas automatizadas",
+        "La reducción de la comunicación con los clientes internos"
+      ],
+      "answer": [
+        "A"
+      ],
+      "explanation": "Observar cómo el trabajo afecta a los clientes internos revela problemas de despliegue y operación que de otra forma no se ven.",
+      "source": "Oficial, p. 187",
+      "verified": "sí (texto leído)",
+      "paginas_fuente": [
+        187
+      ],
+      "sesiones": [
+        11
+      ]
+    },
+    {
+      "id": "DAPC-ES-087",
+      "parte": "Parte 4: Segunda forma, feedback (4.2 Feedback)",
+      "seccion": "4.2 Feedback",
+      "topic": "Autogestión inicial",
+      "type": "single",
+      "difficulty": "medio",
+      "question": "¿Por qué conviene que los equipos de desarrollo gestionen primero sus propios servicios en producción?",
+      "options": [
+        "Porque así la transición de nuevos servicios a producción se vuelve más sencilla y predecible",
+        "Porque Operaciones deja de ser necesaria",
+        "Porque evita cualquier error en producción",
+        "Porque las revisiones de preparación ya no se requieren"
+      ],
+      "answer": [
+        "A"
+      ],
+      "explanation": "Los equipos que gestionan sus servicios al inicio aprenden cómo se comporta el código bajo condiciones reales antes de pasar a Operaciones.",
+      "source": "Oficial, p. 188",
+      "verified": "sí (texto leído)",
+      "paginas_fuente": [
+        188
+      ],
+      "sesiones": [
+        11
+      ]
+    },
+    {
+      "id": "DAPC-ES-088",
+      "parte": "Parte 4: Segunda forma, feedback",
+      "seccion": "4.2 Feedback",
+      "topic": "Mecanismo de devolución",
+      "type": "single",
+      "difficulty": "medio",
+      "question": "Un servicio en producción se vuelve tan frágil que operaciones ya no puede sostenerlo. ¿Qué mecanismo describe el material?",
+      "options": [
+        "Un despliegue azul-verde",
+        "Un mecanismo de devolución (handback) que transfiere la responsabilidad del servicio al equipo de desarrollo",
+        "Eliminar el servicio sin aviso",
+        "Contratar más personal de operaciones"
+      ],
+      "answer": [
+        "B"
+      ],
+      "explanation": "El mecanismo de devolución permite que operaciones devuelva el módulo a desarrollo cuando el servicio no puede sostenerse.",
+      "source": "Oficial, p. 189",
+      "verified": "sí (texto leído)",
+      "paginas_fuente": [
+        189
+      ],
+      "sesiones": [
+        11
+      ]
+    },
+    {
+      "id": "DAPC-ES-089",
+      "parte": "Parte 4: Segunda forma, feedback (4.2 Feedback)",
+      "seccion": "4.2 Feedback",
+      "topic": "Guía de lanzamiento",
+      "type": "single",
+      "difficulty": "fácil",
+      "question": "Según el material, ¿cuál NO es un criterio que suele incluir la guía de lanzamiento?",
+      "options": [
+        "Recuento y gravedad de los defectos",
+        "Tipo y frecuencia de las alertas de buscapersonas",
+        "Cobertura de la monitorización",
+        "Número de personas que asisten a la reunión semanal del equipo"
+      ],
+      "answer": [
+        "D"
+      ],
+      "explanation": "La guía de lanzamiento evalúa la calidad, la operabilidad y la arquitectura del servicio, no la asistencia a reuniones.",
+      "source": "Oficial, p. 190",
+      "verified": "sí (texto leído)",
+      "paginas_fuente": [
+        190
+      ],
+      "sesiones": [
+        11
+      ]
+    },
+    {
+      "id": "DAPC-ES-090",
+      "parte": "Parte 4: Segunda forma, feedback (4.2 Feedback)",
+      "seccion": "4.2 Feedback",
+      "topic": "Guías frente a listas de control",
+      "type": "single",
+      "difficulty": "difícil",
+      "question": "¿Qué diferencia clave tienen las guías de lanzamiento frente a las listas de control tradicionales de producción?",
+      "options": [
+        "Que solo se aplican a servicios sin monitoreo",
+        "Que exigen una monitorización eficaz, despliegues fiables y deterministas, y una arquitectura que soporte despliegues rápidos y frecuentes",
+        "Que se completan una sola vez al año",
+        "Que no requieren revisión por parte de Operaciones"
+      ],
+      "answer": [
+        "B"
+      ],
+      "explanation": "Aunque parecen similares, las guías de lanzamiento exigen requisitos más altos de monitorización, fiabilidad y arquitectura.",
+      "source": "Oficial, p. 191",
+      "verified": "sí (texto leído)",
+      "paginas_fuente": [
+        191
+      ],
+      "sesiones": [
+        11
+      ]
+    },
+    {
+      "id": "DAPC-ES-091",
+      "parte": "Parte 4: Segunda forma, feedback (4.2 Feedback)",
+      "seccion": "4.2 Feedback",
+      "topic": "Revisión de preparación de lanzamiento",
+      "type": "single",
+      "difficulty": "medio",
+      "question": "¿Cuándo debe realizarse y aprobarse la revisión de preparación de lanzamiento (LRR)?",
+      "options": [
+        "Antes de que el nuevo servicio se ponga a disposición del público y reciba tráfico de producción en directo",
+        "Meses después, cuando el servicio pasa a un estado gestionado por Operaciones",
+        "Solo después de un incidente grave",
+        "Cada vez que se modifica una línea de código"
+      ],
+      "answer": [
+        "A"
+      ],
+      "explanation": "La LRR es un control previo a la exposición pública; la HRR se realiza cuando el servicio pasa a Operaciones, normalmente meses después.",
+      "source": "Oficial, p. 193",
+      "verified": "sí (texto leído)",
+      "paginas_fuente": [
+        193
+      ],
+      "sesiones": [
+        11
+      ]
+    },
+    {
+      "id": "DAPC-ES-092",
+      "parte": "Parte 4: Segunda forma, feedback",
+      "seccion": "4.2 Feedback",
+      "topic": "Revisiones de preparación",
+      "type": "single",
+      "difficulty": "difícil",
+      "question": "Entre dos revisiones de preparación, una es autoinformada por el equipo de producto y la otra es más estricta, con criterios de aceptación más exigentes. ¿Cuál es la de traspaso?",
+      "options": [
+        "La autoinformada",
+        "La más estricta, la de traspaso",
+        "Ninguna de las dos es necesaria",
+        "Ambas son idénticas"
+      ],
+      "answer": [
+        "B"
+      ],
+      "explanation": "La revisión de traspaso es mucho más estricta y tiene normas de aceptación más exigentes. La de lanzamiento la completa el propio equipo.",
+      "source": "Oficial, p. 194",
+      "verified": "sí (texto leído)",
+      "paginas_fuente": [
+        194
+      ],
+      "sesiones": [
+        11
+      ]
+    },
+    {
+      "id": "DAPC-ES-093",
+      "parte": "Parte 4: Segunda forma, feedback",
+      "seccion": "4.3 Desarrollo basado en hipótesis",
+      "topic": "Antes de construir",
+      "type": "single",
+      "difficulty": "medio",
+      "question": "Antes de construir una funcionalidad, ¿qué debemos preguntarnos según el material?",
+      "options": [
+        "Solo cuánto tiempo llevará",
+        "Si debemos construirla y por qué; luego validar con los experimentos más baratos y rápidos posibles",
+        "Qué lenguaje usar",
+        "Cuántos desarrolladores la harán"
+      ],
+      "answer": [
+        "B"
+      ],
+      "explanation": "Antes de construir hay que validar la hipótesis con experimentos baratos y rápidos.",
+      "source": "Oficial, p. 196",
+      "verified": "sí (texto leído)",
+      "paginas_fuente": [
+        196
+      ],
+      "sesiones": [
+        12
+      ]
+    },
+    {
+      "id": "DAPC-ES-094",
+      "parte": "Parte 4: Segunda forma, feedback",
+      "seccion": "4.4 Revisión y coordinación",
+      "topic": "Pull request de calidad",
+      "type": "single",
+      "difficulty": "medio",
+      "question": "¿Qué es un pull request de mala calidad, según el material?",
+      "options": [
+        "Uno que contiene un cambio pequeño y bien descrito",
+        "Uno que no tiene contexto suficiente para el lector, como uno que solo dice «Arreglo de errores»",
+        "Uno revisado por al menos dos personas",
+        "Uno que incluye pruebas automatizadas"
+      ],
+      "answer": [
+        "B"
+      ],
+      "explanation": "Un pull request necesita contexto y documentación de lo que pretende hacer el cambio.",
+      "source": "Oficial, p. 204",
+      "verified": "sí (texto leído)",
+      "paginas_fuente": [
+        204
+      ],
+      "sesiones": [
+        12
+      ]
+    },
+    {
+      "id": "DAPC-ES-095",
+      "parte": "Parte 4: Segunda forma, feedback",
+      "seccion": "4.4 Revisión y coordinación",
+      "topic": "Control excesivo",
+      "type": "single",
+      "difficulty": "medio",
+      "question": "¿Qué efecto no intencional puede tener el exceso de controles en los cambios?",
+      "options": [
+        "Entregas más rápidas y feedback inmediato",
+        "Retrasos adicionales en la entrega y menor inmediatez del feedback",
+        "Menos riesgo en todos los despliegues",
+        "Más autonomía para los equipos"
+      ],
+      "answer": [
+        "B"
+      ],
+      "explanation": "Los controles excesivos añaden retrasos y reducen la rapidez del feedback, lo que afecta a todo el proceso.",
+      "source": "Oficial, p. 205",
+      "verified": "sí (texto leído)",
+      "paginas_fuente": [
+        205
+      ],
+      "sesiones": [
+        12
+      ]
+    },
+    {
+      "id": "DAPC-ES-096",
+      "parte": "Parte 4: Segunda forma, feedback",
+      "seccion": "4.4 Revisión y coordinación",
+      "topic": "Quien conoce el problema",
+      "type": "single",
+      "difficulty": "fácil",
+      "question": "Según el principio de gestión de producción por el que se basa parte del material, ¿quién suele saber más sobre un problema?",
+      "options": [
+        "Los directivos que aprueban el cambio",
+        "Las personas más cercanas al problema",
+        "Los clientes",
+        "El equipo de auditoría"
+      ],
+      "answer": [
+        "B"
+      ],
+      "explanation": "La creencia es que las personas más cercanas a un problema son las que más saben sobre él.",
+      "source": "Oficial, p. 207",
+      "verified": "sí (texto leído)",
+      "paginas_fuente": [
+        207
+      ],
+      "sesiones": [
+        12
+      ]
+    },
+    {
+      "id": "DAPC-ES-097",
+      "parte": "Parte 4: Segunda forma, feedback",
+      "seccion": "4.4 Revisión y coordinación",
+      "topic": "Acoplamiento y coordinación",
+      "type": "single",
+      "difficulty": "medio",
+      "question": "¿Qué ocurre con la coordinación entre equipos cuanto más desacoplada está la arquitectura?",
+      "options": [
+        "Aumenta la coordinación necesaria",
+        "Disminuye la comunicación y coordinación necesarias entre equipos",
+        "No cambia nunca",
+        "Se vuelve imposible desplegar"
+      ],
+      "answer": [
+        "B"
+      ],
+      "explanation": "Con una arquitectura desacoplada, los equipos pueden cambiar con autonomía y los cambios locales raramente causan interrupciones globales.",
+      "source": "Oficial, p. 209",
+      "verified": "sí (texto leído)",
+      "paginas_fuente": [
+        209
+      ],
+      "sesiones": [
+        12
+      ]
+    },
+    {
+      "id": "DAPC-ES-098",
+      "parte": "Parte 4: Segunda forma, feedback",
+      "seccion": "4.4 Revisión de código",
+      "topic": "Revisión de pares frente a aprobación",
+      "type": "single",
+      "difficulty": "difícil",
+      "question": "Un equipo cambia la estructura de una base de datos crítica que tiene poca cobertura de pruebas automatizadas. ¿Qué recomienda el material además de la revisión de pares habitual?",
+      "options": [
+        "No revisar el cambio porque la cobertura es baja",
+        "Exigir una revisión adicional de un especialista en el tema, o varias aprobaciones",
+        "Aprobar el cambio sin revisión para no retrasarlo",
+        "Dejar que solo el autor decida el despliegue"
+      ],
+      "answer": [
+        "B"
+      ],
+      "explanation": "Para cambios en bases de datos o componentes esenciales con poca cobertura, se exige una revisión adicional de un especialista o varias revisiones.",
+      "source": "Oficial, p. 211",
+      "verified": "sí (texto leído)",
+      "paginas_fuente": [
+        211
+      ],
+      "sesiones": [
+        12
+      ]
+    },
+    {
+      "id": "DAPC-ES-099",
+      "parte": "Parte 4: Segunda forma, feedback",
+      "seccion": "4.4 Revisión de código",
+      "topic": "Tamaño del cambio",
+      "type": "single",
+      "difficulty": "difícil",
+      "question": "¿Qué relación describe el material entre el tamaño de un cambio y su riesgo al integrarlo?",
+      "options": [
+        "Lineal: el doble de tamaño es el doble de riesgo",
+        "No lineal: el riesgo crece más rápido que el tamaño",
+        "Sin relación",
+        "Inversa: los cambios grandes son siempre más seguros"
+      ],
+      "answer": [
+        "B"
+      ],
+      "explanation": "La relación entre el tamaño del cambio y el riesgo es no lineal: los cambios grandes elevan el riesgo más de lo que sugiere su tamaño.",
+      "source": "Oficial, p. 212",
+      "verified": "sí (texto leído)",
+      "paginas_fuente": [
+        212
+      ],
+      "sesiones": [
+        12
+      ]
+    },
+    {
+      "id": "DAPC-ES-100",
+      "parte": "Parte 4: Segunda forma, feedback",
+      "seccion": "4.4 Revisión de código",
+      "topic": "Directrices de revisión",
+      "type": "single",
+      "difficulty": "fácil",
+      "question": "Según las directrices generales de revisión de código, ¿qué debe ocurrir antes de integrar un cambio a la rama principal?",
+      "options": [
+        "Nada: el autor integra directamente",
+        "Alguien debe revisar el cambio",
+        "Debe aprobarlo un comité semanal",
+        "Debe esperar un mes"
+      ],
+      "answer": [
+        "B"
+      ],
+      "explanation": "Todos deben tener a alguien que revise sus cambios antes de integrarlos a la rama principal.",
+      "source": "Oficial, p. 213",
+      "verified": "sí (texto leído)",
+      "paginas_fuente": [
+        213
+      ],
+      "sesiones": [
+        12
+      ]
+    },
+    {
+      "id": "DAPC-ES-101",
+      "parte": "Parte 5: Aprendizaje y experimentación continua",
+      "seccion": "5.0 Cultura del aprendizaje",
+      "topic": "Respuesta justa a los accidentes",
+      "type": "single",
+      "difficulty": "medio",
+      "question": "¿Por qué es un prerrequisito de la cultura de aprendizaje que la respuesta a los accidentes sea justa?",
+      "options": [
+        "Porque así se evita que la gente informe de sus errores y se evitan los castigos",
+        "Porque si se considera injusta puede impedir investigaciones de seguridad y promueve el miedo",
+        "Porque reduce el número de accidentes a cero",
+        "Porque elimina la necesidad de post mortems"
+      ],
+      "answer": [
+        "B"
+      ],
+      "explanation": "Una respuesta injusta impide investigar, promueve el miedo y hace que la gente oculte información.",
+      "source": "Oficial, p. 220",
+      "verified": "sí (texto leído)",
+      "paginas_fuente": [
+        220
+      ],
+      "sesiones": [
+        13
+      ]
+    },
+    {
+      "id": "DAPC-ES-102",
+      "parte": "Parte 5: Aprendizaje y experimentación continua",
+      "seccion": "5.0 Cultura del aprendizaje",
+      "topic": "Modelo de tipología organizacional",
+      "type": "single",
+      "difficulty": "difícil",
+      "question": "En una organización generativa del modelo de tipología organizacional, ¿qué ocurre con la información y los mensajeros?",
+      "options": [
+        "La información se oculta y los mensajeros son culpados",
+        "La información se busca activamente y los mensajeros son entrenados",
+        "La información se ignora y los mensajeros son tolerados",
+        "La información se distribuye solo entre directivos"
+      ],
+      "answer": [
+        "B"
+      ],
+      "explanation": "En una cultura generativa se busca activamente la información y se entrena a quienes la comunican. Las otras culturas la ocultan o la ignoran.",
+      "source": "Oficial, p. 222",
+      "verified": "sí (texto leído)",
+      "paginas_fuente": [
+        222
+      ],
+      "sesiones": [
+        13
+      ]
+    },
+    {
+      "id": "DAPC-ES-103",
+      "parte": "Parte 5: Aprendizaje y experimentación continua",
+      "seccion": "5.1 Crear resiliencia",
+      "topic": "Post mortem sin culpa",
+      "type": "single",
+      "difficulty": "fácil",
+      "question": "¿Qué caracteriza a un post mortem sin culpa?",
+      "options": [
+        "Busca un responsable individual para sancionarlo",
+        "Analiza los aspectos situacionales del fallo y el proceso de decisión de las personas, sin culparlas",
+        "Se realiza solo si el incidente fue grave",
+        "Lo dirige un único gerente sin participación del equipo"
+      ],
+      "answer": [
+        "B"
+      ],
+      "explanation": "El post mortem sin culpa analiza el mecanismo del fallo y las decisiones, no busca culpables individuales.",
+      "source": "Oficial, p. 225",
+      "verified": "sí (texto leído)",
+      "paginas_fuente": [
+        225
+      ],
+      "sesiones": [
+        13
+      ]
+    },
+    {
+      "id": "DAPC-ES-104",
+      "parte": "Parte 5: Aprendizaje y experimentación continua",
+      "seccion": "5.1 Crear resiliencia",
+      "topic": "Asistentes al post mortem",
+      "type": "single",
+      "difficulty": "medio",
+      "question": "¿Quién debe estar presente en un post mortem según el material?",
+      "options": [
+        "Solo la persona que cometió el error",
+        "Las personas implicadas en las decisiones, las que identificaron, respondieron y diagnosticaron el problema, y las afectadas",
+        "Solo directivos sin participación técnica",
+        "Solo clientes externos"
+      ],
+      "answer": [
+        "B"
+      ],
+      "explanation": "Deben asistir todas las personas que participaron en el problema o se vieron afectadas por él.",
+      "source": "Oficial, p. 230",
+      "verified": "sí (texto leído)",
+      "paginas_fuente": [
+        230
+      ],
+      "sesiones": [
+        14
+      ]
+    },
+    {
+      "id": "DAPC-ES-105",
+      "parte": "Parte 5: Aprendizaje y experimentación continua",
+      "seccion": "5.1 Crear resiliencia",
+      "topic": "Inyección de fallos",
+      "type": "single",
+      "difficulty": "medio",
+      "question": "¿Qué propone el material para aumentar la resiliencia y el aprendizaje?",
+      "options": [
+        "Evitar cualquier fallo en producción",
+        "Introducir fallos en producción de forma controlada para probar los modos de fallo",
+        "Eliminar los sistemas de monitoreo",
+        "Desactivar el registro de errores"
+      ],
+      "answer": [
+        "B"
+      ],
+      "explanation": "La resiliencia requiere definir los modos de fallo y probar que funcionen como se espera, por ejemplo inyectando fallos.",
+      "source": "Oficial, p. 231",
+      "verified": "sí (texto leído)",
+      "paginas_fuente": [
+        231
+      ],
+      "sesiones": [
+        14
+      ]
+    },
+    {
+      "id": "DAPC-ES-106",
+      "parte": "Parte 5: Aprendizaje y experimentación continua",
+      "seccion": "5.1 Día del juego",
+      "topic": "Día del juego (Game Day)",
+      "type": "single",
+      "difficulty": "fácil",
+      "question": "¿Cuál es el objetivo de un Game Day?",
+      "options": [
+        "Evaluar a los desarrolladores por su velocidad",
+        "Simular y ensayar accidentes para que los equipos practiquen",
+        "Lanzar una funcionalidad nueva a todos los clientes",
+        "Eliminar los procedimientos de respuesta"
+      ],
+      "answer": [
+        "B"
+      ],
+      "explanation": "Un Game Day programa un evento catastrófico simulado para que los equipos se preparen y practiquen.",
+      "source": "Oficial, p. 234",
+      "verified": "sí (texto leído)",
+      "paginas_fuente": [
+        234
+      ],
+      "sesiones": [
+        14
+      ]
+    },
+    {
+      "id": "DAPC-ES-107",
+      "parte": "Parte 5: Aprendizaje y experimentación continua",
+      "seccion": "5.2 Mejoras globales",
+      "topic": "Repositorio compartido",
+      "type": "single",
+      "difficulty": "medio",
+      "question": "¿Qué beneficio tiene un repositorio de código compartido en toda la empresa?",
+      "options": [
+        "Que cada equipo guarde sus propios estándares ocultos",
+        "Que el conocimiento y las mejoras locales se difundan a toda la organización",
+        "Que no hace falta versionar",
+        "Que se eliminan las pruebas"
+      ],
+      "answer": [
+        "B"
+      ],
+      "explanation": "Un repositorio compartido difunde el conocimiento y las mejoras a toda la organización.",
+      "source": "Oficial, p. 240",
+      "verified": "sí (texto leído)",
+      "paginas_fuente": [
+        240
+      ],
+      "sesiones": [
+        15
+      ]
+    },
+    {
+      "id": "DAPC-ES-108",
+      "parte": "Parte 5: Aprendizaje y experimentación continua",
+      "seccion": "5.2 Mejoras globales",
+      "topic": "Automatizar procesos estandarizados",
+      "type": "single",
+      "difficulty": "fácil",
+      "question": "Frente a dejar el conocimiento en documentos de texto, ¿qué recomienda el material?",
+      "options": [
+        "Mantenerlo solo en la memoria de las personas",
+        "Transformarlo en un formato ejecutable para que sea más fácil de reutilizar",
+        "Eliminarlo del proyecto",
+        "Guardarlo en un cuaderno personal"
+      ],
+      "answer": [
+        "B"
+      ],
+      "explanation": "Codificar los procesos manuales en formato ejecutable facilita su reutilización.",
+      "source": "Oficial, p. 242",
+      "verified": "sí (texto leído)",
+      "paginas_fuente": [
+        242
+      ],
+      "sesiones": [
+        15
+      ]
+    },
+    {
+      "id": "DAPC-ES-109",
+      "parte": "Parte 5: Aprendizaje y experimentación continua",
+      "seccion": "5.3 Reservar tiempo",
+      "topic": "Blitz de mejora",
+      "type": "single",
+      "difficulty": "medio",
+      "question": "¿Qué es un blitz de mejora?",
+      "options": [
+        "Un período de tiempo dedicado y concentrado a una cuestión específica, muchas veces a lo largo de varios días",
+        "Una reunión diaria de 15 minutos",
+        "Un despliegue de emergencia",
+        "Una auditoría externa"
+      ],
+      "answer": [
+        "A"
+      ],
+      "explanation": "Un blitz de mejora es un período concentrado, a menudo de varios días, dedicado a un problema específico.",
+      "source": "Oficial, p. 246",
+      "verified": "sí (texto leído)",
+      "paginas_fuente": [
+        246
+      ],
+      "sesiones": [
+        15
+      ]
+    },
+    {
+      "id": "DAPC-ES-110",
+      "parte": "Parte 5: Aprendizaje y experimentación continua",
+      "seccion": "5.3 Reservar tiempo",
+      "topic": "Rituales para pagar la deuda técnica",
+      "type": "single",
+      "difficulty": "fácil",
+      "question": "¿Cuál es una de las formas más sencillas de institucionalizar el pago de la deuda técnica?",
+      "options": [
+        "Programar actividades diarias o semanales de mejora continua",
+        "Eliminar el backlog",
+        "Prohibir cualquier cambio",
+        "Contratar consultores externos cada año"
+      ],
+      "answer": [
+        "A"
+      ],
+      "explanation": "Programar actividades regulares de mejora continua es una de las formas más sencillas de institucionalizar el pago de la deuda técnica.",
+      "source": "Oficial, p. 247",
+      "verified": "sí (texto leído)",
+      "paginas_fuente": [
+        247
+      ],
+      "sesiones": [
+        15
+      ]
+    },
+    {
+      "id": "DAPC-ES-111",
+      "parte": "Parte 6: Seguridad de la información, gestión del cambio y cumplimiento",
+      "seccion": "6.1 Seguridad de la información",
+      "topic": "Seguridad como trabajo de todos",
+      "type": "single",
+      "difficulty": "fácil",
+      "question": "Según el material, ¿cómo debe entenderse la seguridad de la información?",
+      "options": [
+        "Como un silo separado del desarrollo y de las operaciones",
+        "Como el trabajo de todos, todos los días",
+        "Como tarea exclusiva del área de auditoría",
+        "Como algo que se revisa solo al final del proyecto"
+      ],
+      "answer": [
+        "B"
+      ],
+      "explanation": "Cuando seguridad se organiza como silo aparecen muchos problemas. La seguridad debe formar parte del trabajo diario de todos.",
+      "source": "Oficial, p. 256",
+      "verified": "sí (texto leído)",
+      "paginas_fuente": [
+        256
+      ],
+      "sesiones": [
+        16
+      ]
+    },
+    {
+      "id": "DAPC-ES-112",
+      "parte": "Parte 6: Seguridad de la información, gestión del cambio y cumplimiento",
+      "seccion": "6.1 Seguridad de la información",
+      "topic": "Controles preventivos",
+      "type": "single",
+      "difficulty": "medio",
+      "question": "¿Qué son los controles de seguridad preventivos que el material propone añadir al repositorio compartido?",
+      "options": [
+        "Bibliotecas y mecanismos preaprobados por seguridad para que los equipos los usen",
+        "Un listado de contraseñas de los administradores",
+        "Informes trimestrales de auditoría",
+        "Hojas de cálculo con excepciones"
+      ],
+      "answer": [
+        "A"
+      ],
+      "explanation": "Las bibliotecas preaprobadas por seguridad permiten que cada aplicación use autenticación, cifrado y otros servicios de forma segura.",
+      "source": "Oficial, pp. 258–259",
+      "verified": "sí (texto leído)",
+      "paginas_fuente": [
+        258,
+        259
+      ],
+      "sesiones": [
+        16
+      ]
+    },
+    {
+      "id": "DAPC-ES-113",
+      "parte": "Parte 6: Seguridad de la información, gestión del cambio y cumplimiento",
+      "seccion": "6.1 Seguridad en el pipeline",
+      "topic": "Seguridad dentro del pipeline",
+      "type": "single",
+      "difficulty": "medio",
+      "question": "¿Cuál es el objetivo de integrar la seguridad en el pipeline de despliegue?",
+      "options": [
+        "Retrasar los despliegues hasta una revisión manual",
+        "Dar a desarrollo y operaciones feedback rápido y permitirles corregir problemas de seguridad en su trabajo diario",
+        "Eliminar la necesidad de pruebas de seguridad",
+        "Reducir el número de cambios"
+      ],
+      "answer": [
+        "B"
+      ],
+      "explanation": "Integrar seguridad en el pipeline da feedback rápido, permite corregir pronto y genera aprendizaje.",
+      "source": "Oficial, p. 260",
+      "verified": "sí (texto leído)",
+      "paginas_fuente": [
+        260
+      ],
+      "sesiones": [
+        16
+      ]
+    },
+    {
+      "id": "DAPC-ES-114",
+      "parte": "Parte 6: Seguridad de la información, gestión del cambio y cumplimiento",
+      "seccion": "6.1 Protección del pipeline",
+      "topic": "Proteger el pipeline",
+      "type": "single",
+      "difficulty": "medio",
+      "question": "¿Cuál es una estrategia para proteger la integración y el despliegue continuos?",
+      "options": [
+        "Dar acceso de escritura a todos los usuarios",
+        "Revisar todos los cambios introducidos en el control de versiones",
+        "Desactivar las alertas de seguridad",
+        "Compartir las credenciales del servidor de construcción"
+      ],
+      "answer": [
+        "B"
+      ],
+      "explanation": "El pipeline es una superficie vulnerable: hay que proteger los servidores de construcción, revisar los cambios y detectar anomalías.",
+      "source": "Oficial, p. 264",
+      "verified": "sí (texto leído)",
+      "paginas_fuente": [
+        264
+      ],
+      "sesiones": [
+        16
+      ]
+    },
+    {
+      "id": "DAPC-ES-115",
+      "parte": "Parte 6: Seguridad de la información, gestión del cambio y cumplimiento",
+      "seccion": "6.2 Gestión del cambio",
+      "topic": "Cambios estándar",
+      "type": "single",
+      "difficulty": "medio",
+      "question": "Cuando el pipeline es confiable, ¿qué propone el material para la mayoría de los cambios de menor riesgo?",
+      "options": [
+        "Mantener el proceso manual de aprobación para todos",
+        "Recategorizarlos como cambios estándar",
+        "Eliminar la gestión del cambio",
+        "Exigir tres aprobaciones de gerencia"
+      ],
+      "answer": [
+        "B"
+      ],
+      "explanation": "Con un pipeline confiable, la mayoría de los cambios de bajo riesgo no necesitan aprobación manual, porque se confía en las pruebas y controles automatizados.",
+      "source": "Oficial, pp. 268–269",
+      "verified": "sí (texto leído)",
+      "paginas_fuente": [
+        268,
+        269
+      ],
+      "sesiones": [
+        16
+      ]
+    },
+    {
+      "id": "DAPC-ES-116",
+      "parte": "Parte 6: Seguridad de la información, gestión del cambio y cumplimiento",
+      "seccion": "6.2 Separación de funciones",
+      "topic": "Reducir la separación de funciones",
+      "type": "single",
+      "difficulty": "difícil",
+      "question": "A medida que crecen la complejidad y la frecuencia de los despliegues, ¿qué necesita el material que ocurra con la separación de funciones?",
+      "options": [
+        "Que se refuerce hasta que cada persona trabaje en aislamiento",
+        "Que se reduzca la dependencia de ella, para que todos vean rápido los resultados de sus acciones",
+        "Que se elimine el control de cambios",
+        "Que la separación sea responsabilidad exclusiva de auditoría"
+      ],
+      "answer": [
+        "B"
+      ],
+      "explanation": "Con despliegues complejos y frecuentes, todos los miembros del flujo de valor deben ver pronto los resultados de sus acciones, por lo que la dependencia de la separación se reduce.",
+      "source": "Oficial, p. 271",
+      "verified": "sí (texto leído)",
+      "paginas_fuente": [
+        271
+      ],
+      "sesiones": [
+        16
+      ]
+    },
+    {
+      "id": "DAPC-ES-117",
+      "parte": "Parte 6: Seguridad de la información, gestión del cambio y cumplimiento",
+      "seccion": "6.2 Auditoría y cumplimiento",
+      "topic": "Documentación para auditores",
+      "type": "single",
+      "difficulty": "fácil",
+      "question": "¿Qué deben garantizar las organizaciones DevOps para auditores y responsables de cumplimiento?",
+      "options": [
+        "Que no haya ninguna documentación",
+        "La documentación y las pruebas necesarias para cumplir con los requisitos",
+        "Que todos los cambios se hagan en secreto",
+        "Que la auditoría se haga solo una vez por década"
+      ],
+      "answer": [
+        "B"
+      ],
+      "explanation": "Hay que garantizar la documentación y las pruebas que auditores y responsables de cumplimiento necesitan.",
+      "source": "Oficial, p. 272",
+      "verified": "sí (texto leído)",
+      "paginas_fuente": [
+        272
+      ],
+      "sesiones": [
+        16
+      ]
+    }
+  ]
+}
