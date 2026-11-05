@@ -24,11 +24,11 @@ Comprueba que hay preguntas suficientes para las sesiones elegidas. Si no las ha
 
 ## 3. Cargar el banco
 
-El banco de preguntas lo proporciona la persona al usar la skill, como archivo JSON adjunto o pegado en el chat. No está en el repositorio ni se lee de Google Drive desde esta sesión.
+El banco está en el repositorio, en la misma carpeta que esta skill: `training/skills/dapc-examen-test/dapc-es-bank.json`. Léelo desde esa ruta. No pidas el banco a la persona.
 
-Cada pregunta tiene: `id`, `sesiones` (lista), `difficulty`, `type` (`single` o `multiple`), `question`, `options`, `answer` (lista de letras), `explanation`.
+El archivo tiene un campo `questions` con la lista de preguntas. Cada pregunta tiene: `id`, `sesiones` (lista), `difficulty`, `type` (`single` o `multiple`), `question`, `options`, `answer` (lista de letras), `explanation`.
 
-Antes de seguir, confirma que el archivo tiene ese formato. Si falta algún campo, avisa y no generes el examen.
+Antes de seguir, confirma que el archivo existe y que tiene ese formato. Si falta algún campo o el archivo no existe, avisa y no generes el examen.
 
 ## 4. Seleccionar las preguntas
 
@@ -77,4 +77,5 @@ Al final de los mensajes de commit y del cuerpo del pull request, incluye las l�
 
 - No inventes preguntas ni cambies respuestas del banco.
 - Si el banco y el reporte no coinciden en IDs, avisa antes de crear el merge request.
+- El banco incluye las respuestas y explicaciones, y está en el repositorio. Por eso este examen es de práctica: no es válido para evaluar a alguien que ya conoce el banco.
 - Un examen real no debe incluir las respuestas en el código de la página. Para uso real, la corrección se hace en Claude a partir de las respuestas enviadas, y la página solo muestra las preguntas.
