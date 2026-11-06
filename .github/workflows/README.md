@@ -5,19 +5,23 @@
 Runs one job, **Unit tests**, on every pull request and on pushes to `main` and `develop`:
 
 1. `ruff check .` (lint)
-2. `pytest -q` (tests)
+2. `pytest -q` (tests of the monolith)
+3. `pytest -q` inside `src/menu-service` (tests of the menu service, with its own `pytest.ini`)
 
 Branch protection on `main` and `develop` requires the **Unit tests** status check to pass before a PR can be merged.
 
-The tests live in `src/summit-cafe-api/tests`.
+The tests live in `src/summit-cafe-api/tests` and `src/menu-service/tests`.
 
 ## Publish image (`publish.yml`)
 
-Builds the Summit Cafe API image and publishes it to GitHub Container Registry (GHCR):
+Builds the service images and publishes them to GitHub Container Registry (GHCR):
 
 ```
 ghcr.io/devopscourseeng/devops-expert-dapc/summit-cafe-api:<version>
+ghcr.io/devopscourseeng/devops-expert-dapc/menu-service:<version>
 ```
+
+The job runs once per service (a matrix), so one tag publishes both images with the same version.
 
 Steps: check the version, build the image, run a smoke test (the container starts and `/health` answers), then publish for Intel and Apple Silicon computers. Each image gets two tags: the version (for example `1.2`) and the commit (`sha-<full commit>`).
 

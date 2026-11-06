@@ -22,10 +22,19 @@ jobs:
           python-version: "3.12"
 
       - name: Install dependencies
-        run: python -m pip install --upgrade pip ruff pytest -r src/summit-cafe-api/requirements.txt
+        run: >-
+          python -m pip install --upgrade pip ruff pytest
+          -r src/summit-cafe-api/requirements.txt
+          -r src/menu-service/requirements.txt
 
       - name: Lint (ruff)
         run: ruff check .
 
       - name: Tests (pytest)
+        run: pytest -q
+
+      # The menu service runs on its own: it has its own pytest.ini, and its
+      # app.py would clash with the monolith's app.py in a single pytest run.
+      - name: Tests menu-service (pytest)
+        working-directory: src/menu-service
         run: pytest -q
