@@ -1,0 +1,158 @@
+{
+  "examen": "DAPC tipo test (práctica)",
+  "persona": {
+    "nombre": "Brandon Alejandro Stambuk",
+    "github": "BrandonStambuk",
+    "identificador": "BrandonStambuk"
+  },
+  "fecha": "2026-11-06",
+  "sesiones": "1-16",
+  "total": 10,
+  "correctas": 6,
+  "porcentaje": 60,
+  "aprobado": false,
+  "umbral": 80,
+  "preguntas": [
+    {
+      "id": "DAPC-ES-099",
+      "sesiones": [
+        12
+      ],
+      "tipo": "single",
+      "marcadas": [
+        "A"
+      ],
+      "correctas": [
+        "B"
+      ],
+      "acierto": false
+    },
+    {
+      "id": "DAPC-ES-014",
+      "sesiones": [
+        2
+      ],
+      "tipo": "single",
+      "marcadas": [
+        "B"
+      ],
+      "correctas": [
+        "B"
+      ],
+      "acierto": true
+    },
+    {
+      "id": "DAPC-ES-004",
+      "sesiones": [
+        1
+      ],
+      "tipo": "single",
+      "marcadas": [
+        "A"
+      ],
+      "correctas": [
+        "A"
+      ],
+      "acierto": true
+    },
+    {
+      "id": "DAPC-ES-109",
+      "sesiones": [
+        15
+      ],
+      "tipo": "single",
+      "marcadas": [
+        "A"
+      ],
+      "correctas": [
+        "A"
+      ],
+      "acierto": true
+    },
+    {
+      "id": "DAPC-ES-095",
+      "sesiones": [
+        12
+      ],
+      "tipo": "single",
+      "marcadas": [
+        "B"
+      ],
+      "correctas": [
+        "B"
+      ],
+      "acierto": true
+    },
+    {
+      "id": "DAPC-ES-087",
+      "sesiones": [
+        11
+      ],
+      "tipo": "single",
+      "marcadas": [
+        "A"
+      ],
+      "correctas": [
+        "A"
+      ],
+      "acierto": true
+    },
+    {
+      "id": "DAPC-ES-056",
+      "sesiones": [
+        7
+      ],
+      "tipo": "single",
+      "marcadas": [
+        "A"
+      ],
+      "correctas": [
+        "B"
+      ],
+      "acierto": false
+    },
+    {
+      "id": "DAPC-ES-082",
+      "sesiones": [
+        10
+      ],
+      "tipo": "single",
+      "marcadas": [
+        "A"
+      ],
+      "correctas": [
+        "D"
+      ],
+      "acierto": false
+    },
+    {
+      "id": "DAPC-ES-024",
+      "sesiones": [
+        3,
+        5
+      ],
+      "tipo": "single",
+      "marcadas": [
+        "C"
+      ],
+      "correctas": [
+        "B"
+      ],
+      "acierto": false
+    },
+    {
+      "id": "DAPC-ES-012",
+      "sesiones": [
+        1
+      ],
+      "tipo": "single",
+      "marcadas": [
+        "A"
+      ],
+      "correctas": [
+        "A"
+      ],
+      "acierto": true
+    }
+  ]
+}
