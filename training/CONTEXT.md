@@ -89,7 +89,6 @@ Git and GitHub (Actions, GHCR), Docker and Compose, Flask, pytest, ruff, nginx, 
 - Structure: `training/` holds the course material (`CONTEXT.md`, `plan/`, `docs/` guides, `session_N/` per session with slides and handouts). `src/` holds the source code (`src/summit-cafe-api/`). `.github/` holds the CI workflow.
 - Changes enter **through pull requests**, one topic per PR, with a short description of what changes and why.
 - Secrets that appear in practices are always **fake** (test patterns); never real credentials.
-- The original CertiProf PDFs (instructor and student material, brochure, sample exam) are **not uploaded** to this repo because they are copyrighted material. They are cited by slide number.
 
 ## 9. Open decisions
 
