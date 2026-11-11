@@ -18,3 +18,9 @@ def test_get_one_item(client):
     response = client.get("/menu/3")
     assert response.status_code == 200
     assert response.get_json()["name"] == "Latte"
+
+
+def test_cappuccino_name_is_spelled_correctly(client):
+    response = client.get("/menu/2")
+    assert response.status_code == 200
+    assert response.get_json()["name"] == "Cappuccino"
