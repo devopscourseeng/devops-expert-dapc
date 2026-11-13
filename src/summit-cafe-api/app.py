@@ -2,6 +2,7 @@
 
 import re
 
+import metrics
 from features import app_version, scheduled_orders_enabled
 from flask import Flask, jsonify, request
 from menu import MENU, MENU_BY_ID
@@ -12,6 +13,7 @@ PICKUP_TIME = re.compile(r"([01]\d|2[0-3]):[0-5]\d")
 
 def create_app():
     app = Flask(__name__)
+    metrics.init_app(app)
 
     @app.get("/health")
     def health():
@@ -54,7 +56,9 @@ def create_app():
             pickup_time = body["pickup_time"]
             if not isinstance(pickup_time, str) or not PICKUP_TIME.fullmatch(pickup_time):
                 return jsonify({"error": "pickup_time must look like 14:30"}), 400
-        return jsonify(create_order(items, pickup_time)), 201
+        order = create_order(items, pickup_time)
+        metrics.ORDERS.inc()
+        return jsonify(order), 201
 
     @app.get("/orders/<int:order_id>")
     def get_one_order(order_id):
