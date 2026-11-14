@@ -38,6 +38,17 @@ docker compose up -d --build
 | Prometheus | http://localhost:9090 |
 | Grafana | http://localhost:3000 (no login, for local training only) |
 
+Open the **Summit Cafe** dashboard: http://localhost:3000/d/summit-cafe
+
+To see data in the panels, send traffic to the API (stop with Ctrl+C):
+
+```
+./observability/send-traffic.sh
+DELAY=1 BASE_URL=http://localhost:8000 ./observability/send-traffic.sh   # slower, explicit URL
+```
+
+What each panel query means: [`observability/queries.md`](observability/queries.md).
+
 Stop everything: `docker compose down`
 
 The stack needs about 8 GB of RAM. If your computer has less, use GitHub Codespaces.

@@ -41,3 +41,6 @@ jobs:
 
       - name: Validate docker-compose.yml
         run: docker compose config -q
+
+      - name: Validate the Grafana dashboard (JSON)
+        run: python -m json.tool observability/grafana/dashboards/summit-cafe.json > /dev/null
