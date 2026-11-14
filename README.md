@@ -40,6 +40,8 @@ docker compose up -d --build
 
 Open the **Summit Cafe** dashboard: http://localhost:3000/d/summit-cafe
 
+**Radiator:** open http://localhost:3000/d/summit-cafe?kiosk on a shared screen so the whole team sees the dashboard, without menus.
+
 To see data in the panels, send traffic to the API (stop with Ctrl+C):
 
 ```
