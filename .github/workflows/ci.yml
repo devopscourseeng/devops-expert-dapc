@@ -38,3 +38,6 @@ jobs:
       - name: Tests menu-service (pytest)
         working-directory: src/menu-service
         run: pytest -q
+
+      - name: Validate docker-compose.yml
+        run: docker compose config -q

@@ -23,6 +23,25 @@ Material and code for the CertiProf DAPC course (DevOps Advanced Professional Ce
 |---|---|
 | [`src/summit-cafe-api/`](src/summit-cafe-api/) | The Summit Cafe API: a small Flask REST API with a Dockerfile and tests |
 
+## Monitoring
+
+Run the API, the menu service, Prometheus and Grafana together. Everything is configured from files in [`observability/`](observability/).
+
+```
+docker compose up -d --build
+```
+
+| Service | Address |
+|---|---|
+| Summit Cafe API | http://localhost:8000 (metrics at `/metrics`) |
+| Menu service | http://localhost:8001 |
+| Prometheus | http://localhost:9090 |
+| Grafana | http://localhost:3000 (no login, for local training only) |
+
+Stop everything: `docker compose down`
+
+The stack needs about 8 GB of RAM. If your computer has less, use GitHub Codespaces.
+
 ## How we work
 
 - Every change starts from a Jira ticket (project SCRUM) and goes through a pull request to `develop`.
