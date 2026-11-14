@@ -1,0 +1,40 @@
+# Summit Cafe with monitoring: the API, the menu service, Prometheus and Grafana.
+# Start: docker compose up -d --build     Stop: docker compose down
+
+services:
+  summit-cafe-api:
+    build: ./src/summit-cafe-api
+    ports:
+      - "8000:8000"
+
+  menu-service:
+    build: ./src/menu-service
+    ports:
+      - "8001:8000"
+
+  prometheus:
+    image: prom/prometheus:v2.53.0
+    ports:
+      - "9090:9090"
+    volumes:
+      - ./observability/prometheus:/etc/prometheus:ro
+    command: ["--config.file=/etc/prometheus/prometheus.yml"]
+    # Lets Prometheus reach services on the host (needed by SCRUM-31 on Linux).
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+
+  grafana:
+    image: grafana/grafana:11.1.0
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./observability/grafana/provisioning:/etc/grafana/provisioning:ro
+      - ./observability/grafana/dashboards:/var/lib/grafana/dashboards:ro
+    # FOR LOCAL TRAINING ONLY: anyone who opens Grafana is an admin, with no login.
+    # Never use these settings on a shared or public server.
+    environment:
+      GF_AUTH_ANONYMOUS_ENABLED: "true"
+      GF_AUTH_ANONYMOUS_ORG_ROLE: Admin
+      GF_AUTH_DISABLE_LOGIN_FORM: "true"
+    depends_on:
+      - prometheus
