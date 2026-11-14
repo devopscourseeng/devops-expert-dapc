@@ -2,6 +2,9 @@ global:
   scrape_interval: 15s
   evaluation_interval: 15s
 
+# Alert rules. The path is relative to this file.
+rule_files: ["alerts.yml"]
+
 scrape_configs:
   # The Summit Cafe API exposes its metrics at /metrics (the default path).
   - job_name: summit-cafe-api

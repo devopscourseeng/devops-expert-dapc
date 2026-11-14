@@ -33,3 +33,20 @@ sum(rate(orders_total[5m])) * 60
 ```
 
 How many orders are created per minute, averaged over the last 5 minutes. Only orders that returned 201 count; rejected orders (400) do not.
+
+## 5. Orders per minute and normal band (mean ± 3σ, last hour)
+
+```promql
+# A [orders/min]
+sum(rate(orders_total[1m])) * 60
+# B [mean]
+avg_over_time((sum(rate(orders_total[1m])) * 60)[1h:1m])
+# C [top]
+avg_over_time((sum(rate(orders_total[1m])) * 60)[1h:1m]) + 3 * stddev_over_time((sum(rate(orders_total[1m])) * 60)[1h:1m])
+# D [bottom]
+avg_over_time((sum(rate(orders_total[1m])) * 60)[1h:1m]) - 3 * stddev_over_time((sum(rate(orders_total[1m])) * 60)[1h:1m])
+```
+
+The band is "what normal looked like in the last hour". The middle line is the average number of orders per minute; top and bottom are that average plus or minus three times how much it usually moves (the standard deviation). If the orders line leaves the band, something unusual is happening and is worth a look.
+
+**False alarm:** at the lunch peak, orders jump far above the quiet hour before it, so the line leaves the band even though nothing is broken. The same happens near zero: with very few orders the band is so narrow that one extra order looks unusual, and the bottom line can even go below zero, which is not a real value.

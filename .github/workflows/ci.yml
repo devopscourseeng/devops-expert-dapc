@@ -44,3 +44,9 @@ jobs:
 
       - name: Validate the Grafana dashboard (JSON)
         run: python -m json.tool observability/grafana/dashboards/summit-cafe.json > /dev/null
+
+      - name: Validate the Prometheus config and alert rules (promtool)
+        run: >-
+          docker run --rm --entrypoint promtool
+          -v "$PWD/observability/prometheus:/p:ro"
+          prom/prometheus:v2.53.0 check config /p/prometheus.yml
