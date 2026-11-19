@@ -1,0 +1,17 @@
+{
+  "examen": "DAPC examen tipo test",
+  "nombre": "Anónimo",
+  "identificador": "agent-1",
+  "fecha": "2026-11-05",
+  "sesiones": [8],
+  "total_preguntas": 4,
+  "correctas": 3,
+  "puntuacion": 75,
+  "aprobado": false,
+  "preguntas": [
+    {"numero": 1, "id": "DAPC-ES-057", "sesiones": [8], "tipo": "single", "marcada": ["C"], "correcta": ["B"], "acierto": false},
+    {"numero": 2, "id": "DAPC-ES-058", "sesiones": [8], "tipo": "single", "marcada": ["B"], "correcta": ["B"], "acierto": true},
+    {"numero": 3, "id": "DAPC-ES-060", "sesiones": [8], "tipo": "single", "marcada": ["B"], "correcta": ["B"], "acierto": true},
+    {"numero": 4, "id": "DAPC-ES-063", "sesiones": [8], "tipo": "single", "marcada": ["B"], "correcta": ["B"], "acierto": true}
+  ]
+}
