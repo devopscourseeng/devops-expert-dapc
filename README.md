@@ -51,6 +51,16 @@ DELAY=1 BASE_URL=http://localhost:8000 ./observability/send-traffic.sh   # slowe
 
 What each panel query means: [`observability/queries.md`](observability/queries.md).
 
+**Logs:** both services write one JSON object per line, with `time`, `level`, `service`, `request_id` and `msg`. Every response has an `X-Request-ID` header; send your own value to follow one request:
+
+```
+curl -s -H 'X-Request-ID: abc123' -H 'Content-Type: application/json' \
+  -d '{"items":[{"id":2,"quantity":1}]}' localhost:8000/orders
+docker compose logs --no-log-prefix summit-cafe-api | jq -cR 'fromjson? | select(.request_id=="abc123")'
+```
+
+`fromjson?` skips gunicorn's own plain-text lines.
+
 Stop everything: `docker compose down`
 
 The stack needs about 8 GB of RAM. If your computer has less, use GitHub Codespaces.

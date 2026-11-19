@@ -2,9 +2,10 @@
 
 import re
 
+import logging_setup
 import metrics
 from features import app_version, scheduled_orders_enabled
-from flask import Flask, jsonify, request
+from flask import Flask, current_app, jsonify, request
 from menu import MENU, MENU_BY_ID
 from orders import create_order, get_order
 
@@ -14,6 +15,7 @@ PICKUP_TIME = re.compile(r"([01]\d|2[0-3]):[0-5]\d")
 def create_app():
     app = Flask(__name__)
     metrics.init_app(app)
+    logging_setup.init_app(app)
 
     @app.get("/health")
     def health():
@@ -58,6 +60,7 @@ def create_app():
                 return jsonify({"error": "pickup_time must look like 14:30"}), 400
         order = create_order(items, pickup_time)
         metrics.ORDERS.inc()
+        current_app.logger.info("order created", extra={"order_id": order["id"], "total": order["total"]})
         return jsonify(order), 201
 
     @app.get("/orders/<int:order_id>")

@@ -2,6 +2,7 @@
 
 import os
 
+import logging_setup
 from flask import Flask, jsonify
 from menu import MENU, MENU_BY_ID
 
@@ -15,6 +16,7 @@ def app_version():
 
 def create_app():
     app = Flask(__name__)
+    logging_setup.init_app(app)
 
     @app.get("/health")
     def health():
