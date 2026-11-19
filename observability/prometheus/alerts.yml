@@ -1,0 +1,30 @@
+groups:
+  - name: summit-cafe
+    rules:
+      - alert: HighErrorRate
+        expr: sum(rate(http_requests_total{job="summit-cafe-api",status=~"5.."}[5m])) / sum(rate(http_requests_total{job="summit-cafe-api"}[5m])) > 0.05
+        for: 2m
+        labels:
+          severity: page
+        annotations:
+          summary: More than 5% of the API requests ended in a 5xx error for 2 minutes.
+          runbook: |
+            1. Check: docker compose ps, then docker compose logs summit-cafe-api
+            2. Look for the error in the logs (Traceback, 500).
+            3. Restart: docker compose up -d summit-cafe-api
+            4. Still failing? Go back: git checkout <last good tag>
+            5. Then rebuild: docker compose up -d --build summit-cafe-api
+
+      - alert: ApiDown
+        expr: up{job="summit-cafe-api"} == 0
+        for: 1m
+        labels:
+          severity: page
+        annotations:
+          summary: Prometheus cannot reach the Summit Cafe API for 1 minute.
+          runbook: |
+            1. Check: docker compose ps, then docker compose logs summit-cafe-api
+            2. Is the container stopped or restarting? Note why.
+            3. Restart: docker compose up -d summit-cafe-api
+            4. Still down? Go back: git checkout <last good tag>
+            5. Then rebuild: docker compose up -d --build summit-cafe-api
