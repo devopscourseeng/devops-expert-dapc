@@ -19,6 +19,7 @@ A small REST API for the cafe menu. It is the project we build and improve durin
 | Variable | Values | What it does |
 |---|---|---|
 | `SCHEDULED_ORDERS` | `off` (default), `on` | Feature toggle: lets a customer choose a pickup time. With `off` the field is ignored and the API works as in 1.1. |
+| `SERVICE_NAME` | text | The `service` field in the JSON logs. Default: `summit-cafe-api`. |
 | `APP_VERSION` | text | The version shown by `/version` and in the `version` label of the request metrics. The publish workflow sets it from the image tag. Default: `dev`. |
 
 ## Metrics
@@ -39,6 +40,8 @@ A small REST API for the cafe menu. It is the project we build and improve durin
 |---|---|
 | `app.py` | The routes |
 | `menu.py` | The menu data (kept in memory, no database) |
+| `metrics.py` | The Prometheus metrics at `/metrics` |
+| `logging_setup.py` | JSON logs with a request id (`X-Request-ID`) |
 | `tests/` | The tests (pytest) |
 | `Dockerfile` | Builds the container image |
 | `requirements.txt` | Python packages |
