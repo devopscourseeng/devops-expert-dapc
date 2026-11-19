@@ -19,7 +19,19 @@ A small REST API for the cafe menu. It is the project we build and improve durin
 | Variable | Values | What it does |
 |---|---|---|
 | `SCHEDULED_ORDERS` | `off` (default), `on` | Feature toggle: lets a customer choose a pickup time. With `off` the field is ignored and the API works as in 1.1. |
-| `APP_VERSION` | text | The version shown by `/version`. The publish workflow sets it from the image tag. |
+| `APP_VERSION` | text | The version shown by `/version` and in the `version` label of the request metrics. The publish workflow sets it from the image tag. Default: `dev`. |
+
+## Metrics
+
+`GET /metrics` shows the metrics for Prometheus:
+
+| Metric | Labels | What it counts |
+|---|---|---|
+| `http_requests_total` | `endpoint`, `status`, `version` | HTTP requests |
+| `http_request_duration_seconds` | `endpoint`, `version` | Request time (histogram) |
+| `orders_total` | none | Orders created |
+
+`endpoint` is the route template (`/menu/<int:item_id>`), `version` is `APP_VERSION`. The `version` label lets Prometheus tell the stable and the canary containers apart.
 
 ## Project files
 
