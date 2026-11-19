@@ -23,6 +23,48 @@ Material and code for the CertiProf DAPC course (DevOps Advanced Professional Ce
 |---|---|
 | [`src/summit-cafe-api/`](src/summit-cafe-api/) | The Summit Cafe API: a small Flask REST API with a Dockerfile and tests |
 
+## Monitoring
+
+Run the API, the menu service, Prometheus and Grafana together. Everything is configured from files in [`observability/`](observability/).
+
+```
+docker compose up -d --build
+```
+
+| Service | Address |
+|---|---|
+| Summit Cafe API | http://localhost:8000 (metrics at `/metrics`) |
+| Menu service | http://localhost:8001 |
+| Prometheus | http://localhost:9090 |
+| Grafana | http://localhost:3000 (no login, for local training only) |
+
+Open the **Summit Cafe** dashboard: http://localhost:3000/d/summit-cafe
+
+**Radiator:** open http://localhost:3000/d/summit-cafe?kiosk on a shared screen so the whole team sees the dashboard, without menus.
+
+To see data in the panels, send traffic to the API (stop with Ctrl+C):
+
+```
+./observability/send-traffic.sh
+DELAY=1 BASE_URL=http://localhost:8000 ./observability/send-traffic.sh   # slower, explicit URL
+```
+
+What each panel query means: [`observability/queries.md`](observability/queries.md).
+
+**Logs:** both services write one JSON object per line, with `time`, `level`, `service`, `request_id` and `msg`. Every response has an `X-Request-ID` header; send your own value to follow one request:
+
+```
+curl -s -H 'X-Request-ID: abc123' -H 'Content-Type: application/json' \
+  -d '{"items":[{"id":2,"quantity":1}]}' localhost:8000/orders
+docker compose logs --no-log-prefix summit-cafe-api | jq -cR 'fromjson? | select(.request_id=="abc123")'
+```
+
+`fromjson?` skips gunicorn's own plain-text lines.
+
+Stop everything: `docker compose down`
+
+The stack needs about 8 GB of RAM. If your computer has less, use GitHub Codespaces.
+
 ## How we work
 
 - Every change starts from a Jira ticket (project SCRUM) and goes through a pull request to `develop`.
