@@ -17,6 +17,4 @@ Spanish summary for the trainer, with simple examples for every capability: [res
 
 Steps 3, 4 and 5 (prepare, present, talk together) are yours to do with your pair.
 
-> We do not store the original CertiProf slides in this repository because they are protected by copyright. The files give the slide numbers and describe the content in our own words.
->
 > **Trainer note:** these files are the answer key for the activity. Do not show them unless participants really cannot use Claude.
