@@ -31,3 +31,12 @@ def test_get_unknown_order_returns_404(client):
 
 def test_create_order_rejects_empty_items(client):
     assert client.post("/orders", json={"items": []}).status_code == 400
+
+
+def test_total_multiplies_price_by_quantity(client):
+    response = client.post(
+        "/orders",
+        json={"items": [{"id": 2, "quantity": 2}, {"id": 4, "quantity": 1}]},
+    )
+    assert response.status_code == 201
+    assert response.get_json()["total"] == 9.8
