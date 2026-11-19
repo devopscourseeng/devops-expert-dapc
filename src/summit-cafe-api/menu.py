@@ -2,7 +2,7 @@
 
 MENU = [
     {"id": 1, "name": "Espresso", "category": "drinks", "price": 0, "available": True},
-    {"id": 2, "name": "Capuchino", "category": "drinks", "price": 3.5, "available": True},
+    {"id": 2, "name": "Cappuccino", "category": "drinks", "price": 3.5, "available": True},
     {"id": 3, "name": "Latte", "category": "drinks", "price": 4.0, "available": True},
     {"id": 4, "name": "Croissant", "category": "food", "price": 2.8, "available": True},
     {"id": 5, "name": "Banana bread", "category": "food", "price": 3.2, "available": True},
