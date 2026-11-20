@@ -24,6 +24,8 @@ DURATION = Histogram(
     ["endpoint", "version"],
 )
 ORDERS = Counter("orders_total", "Orders created.")
+AB_MENU_VIEWS = Counter("ab_menu_views_total", "Menu views in the A/B test, by variant.", ["variant"])
+AB_ORDERS = Counter("ab_orders_total", "Orders in the A/B test, by variant.", ["variant"])
 
 METRICS_PATH = "/metrics"
 UNMATCHED = "unmatched"

@@ -4,12 +4,26 @@ import re
 
 import logging_setup
 import metrics
-from features import app_version, scheduled_orders_enabled
+from features import (
+    ab_combo_test_enabled,
+    app_version,
+    scheduled_orders_enabled,
+    variant_for,
+)
 from flask import Flask, current_app, jsonify, request
-from menu import MENU, MENU_BY_ID
+from menu import COMBO, MENU, MENU_BY_ID
 from orders import create_order, get_order
 
 PICKUP_TIME = re.compile(r"([01]\d|2[0-3]):[0-5]\d")
+
+
+def ab_variant():
+    """The A/B variant for this request, or None when the test is off or there is
+    no ?customer= (then everything behaves exactly as without the experiment)."""
+    customer = request.args.get("customer")
+    if not customer or not ab_combo_test_enabled():
+        return None
+    return variant_for(customer)
 
 
 def create_app():
@@ -32,7 +46,13 @@ def create_app():
 
     @app.get("/menu")
     def list_menu():
-        return jsonify(MENU)
+        variant = ab_variant()
+        if variant is None:
+            return jsonify(MENU)
+        metrics.AB_MENU_VIEWS.labels(variant=variant).inc()
+        response = jsonify(MENU + [COMBO] if variant == "B" else MENU)
+        response.headers["X-Variant"] = variant
+        return response
 
     @app.get("/menu/<int:item_id>")
     def get_item(item_id):
@@ -60,8 +80,16 @@ def create_app():
                 return jsonify({"error": "pickup_time must look like 14:30"}), 400
         order = create_order(items, pickup_time)
         metrics.ORDERS.inc()
-        current_app.logger.info("order created", extra={"order_id": order["id"], "total": order["total"]})
-        return jsonify(order), 201
+        variant = ab_variant()
+        log_fields = {"order_id": order["id"], "total": order["total"]}
+        if variant is not None:
+            metrics.AB_ORDERS.labels(variant=variant).inc()
+            log_fields["variant"] = variant
+        current_app.logger.info("order created", extra=log_fields)
+        response = jsonify(order)
+        if variant is not None:
+            response.headers["X-Variant"] = variant
+        return response, 201
 
     @app.get("/orders/<int:order_id>")
     def get_one_order(order_id):

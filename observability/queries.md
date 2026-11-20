@@ -50,3 +50,12 @@ avg_over_time((sum(rate(orders_total[1m])) * 60)[1h:1m]) - 3 * stddev_over_time(
 The band is "what normal looked like in the last hour". The middle line is the average number of orders per minute; top and bottom are that average plus or minus three times how much it usually moves (the standard deviation). If the orders line leaves the band, something unusual is happening and is worth a look.
 
 **False alarm:** at the lunch peak, orders jump far above the quiet hour before it, so the line leaves the band even though nothing is broken. The same happens near zero: with very few orders the band is so narrow that one extra order looks unusual, and the bottom line can even go below zero, which is not a real value.
+
+## 6. A/B: orders per menu view
+
+```promql
+sum by (variant) (increase(ab_orders_total[10m]))
+/ sum by (variant) (increase(ab_menu_views_total[10m]))
+```
+
+The conversion of each variant of the A/B experiment (SCRUM-50): orders divided by menu views, over the last 10 minutes, one line for A and one for B. It only has data while `AB_COMBO_TEST=on` and customers send `?customer=`.

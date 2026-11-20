@@ -271,6 +271,50 @@
           "range": true
         }
       ]
+    },
+    {
+      "id": 6,
+      "type": "timeseries",
+      "title": "A/B: orders per menu view",
+      "datasource": {
+        "type": "prometheus",
+        "uid": "prometheus"
+      },
+      "gridPos": {
+        "h": 8,
+        "w": 24,
+        "x": 0,
+        "y": 24
+      },
+      "fieldConfig": {
+        "defaults": {
+          "unit": "percentunit"
+        },
+        "overrides": []
+      },
+      "options": {
+        "legend": {
+          "displayMode": "list",
+          "placement": "bottom",
+          "showLegend": true
+        },
+        "tooltip": {
+          "mode": "multi",
+          "sort": "none"
+        }
+      },
+      "targets": [
+        {
+          "refId": "A",
+          "datasource": {
+            "type": "prometheus",
+            "uid": "prometheus"
+          },
+          "expr": "sum by (variant) (increase(ab_orders_total[10m])) / sum by (variant) (increase(ab_menu_views_total[10m]))",
+          "legendFormat": "{{variant}}",
+          "range": true
+        }
+      ]
     }
   ]
 }

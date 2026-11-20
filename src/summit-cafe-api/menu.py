@@ -8,4 +8,8 @@ MENU = [
     {"id": 5, "name": "Banana bread", "category": "food", "price": 3.2, "available": True},
 ]
 
-MENU_BY_ID = {item["id"]: item for item in MENU}
+# A/B experiment (SCRUM-50): only customers in variant B see the combo in the
+# menu list, but anyone can get it by id or order it.
+COMBO = {"id": 6, "name": "Latte + Croissant combo", "category": "combos", "price": 6.0, "available": True}
+
+MENU_BY_ID = {item["id"]: item for item in [*MENU, COMBO]}
