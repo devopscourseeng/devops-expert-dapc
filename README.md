@@ -25,7 +25,7 @@ Material and code for the CertiProf DAPC course (DevOps Advanced Professional Ce
 
 ## Monitoring
 
-Run the API, the menu service, Prometheus and Grafana together. Everything is configured from files in [`observability/`](observability/).
+Run the API, the menu service, Prometheus, Loki, Alloy and Grafana together. Everything is configured from files in [`observability/`](observability/).
 
 ```
 docker compose up -d --build
@@ -37,6 +37,8 @@ docker compose up -d --build
 | Menu service | http://localhost:8001 |
 | Prometheus | http://localhost:9090 |
 | Grafana | http://localhost:3000 (no login, for local training only) |
+| Loki (logs) | http://localhost:3100 (read it from Grafana) |
+| Alloy (sends the logs to Loki) | http://localhost:12345 |
 
 Open the **Summit Cafe** dashboard: http://localhost:3000/d/summit-cafe
 
@@ -61,6 +63,8 @@ docker compose logs --no-log-prefix summit-cafe-api | jq -cR 'fromjson? | select
 
 `fromjson?` skips gunicorn's own plain-text lines.
 
+**Logs in Grafana:** Alloy reads the logs of both services and sends them to Loki, with the labels `service` and `level`. The dashboard shows the number of errors and warnings, errors and warnings per minute, and the latest lines. In **Explore** (data source Loki) you can search any line, for example `{service="summit-cafe-api"} |= "abc123"`. Levels: ERROR for a 5xx response, WARNING for a 4xx response or a request slower than 1 second.
+
 ## A/B experiment
 
 An A/B test of a **Latte + Croissant combo** on the menu (SCRUM-50). It is off by default.
@@ -76,11 +80,11 @@ docker compose --profile load run --rm k6         # 3 minutes of simulated custo
 docker compose up -d                              # stop the experiment (toggle off)
 ```
 
-The simulated customers in [`load/ab-test.js`](load/ab-test.js) order with invented chances (20 % in A, 24 % in B), so the class sees a result.
+The simulated customers in [`load/ab-test.js`](load/ab-test.js) order with invented chances (20 % in A, 24 % in B), so the class sees a result. They also make some random bad requests (about 5 % warnings, 2 % errors) for the logs panels; these do not change the A/B numbers. The errors use the training toggle `SIMULATE_ERRORS`, which `docker-compose.yml` turns on: a request with the header `X-Simulate-Error` gets a 500.
 
 Stop everything: `docker compose down`
 
-The stack needs about 8 GB of RAM. If your computer has less, use GitHub Codespaces.
+The stack needs about 8 GB of RAM (Loki and Alloy add about 300 MB). If your computer has less, use GitHub Codespaces.
 
 ## How we work
 

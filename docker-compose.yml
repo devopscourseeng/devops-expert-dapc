@@ -1,4 +1,4 @@
-# Summit Cafe with monitoring: the API, the menu service, Prometheus and Grafana.
+# Summit Cafe with monitoring: the API, the menu service, Prometheus, Loki, Alloy and Grafana.
 # Start: docker compose up -d --build     Stop: docker compose down
 
 services:
@@ -9,6 +9,9 @@ services:
     environment:
       # A/B experiment (SCRUM-50): AB_COMBO_TEST=on docker compose up -d
       AB_COMBO_TEST: "${AB_COMBO_TEST:-off}"
+      # FOR LOCAL TRAINING ONLY: a request with the header X-Simulate-Error gets a
+      # 500 error, so k6 can create errors for the logs panels. Off in the code.
+      SIMULATE_ERRORS: "${SIMULATE_ERRORS:-on}"
 
   menu-service:
     build: ./src/menu-service
@@ -26,6 +29,30 @@ services:
     extra_hosts:
       - "host.docker.internal:host-gateway"
 
+  # Stores the logs. Grafana reads them from here (data source "Loki").
+  loki:
+    image: grafana/loki:3.3.2
+    ports:
+      - "3100:3100"
+    command: ["-config.file=/etc/loki/local-config.yaml"]
+
+  # Reads the logs of the cafe containers through the Docker socket and sends them
+  # to Loki, with the labels service and level. Status page: http://localhost:12345
+  alloy:
+    image: grafana/alloy:v1.5.1
+    ports:
+      - "12345:12345"
+    volumes:
+      - ./observability/alloy:/etc/alloy:ro
+      - /var/run/docker.sock:/var/run/docker.sock:ro
+    command:
+      - run
+      - --server.http.listen-addr=0.0.0.0:12345
+      - --storage.path=/var/lib/alloy/data
+      - /etc/alloy/config.alloy
+    depends_on:
+      - loki
+
   grafana:
     image: grafana/grafana:11.1.0
     ports:
@@ -41,8 +68,9 @@ services:
       GF_AUTH_DISABLE_LOGIN_FORM: "true"
     depends_on:
       - prometheus
+      - loki
 
-  # Simulated customers for the A/B experiment. Only in the profile "load", so a
+  # Simulated customers for the A/B experiment, with some random warnings and errors. Only in the profile "load", so a
   # plain "docker compose up" does not start it. Start the stack first; k6 has no
   # depends_on on purpose, so running it never recreates the API with the toggle off.
   # Run: docker compose --profile load run --rm k6

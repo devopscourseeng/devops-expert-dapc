@@ -6,6 +6,9 @@ The request id comes from the X-Request-ID header, or a new one is created, and
 it is sent back in the X-Request-ID response header. Search the logs for that
 value to follow one request.
 
+Levels: ERROR for a 5xx response ("request failed"), WARNING for a 4xx response
+("request rejected") or a request slower than 1 second ("slow request").
+
 Only the standard library is used. Never log request bodies, passwords, tokens
 or personal data.
 """
@@ -104,6 +107,11 @@ def init_app(app):
         if response.status_code >= 500:
             app.logger.error(
                 "request failed",
+                extra={"path": request.path, "status": response.status_code},
+            )
+        elif response.status_code >= 400:
+            app.logger.warning(
+                "request rejected",
                 extra={"path": request.path, "status": response.status_code},
             )
         response.headers[REQUEST_ID_HEADER] = g.get("request_id", "-")

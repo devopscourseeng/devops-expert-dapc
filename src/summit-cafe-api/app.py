@@ -8,6 +8,7 @@ from features import (
     ab_combo_test_enabled,
     app_version,
     scheduled_orders_enabled,
+    simulate_errors_enabled,
     variant_for,
 )
 from flask import Flask, current_app, jsonify, request
@@ -15,6 +16,7 @@ from menu import COMBO, MENU, MENU_BY_ID
 from orders import create_order, get_order
 
 PICKUP_TIME = re.compile(r"([01]\d|2[0-3]):[0-5]\d")
+SIMULATE_ERROR_HEADER = "X-Simulate-Error"
 
 
 def ab_variant():
@@ -30,6 +32,14 @@ def create_app():
     app = Flask(__name__)
     metrics.init_app(app)
     logging_setup.init_app(app)
+
+    @app.before_request
+    def simulated_error():
+        """With SIMULATE_ERRORS=on, a request with the header X-Simulate-Error gets
+        a 500 error. The metrics and the logs count it like a real one."""
+        if simulate_errors_enabled() and request.headers.get(SIMULATE_ERROR_HEADER):
+            return jsonify({"error": "simulated error"}), 500
+        return None
 
     @app.get("/health")
     def health():
@@ -56,7 +66,10 @@ def create_app():
 
     @app.get("/menu/<int:item_id>")
     def get_item(item_id):
-        return jsonify(MENU_BY_ID[item_id])
+        item = MENU_BY_ID.get(item_id)
+        if item is None:
+            return jsonify({"error": "item not found"}), 404
+        return jsonify(item)
 
     @app.post("/orders")
     def post_order():

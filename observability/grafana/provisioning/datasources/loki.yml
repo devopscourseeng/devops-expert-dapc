@@ -1,0 +1,9 @@
+apiVersion: 1
+
+# The logs of the cafe services, collected by Alloy (observability/alloy/config.alloy).
+datasources:
+  - name: Loki
+    type: loki
+    uid: loki
+    url: http://loki:3100
+    access: proxy

@@ -108,3 +108,19 @@ def test_slow_request_logs_a_warning(monkeypatch, caplog):
     caplog.set_level(logging.INFO)
     create_app().test_client().get("/health")
     assert any(r.getMessage() == "slow request" and r.levelname == "WARNING" for r in caplog.records)
+
+
+def test_client_error_logs_a_warning(client, caplog):
+    caplog.set_level(logging.INFO)
+    assert client.post("/orders", json={"items": []}).status_code == 400
+    rejected = [r for r in caplog.records if r.getMessage() == "request rejected"]
+    assert len(rejected) == 1
+    assert rejected[0].levelname == "WARNING"
+    assert rejected[0].status == 400
+    assert rejected[0].path == "/orders"
+
+
+def test_success_logs_no_warning_or_error(client, caplog):
+    caplog.set_level(logging.INFO)
+    client.get("/menu")
+    assert not [r for r in caplog.records if r.levelno >= logging.WARNING]

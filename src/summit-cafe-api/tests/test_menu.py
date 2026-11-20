@@ -43,3 +43,9 @@ def test_single_menu_item_is_available(client):
     response = client.get("/menu/3")
     assert response.status_code == 200
     assert response.get_json()["available"] is True
+
+
+def test_unknown_item_is_404(client):
+    response = client.get("/menu/99")
+    assert response.status_code == 404
+    assert response.get_json() == {"error": "item not found"}

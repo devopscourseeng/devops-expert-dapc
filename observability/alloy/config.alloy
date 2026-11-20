@@ -1,0 +1,53 @@
+// Grafana Alloy: reads the logs of the Summit Cafe containers and sends them to Loki.
+//
+// The services write one JSON object per line (see logging_setup.py). Alloy keeps
+// two labels for searching and counting in Grafana:
+//   service  the Compose service (summit-cafe-api or menu-service)
+//   level    the "level" field of the JSON line (INFO, WARNING, ERROR)
+// Lines that are not JSON (gunicorn's own start-up lines) are kept, without a level.
+
+discovery.docker "containers" {
+  host = "unix:///var/run/docker.sock"
+}
+
+discovery.relabel "cafe" {
+  targets = []
+
+  // The Compose service name becomes the label "service".
+  rule {
+    source_labels = ["__meta_docker_container_label_com_docker_compose_service"]
+    target_label  = "service"
+  }
+
+  // Only the two services of the cafe; not Prometheus, Grafana, Loki or Alloy.
+  rule {
+    source_labels = ["service"]
+    regex         = "summit-cafe-api|menu-service"
+    action        = "keep"
+  }
+}
+
+loki.source.docker "cafe" {
+  host          = "unix:///var/run/docker.sock"
+  targets       = discovery.docker.containers.targets
+  relabel_rules = discovery.relabel.cafe.rules
+  forward_to    = [loki.process.levels.receiver]
+}
+
+loki.process "levels" {
+  stage.json {
+    expressions = { level = "level" }
+  }
+
+  stage.labels {
+    values = { level = "" }
+  }
+
+  forward_to = [loki.write.local.receiver]
+}
+
+loki.write "local" {
+  endpoint {
+    url = "http://loki:3100/loki/api/v1/push"
+  }
+}

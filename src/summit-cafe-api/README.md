@@ -9,8 +9,7 @@ A small REST API for the cafe menu. It is the project we build and improve durin
 | GET | `/health` | The status of the service |
 | GET | `/version` | The image version and the state of the toggles |
 | GET | `/menu` | The list of menu items |
-| GET | `/menu/{id}` | One menu item |
-
+| GET | `/menu/{id}` | One menu item, or 404 if there is no item with that id |
 | POST | `/orders` | Creates an order. With `SCHEDULED_ORDERS=on` it also accepts `pickup_time` (like `14:30`) |
 | GET | `/orders/{id}` | One order |
 
@@ -19,6 +18,8 @@ A small REST API for the cafe menu. It is the project we build and improve durin
 | Variable | Values | What it does |
 |---|---|---|
 | `SCHEDULED_ORDERS` | `off` (default), `on` | Feature toggle: lets a customer choose a pickup time. With `off` the field is ignored and the API works as in 1.1. |
+| `AB_COMBO_TEST` | `off` (default), `on` | The A/B experiment with the Latte + Croissant combo (SCRUM-50). See the main README. |
+| `SIMULATE_ERRORS` | `off` (default), `on` | FOR LOCAL TRAINING ONLY. A request with the header `X-Simulate-Error` gets a 500 error, so the logs panels have errors to show. `docker-compose.yml` turns it on. |
 | `SERVICE_NAME` | text | The `service` field in the JSON logs. Default: `summit-cafe-api`. |
 | `APP_VERSION` | text | The version shown by `/version` and in the `version` label of the request metrics. The publish workflow sets it from the image tag. Default: `dev`. |
 
