@@ -67,3 +67,12 @@ def test_service_name_default_is_menu_service(monkeypatch):
     monkeypatch.delenv("SERVICE_NAME", raising=False)
     record = logging.LogRecord("app", logging.INFO, __file__, 1, "x", None, None)
     assert json.loads(JsonFormatter().format(record))["service"] == "menu-service"
+
+
+def test_unknown_item_logs_a_warning(client, caplog):
+    caplog.set_level(logging.INFO)
+    assert client.get("/menu/99").status_code == 404
+    rejected = [r for r in caplog.records if r.getMessage() == "request rejected"]
+    assert len(rejected) == 1
+    assert rejected[0].levelname == "WARNING"
+    assert rejected[0].status == 404

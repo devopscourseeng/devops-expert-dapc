@@ -50,3 +50,9 @@ jobs:
           docker run --rm --entrypoint promtool
           -v "$PWD/observability/prometheus:/p:ro"
           prom/prometheus:v2.53.0 check config /p/prometheus.yml
+
+      - name: Validate the Alloy config (alloy fmt)
+        run: >-
+          docker run --rm
+          -v "$PWD/observability/alloy:/a:ro"
+          grafana/alloy:v1.5.1 fmt /a/config.alloy > /dev/null

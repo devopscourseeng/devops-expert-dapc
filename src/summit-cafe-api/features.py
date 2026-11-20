@@ -29,6 +29,13 @@ def ab_combo_test_enabled():
     return _is_on("AB_COMBO_TEST")
 
 
+def simulate_errors_enabled():
+    """SIMULATE_ERRORS=on lets a request ask for a 500 error with the header
+    X-Simulate-Error, so the class can see errors in the logs. Default: off.
+    Only for local training: docker-compose.yml turns it on."""
+    return _is_on("SIMULATE_ERRORS")
+
+
 def variant_for(customer_id):
     """The A/B variant of a customer: "A" (menu as today) or "B" (menu with the combo).
 

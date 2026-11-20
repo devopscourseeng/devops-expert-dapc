@@ -59,3 +59,28 @@ sum by (variant) (increase(ab_orders_total[10m]))
 ```
 
 The conversion of each variant of the A/B experiment (SCRUM-50): orders divided by menu views, over the last 10 minutes, one line for A and one for B. It only has data while `AB_COMBO_TEST=on` and customers send `?customer=`.
+
+## 7. Logs: errors and warnings (Loki, LogQL)
+
+These panels read the **logs**, not the metrics: Alloy ([`alloy/config.alloy`](alloy/config.alloy)) sends every log line of the two services to Loki, with the labels `service` and `level`. The query language is LogQL; it looks like PromQL, with a log selector in `{ }`.
+
+```logql
+# Logs: errors (stat; Logs: warnings is the same with level="WARNING")
+sum(count_over_time({service=~"summit-cafe-api|menu-service", level="ERROR"} [$__range]))
+# Logs: errors and warnings per minute
+sum by (level) (count_over_time({service=~"summit-cafe-api|menu-service", level=~"ERROR|WARNING"} [1m]))
+# Logs: latest errors and warnings (the lines themselves)
+{service=~"summit-cafe-api|menu-service", level=~"ERROR|WARNING"}
+```
+
+`count_over_time` counts log lines in a window; `$__range` is the time range chosen at the top of the dashboard. What creates each level:
+
+| Level | Message | When |
+|---|---|---|
+| ERROR | `request failed` | the response is a 5xx |
+| WARNING | `request rejected` | the response is a 4xx (bad order, unknown id) |
+| WARNING | `slow request` | the request took more than 1 second |
+
+To follow one request, search its id in **Explore** (data source Loki): `{service="summit-cafe-api"} |= "abc123"`.
+
+The k6 script [`load/ab-test.js`](../load/ab-test.js) makes random bad requests, so these panels have data during the A/B run. Errors come from the training toggle `SIMULATE_ERRORS` (on in `docker-compose.yml`): a request with the header `X-Simulate-Error` gets a 500.
