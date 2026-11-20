@@ -6,6 +6,9 @@ services:
     build: ./src/summit-cafe-api
     ports:
       - "8000:8000"
+    environment:
+      # A/B experiment (SCRUM-50): AB_COMBO_TEST=on docker compose up -d
+      AB_COMBO_TEST: "${AB_COMBO_TEST:-off}"
 
   menu-service:
     build: ./src/menu-service
@@ -38,3 +41,16 @@ services:
       GF_AUTH_DISABLE_LOGIN_FORM: "true"
     depends_on:
       - prometheus
+
+  # Simulated customers for the A/B experiment. Only in the profile "load", so a
+  # plain "docker compose up" does not start it. Start the stack first; k6 has no
+  # depends_on on purpose, so running it never recreates the API with the toggle off.
+  # Run: docker compose --profile load run --rm k6
+  k6:
+    image: grafana/k6:0.54.0
+    profiles: ["load"]
+    volumes:
+      - ./load:/scripts:ro
+    command: ["run", "/scripts/ab-test.js"]
+    environment:
+      BASE_URL: http://summit-cafe-api:8000

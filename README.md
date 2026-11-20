@@ -61,6 +61,23 @@ docker compose logs --no-log-prefix summit-cafe-api | jq -cR 'fromjson? | select
 
 `fromjson?` skips gunicorn's own plain-text lines.
 
+## A/B experiment
+
+An A/B test of a **Latte + Croissant combo** on the menu (SCRUM-50). It is off by default.
+
+* With `AB_COMBO_TEST=on`, `GET /menu?customer=<id>` puts each customer in variant **A** (the menu as today) or **B** (the menu with the combo), always the same one for the same id, and answers with the header `X-Variant`.
+* `POST /orders?customer=<id>` counts the order for that variant.
+* The panel **A/B: orders per menu view** shows the conversion of A and B.
+
+```
+AB_COMBO_TEST=on docker compose up -d --build     # start with the experiment on
+curl -i "localhost:8000/menu?customer=c-1"        # see X-Variant, and the combo for B
+docker compose --profile load run --rm k6         # 3 minutes of simulated customers
+docker compose up -d                              # stop the experiment (toggle off)
+```
+
+The simulated customers in [`load/ab-test.js`](load/ab-test.js) order with invented chances (20 % in A, 24 % in B), so the class sees a result.
+
 Stop everything: `docker compose down`
 
 The stack needs about 8 GB of RAM. If your computer has less, use GitHub Codespaces.

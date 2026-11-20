@@ -16,7 +16,7 @@ import os
 import sys
 import time
 import uuid
-from datetime import datetime, timezone
+from datetime import UTC, datetime
 
 from flask import g, has_request_context, request
 
@@ -42,7 +42,7 @@ class JsonFormatter(logging.Formatter):
 
     def format(self, record):
         entry = {
-            "time": datetime.fromtimestamp(record.created, tz=timezone.utc).isoformat(),
+            "time": datetime.fromtimestamp(record.created, tz=UTC).isoformat(),
             "level": record.levelname,
             "service": service_name(),
             "request_id": getattr(record, "request_id", "-"),
