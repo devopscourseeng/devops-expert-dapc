@@ -10,8 +10,11 @@ discovery.docker "containers" {
   host = "unix:///var/run/docker.sock"
 }
 
+// The filter and the labels are applied to the list of containers, before
+// Alloy starts reading them. (As relabel_rules of loki.source.docker they were
+// not applied: Alloy also read the k6 container and set no "service" label.)
 discovery.relabel "cafe" {
-  targets = []
+  targets = discovery.docker.containers.targets
 
   // The Compose service name becomes the label "service".
   rule {
@@ -28,10 +31,9 @@ discovery.relabel "cafe" {
 }
 
 loki.source.docker "cafe" {
-  host          = "unix:///var/run/docker.sock"
-  targets       = discovery.docker.containers.targets
-  relabel_rules = discovery.relabel.cafe.rules
-  forward_to    = [loki.process.levels.receiver]
+  host       = "unix:///var/run/docker.sock"
+  targets    = discovery.relabel.cafe.output
+  forward_to = [loki.process.levels.receiver]
 }
 
 loki.process "levels" {
